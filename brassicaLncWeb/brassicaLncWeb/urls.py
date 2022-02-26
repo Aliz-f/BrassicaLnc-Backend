@@ -20,4 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('lncRNA/', include('lncRNA.urls')),
     path('blast/', include('blastplus.urls')),
+    path('download/', include('download.urls')),
+    path('search/', include('search.urls')),
+
 ]

@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'lncRNA',
     'blastplus',
+    'download',
+    'search',
 ]
 
 MIDDLEWARE = [

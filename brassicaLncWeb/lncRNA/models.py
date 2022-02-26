@@ -9,6 +9,8 @@ class lnc (models.Model):
     stringTieId  = models.CharField(verbose_name="StringTie ID", max_length=70, null=False)
     chr = models.CharField(verbose_name="Chr", max_length=20, null=False)
     location = models.CharField(verbose_name="Location", max_length=70, null=False)
+    locStart = models.IntegerField(verbose_name='location start', null=False)
+    locEnd = models.IntegerField(verbose_name='location End', null=False)
     length = models.PositiveIntegerField(verbose_name="Length", null=False)
     classification = models.CharField(verbose_name="Classification", max_length=5, null=False)
     exonNumber = models.PositiveIntegerField(verbose_name="Exon number", null=False)
