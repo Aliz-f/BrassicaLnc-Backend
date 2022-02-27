@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status, authentication, permissions
 from rest_framework.pagination import PageNumberPagination
 
-from .serializer import lncSerializer
+from .serializer import lncSerializer, gtfSerializer
 from .models import lnc
 
 
@@ -12,7 +12,7 @@ class CsrfExemptSessionAuthentication(authentication.SessionAuthentication):
     def enforce_csrf(self, request):
         return
 
-class createDatabase(APIView):
+class createLNC(APIView):
     permission_classes = (permissions.AllowAny,)
     authentication_classes = (
         CsrfExemptSessionAuthentication, authentication.SessionAuthentication, authentication.BasicAuthentication)
@@ -26,7 +26,23 @@ class createDatabase(APIView):
             return Response(ser.errors, status=status.HTTP_406_NOT_ACCEPTABLE)
         except Exception as e:
             return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
-        
+
+class createGTF(APIView):
+    permission_classes = (permissions.AllowAny,)
+    authentication_classes = (
+        CsrfExemptSessionAuthentication, authentication.SessionAuthentication, authentication.BasicAuthentication)
+    
+    def post(self, request):
+        try:
+            print(request.data)
+            ser = gtfSerializer(data=request.data)
+            if ser.is_valid():
+                ser.save()
+                return Response(ser.data, status=status.HTTP_201_CREATED)
+            return Response(ser.errors, status=status.HTTP_406_NOT_ACCEPTABLE)
+        except Exception as e:
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
 class transcripts(APIView):
     permission_classes = (permissions.AllowAny,)
     authentication_classes = (

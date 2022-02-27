@@ -3,7 +3,7 @@ from rest_framework import serializers, status
 
 from django.utils.encoding import force_str
 
-from .models import lnc
+from .models import lnc, gtf
 
 class CustomValidation(APIException):
     status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
@@ -23,3 +23,11 @@ class lncSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return lnc.objects.create(**validated_data)
+
+class gtfSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= gtf
+        fields = "__all__"
+
+    def create(self, validated_data):
+        return gtf.objects.create(**validated_data)
