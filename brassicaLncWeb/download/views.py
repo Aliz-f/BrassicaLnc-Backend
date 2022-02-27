@@ -4,7 +4,7 @@ from rest_framework import status, authentication, permissions
 
 
 from lncRNA.models import lnc
-from .utils import exportCSV, exportTXT
+from .utils import exportCSV, exportTXT, exportFasta
 
 
 # Create your views here.
@@ -48,5 +48,44 @@ class downloadTXT(APIView):
                 idList = idList.split(',')
                 lncQuery = lnc.objects.filter(id__in=idList)
                 return exportTXT(list(lncQuery))
+        except Exception as e:
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+class downloadFASTA(APIView):
+    permission_classes = (permissions.AllowAny,)
+    authentication_classes = (
+        CsrfExemptSessionAuthentication, authentication.SessionAuthentication, authentication.BasicAuthentication)
+
+    def get(self, request):
+        try:
+            idList = request.GET.get('ids', None)
+            lncList = []
+            if idList == None:
+                lncQuery = lnc.objects.all()
+                return exportFasta(list(lncQuery))
+            else:
+                idList = idList.split(',')
+                lncQuery = lnc.objects.filter(id__in=idList)
+                return exportFasta(list(lncQuery))
+        except Exception as e:
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class downloadGTF(APIView):
+    permission_classes = (permissions.AllowAny,)
+    authentication_classes = (
+        CsrfExemptSessionAuthentication, authentication.SessionAuthentication, authentication.BasicAuthentication)
+
+    def get(self, request):
+        try:
+            idList = request.GET.get('ids', None)
+            lncList = []
+            if idList == None:
+                lncQuery = lnc.objects.all()
+                return exportFasta(list(lncQuery))
+            else:
+                idList = idList.split(',')
+                lncQuery = lnc.objects.filter(id__in=idList)
+                return exportFasta(list(lncQuery))
         except Exception as e:
             return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)

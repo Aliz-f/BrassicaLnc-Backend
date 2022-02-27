@@ -15,6 +15,3 @@ dataFormatAdd = {
 
 }
 
-dataFormatSearchById={
-    "geneId":"BnaA01LNG0000100"
-}
