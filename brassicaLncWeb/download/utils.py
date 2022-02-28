@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 import csv
+from lncRNA.models import gtf, lnc
 
 def exportCSV(lncList):
     # Create the HttpResponse object with the appropriate CSV header.
@@ -52,9 +53,15 @@ def exportGTF(lncList):
     )
 
     writer = csv.writer(response)
-    for value in lncList:
-        temp = '>{}'.format(value.transcriptId)
-        writer.writerow([temp])
-        writer.writerow([value.sequence])
+    lncQuery = lnc.objects.filter(id__in = lncList)
+    for value in lncQuery:
+        gtfQuery = gtf.objects.filter(transcript_id = value.stringTieId)
+        for eachGTF in gtfQuery:
+            strTemp = """{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\tgene_id {}; transcript_id {}; exon_number {}; """.format(
+                eachGTF.chromosome, eachGTF.stringTie, 
+                eachGTF.exon, eachGTF.locStart, eachGTF.locEnd,
+                eachGTF.number, eachGTF.strand1, eachGTF.strand2,
+                eachGTF.gene_id, eachGTF.transcript_id, eachGTF.exon_number)
+            writer.writerow([strTemp])
 
     return response

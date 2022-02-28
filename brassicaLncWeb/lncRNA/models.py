@@ -27,10 +27,10 @@ class gtf(models.Model):
     locStart = models.IntegerField(verbose_name="Location start", null=False)
     locEnd = models.IntegerField(verbose_name="Location end", null=False)
     number = models.IntegerField(verbose_name="Number", null=False)
-    symbol1 = models.CharField(verbose_name="Symbol 1", null=False, max_length=100)
-    symbol2 = models.CharField(verbose_name="Symbol 2", null=False, max_length=100)
+    strand1 = models.CharField(verbose_name="Symbol 1", null=False, max_length=100)
+    strand2 = models.CharField(verbose_name="Symbol 2", null=False, max_length=100)
     exon_number = models.IntegerField(verbose_name="Exon_Number", null=False)
-    chr = models.CharField(verbose_name="Chr", null=False, max_length=100)
+    chromosome = models.CharField(verbose_name="Chr", null=False, max_length=100)
 
     def __str__(self):
         return self.transcript_id

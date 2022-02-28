@@ -4,7 +4,7 @@ from rest_framework import status, authentication, permissions
 
 
 from lncRNA.models import lnc
-from .utils import exportCSV, exportTXT, exportFasta
+from .utils import exportCSV, exportTXT, exportFasta, exportGTF
 
 
 # Create your views here.
@@ -81,11 +81,11 @@ class downloadGTF(APIView):
             idList = request.GET.get('ids', None)
             lncList = []
             if idList == None:
-                lncQuery = lnc.objects.all()
-                return exportFasta(list(lncQuery))
+                lncQuery = lnc.objects.all().values_list('id', flat=True)
+                return exportGTF(list(lncQuery))
             else:
                 idList = idList.split(',')
-                lncQuery = lnc.objects.filter(id__in=idList)
-                return exportFasta(list(lncQuery))
+                lncQuery = lnc.objects.filter(id__in=idList).values_list('id', flat=True)
+                return exportGTF(list(lncQuery))
         except Exception as e:
             return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
