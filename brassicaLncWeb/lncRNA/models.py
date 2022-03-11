@@ -27,8 +27,8 @@ class gtf(models.Model):
     locStart = models.IntegerField(verbose_name="Location start", null=False)
     locEnd = models.IntegerField(verbose_name="Location end", null=False)
     number = models.IntegerField(verbose_name="Number", null=False)
-    strand1 = models.CharField(verbose_name="Symbol 1", null=False, max_length=100)
-    strand2 = models.CharField(verbose_name="Symbol 2", null=False, max_length=100)
+    strand1 = models.CharField(verbose_name="strand 1", null=False, max_length=100)
+    strand2 = models.CharField(verbose_name="strand 2", null=False, max_length=100)
     exon_number = models.IntegerField(verbose_name="Exon_Number", null=False)
     chromosome = models.CharField(verbose_name="Chr", null=False, max_length=100)
 
