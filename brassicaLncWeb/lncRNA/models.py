@@ -34,7 +34,7 @@ class gtf(models.Model):
     def __str__(self):
         return self.transcript_id
 
-class cemicalFpk(models.Model):
+class chemicalFpk(models.Model):
     lncRNAs=models.TextField()
     SRR5816403=models.FloatField()
     SRR5816404=models.FloatField()
