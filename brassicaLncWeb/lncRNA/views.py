@@ -1,3 +1,7 @@
+from email.policy import default
+from re import S
+from urllib import response
+from django.urls import Resolver404, ResolverMatch
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, authentication, permissions
@@ -93,3 +97,47 @@ class transcripts(APIView):
             return Response(data, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)        
+
+class chemical(APIView):
+    permission_classes = (permissions.AllowAny,)
+    authentication_classes = (
+        CsrfExemptSessionAuthentication, authentication.SessionAuthentication, authentication.BasicAuthentication)
+
+    def post(self,request):
+        data = []
+        dic = dict()
+        with open("Tabledb - Chemical_db.csv", 'r') as myfile:
+            for line in myfile:
+                data.append(line.split(","))
+
+            for i in data :
+                ##print(i)
+                #break
+                try:
+                    try :
+                        t= dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0]] 
+                        t.append(i[1].split()[0])
+                        dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ]  =t
+                    except :
+                        #t = dic[i[4].split()[0]]
+                        #print(i[:4])
+                        dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] = [i[1].split()[0]]
+                        
+                except:
+                    dic[i[4].split()[0]]=dict()
+
+        id = request.data["id"]
+        transcript = chemicalFpk.object.filte(lncRNAs__contains=id)
+        a = dic()
+        responce = dict()
+        for t in transcript :
+            for i in dic.keys():
+                for j in i.keys():
+                    k = dic[i][j]
+                    for z in k :
+                        s += t.values_list("z")[0][0]
+                    s/=len(k)
+                    a[i][j]=s
+            response[t.lncRNAs] = a 
+        return Response(response)
+
