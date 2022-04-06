@@ -8,7 +8,7 @@ from rest_framework import status, authentication, permissions
 from rest_framework.pagination import PageNumberPagination
 
 from .serializer import lncSerializer, gtfSerializer
-from .models import lnc
+from .models import *
 
 
 # Create your views here.
