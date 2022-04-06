@@ -135,7 +135,7 @@ class chemical(APIView):
                 for j in i.keys():
                     k = dic[i][j]
                     for z in k :
-                        s += t.values_list("z")[0][0]
+                        s += t.values_list(z)[0][0]
                     s/=len(k)
                     a[i][j]=s
             response[t.lncRNAs] = a 
