@@ -7,10 +7,10 @@ from rest_framework.response import Response
 from rest_framework import status, authentication, permissions
 from rest_framework.pagination import PageNumberPagination
 
-from .serializer import lncSerializer, gtfSerializer
+from .serializer import lncSerializer, gtfSerializer,chemicalSerializer
 from .models import *
-
-
+import csv
+import time
 # Create your views here.
 class CsrfExemptSessionAuthentication(authentication.SessionAuthentication):
     def enforce_csrf(self, request):
@@ -106,7 +106,7 @@ class chemical(APIView):
     def post(self,request):
         data = []
         dic = dict()
-        with open("Tabledb - Chemical_db.csv", 'r') as myfile:
+        with open("lncRNA/Tabledb - Chemical_db.csv", 'r') as myfile:
             for line in myfile:
                 data.append(line.split(","))
 
@@ -127,17 +127,67 @@ class chemical(APIView):
                     dic[i[4].split()[0]]=dict()
 
         id = request.data["id"]
-        transcript = chemicalFpk.object.filte(lncRNAs__contains=id)
-        a = dic()
+        transcript = chemicalFpk.objects.filter(lncRNAs__contains=id)
+        a = dic
+        #print(dic.keys())
+        #return Response({"1":1})
         responce = dict()
+        print(dic)
+        #{"id":"BnaCnnLNG0002300"}
+        #return Response(1)
         for t in transcript :
             for i in dic.keys():
-                for j in i.keys():
+                s=0
+                for j in dic[i].keys():
                     k = dic[i][j]
-                    for z in k :
-                        s += t.values_list(z)[0][0]
-                    s/=len(k)
-                    a[i][j]=s
-            response[t.lncRNAs] = a 
-        return Response(response)
+                    #print(dic,"i",i,"  j :",j, "ppp   ", dic[i][j])
+                    #return Response({"1":1})
+                    #print(t)
+                    dat = chemicalSerializer(t).data      
+                    try:              
+                        for z in k :
+                            s += dat[z]
+                        s/=len(k)
+                        a[i][j]=s
+                    except :
+                        #print(k , "i:",i,"  j:",j)
+                        #print(dic)
+                        responce[dat["lncRNAs"]] = dic
+                        #print(responce)
+                        return Response(responce)
+
+            #print(dat["lncRNAs"])
+            #return Response({"1":1})
+            #responce[dat["lncRNAs"]] = a 
+        #print(a)
+        return Response(2)
+
+
+class create_chemical_db(APIView):
+
+    def get(self,request):
+        csvFilePath = r'lncRNA/Chimical_fpkm.csv'
+        jsonArray = []
+        #read csv file
+        with open(csvFilePath, encoding='utf-8') as csvf: 
+            #load csv file data using csv library's dictionary reader
+            csvReader = csv.DictReader(csvf) 
+
+            #convert each csv row into python dict
+            for row in csvReader: 
+                #add this python dict to json array
+                jsonArray.append(row)
+        #print(jsonArray[0])
+        k=0
+        for i in jsonArray:
+            ser = chemicalSerializer(data=i)
+            if ser.is_valid():
+                k+=1
+                print(k)
+                ser.save()
+                time.sleep(0.5)
+            else:
+                print(i)
+                print(ser.errors)
+                break
 
