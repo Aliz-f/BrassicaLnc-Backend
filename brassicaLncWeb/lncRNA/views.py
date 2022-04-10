@@ -155,7 +155,7 @@ class chemical(APIView):
 
                 #print(dat["lncRNAs"])
                 #return Response({"1":1})
-                #responce[dat["lncRNAs"]] = a 
+                responce[dat["lncRNAs"]] = a 
             #print(a)
             return Response(responce,status=status.HTTP_200_OK)
         except Exception as e:
