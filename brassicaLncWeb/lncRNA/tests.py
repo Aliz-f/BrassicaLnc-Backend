@@ -27,3 +27,8 @@ dataFormatCreateGTF = {
     "transcript_id": "MSTRG.363.1",
     "exon_number": 1,
 }
+
+
+dataFormatEachTranscript = {
+    "tranId":"BnaCnnLNG0016000.1"
+}

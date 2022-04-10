@@ -5,3 +5,7 @@ from django.test import TestCase
 dataFormatSearchById={
     "geneId":"BnaA01LNG0000100"
 }
+
+dataFormatSearchById={
+    "tranId":"BnaCnnLNG0016000.1"
+}

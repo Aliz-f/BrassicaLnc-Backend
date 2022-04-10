@@ -26,11 +26,16 @@ class searchById(APIView):
             data = request.data
             
             geneId = data.get('geneId', None)
-            assert geneId, 'geneId not found'
-
-            lncQuery = lnc.objects.filter(geneId=geneId)
-            assert lncQuery, 'query not found'
-
+            # assert geneId, 'geneId not found'
+            transcript = data.get('tranId', None)
+            assert transcript or geneId, 'transcript and geneId not found'
+            if geneId:
+                lncQuery = lnc.objects.filter(geneId=geneId)
+                assert lncQuery, 'query not found'
+            elif transcript:
+                lncQuery = lnc.objects.filter(transcriptId=transcript)
+                assert lncQuery, 'query not found'
+            
             result_page = paginator.paginate_queryset(lncQuery, request)
             ser = lncSerializer(result_page, many=True)
             return Response(ser.data, status=status.HTTP_200_OK)
