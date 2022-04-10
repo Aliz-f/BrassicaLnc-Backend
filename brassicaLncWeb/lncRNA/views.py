@@ -1,5 +1,3 @@
-from email.policy import default
-from re import S
 from urllib import response
 from django.urls import Resolver404, ResolverMatch
 from rest_framework.views import APIView
@@ -11,6 +9,7 @@ from .serializer import lncSerializer, gtfSerializer,chemicalSerializer
 from .models import *
 import csv
 import time
+
 # Create your views here.
 class CsrfExemptSessionAuthentication(authentication.SessionAuthentication):
     def enforce_csrf(self, request):
