@@ -237,3 +237,6 @@ class chemicalFpk(models.Model):
     SRR13167940=models.FloatField()
     SRR13167938=models.FloatField()
     SRR13167936=models.FloatField()
+
+    def __str__(self):
+        return self.lncRNAs

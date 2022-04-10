@@ -97,3 +97,26 @@
 #     response = requests.post(url, data=data[i])
 #     print(response)
 #     # time.sleep(0.1)
+
+
+#*** Create chemical dataBase
+# import csv
+# import requests
+# csvFilePath = r'lncRNA/files/Chimical_fpkm.csv'
+# jsonArray = []
+# #read csv file
+# with open(csvFilePath, encoding='utf-8') as csvf: 
+#     #load csv file data using csv library's dictionary reader
+#     csvReader = csv.DictReader(csvf) 
+
+#     #convert each csv row into python dict
+#     for row in csvReader: 
+#         #add this python dict to json array
+#         jsonArray.append(row)
+# #print(jsonArray[0])
+# k=0
+# url = 'http://188.121.122.34/lncRNA/create/chemicaldb/'
+# for i in jsonArray:
+#     response = requests.post(url, data=i)
+#     print(response)
+#     # time.sleep(0.1)
