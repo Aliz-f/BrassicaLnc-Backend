@@ -70,7 +70,6 @@ class downloadFASTA(APIView):
         except Exception as e:
             return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
-
 class downloadGTF(APIView):
     permission_classes = (permissions.AllowAny,)
     authentication_classes = (

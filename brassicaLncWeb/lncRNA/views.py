@@ -1,5 +1,3 @@
-from urllib import response
-from django.urls import Resolver404, ResolverMatch
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, authentication, permissions
@@ -103,90 +101,116 @@ class chemical(APIView):
         CsrfExemptSessionAuthentication, authentication.SessionAuthentication, authentication.BasicAuthentication)
 
     def post(self,request):
-        data = []
-        dic = dict()
-        with open("lncRNA/Tabledb - Chemical_db.csv", 'r') as myfile:
-            for line in myfile:
-                data.append(line.split(","))
+        try:
+            data = []
+            dic = dict()
+            with open("lncRNA/files/Tabledb - Chemical_db.csv", 'r') as myfile:
+                for line in myfile:
+                    data.append(line.split(","))
 
-            for i in data :
-                ##print(i)
-                #break
-                try:
-                    try :
-                        t= dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0]] 
-                        t.append(i[1].split()[0])
-                        dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ]  =t
-                    except :
-                        #t = dic[i[4].split()[0]]
-                        #print(i[:4])
-                        dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] = [i[1].split()[0]]
-                        
-                except:
-                    dic[i[4].split()[0]]=dict()
+                for i in data :
+                    ##print(i)
+                    #break
+                    try:
+                        try :
+                            t= dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0]] 
+                            t.append(i[1].split()[0])
+                            dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ]  =t
+                        except :
+                            #t = dic[i[4].split()[0]]
+                            #print(i[:4])
+                            dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] = [i[1].split()[0]]
+                            
+                    except:
+                        dic[i[4].split()[0]]=dict()
 
-        id = request.data["id"]
-        transcript = chemicalFpk.objects.filter(lncRNAs__contains=id)
-        a = dic
-        #print(dic.keys())
-        #return Response({"1":1})
-        responce = dict()
-        print(dic)
-        #{"id":"BnaCnnLNG0002300"}
-        #return Response(1)
-        for t in transcript :
-            for i in dic.keys():
-                s=0
-                for j in dic[i].keys():
-                    k = dic[i][j]
-                    #print(dic,"i",i,"  j :",j, "ppp   ", dic[i][j])
-                    #return Response({"1":1})
-                    #print(t)
-                    dat = chemicalSerializer(t).data      
-                    try:              
-                        for z in k :
-                            s += dat[z]
-                        s/=len(k)
-                        a[i][j]=s
-                    except :
-                        #print(k , "i:",i,"  j:",j)
-                        #print(dic)
-                        responce[dat["lncRNAs"]] = dic
-                        #print(responce)
-                        return Response(responce)
-
-            #print(dat["lncRNAs"])
+            id = request.data["id"]
+            transcript = chemicalFpk.objects.filter(lncRNAs__contains=id)
+            a = dic
+            #print(dic.keys())
             #return Response({"1":1})
-            #responce[dat["lncRNAs"]] = a 
-        #print(a)
-        return Response(2)
+            responce = dict()
+            #print(dic)
+            #{"id":"BnaCnnLNG0002300"}
+            #return Response(1)
+            for t in transcript :
+                for i in dic.keys():
+                    s=0
+                    for j in dic[i].keys():
+                        k = dic[i][j]
+                        #print(dic,"i",i,"  j :",j, "ppp   ", dic[i][j])
+                        #return Response({"1":1})
+                        #print(t)
+                        dat = chemicalSerializer(t).data      
+                        try:              
+                            for z in k :
+                                s += dat[z]
+                            s/=len(k)
+                            a[i][j]=s
+                        except :
+                            #print(k , "i:",i,"  j:",j)
+                            #print(dic)
+                            responce[dat["lncRNAs"]] = dic
+                            #print(responce)
+                            return Response(responce)
 
+                #print(dat["lncRNAs"])
+                #return Response({"1":1})
+                #responce[dat["lncRNAs"]] = a 
+            #print(a)
+            return Response(status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 class create_chemical_db(APIView):
-
     def get(self,request):
-        csvFilePath = r'lncRNA/Chimical_fpkm.csv'
-        jsonArray = []
-        #read csv file
-        with open(csvFilePath, encoding='utf-8') as csvf: 
-            #load csv file data using csv library's dictionary reader
-            csvReader = csv.DictReader(csvf) 
+        try:
+            csvFilePath = r'lncRNA/files/Chimical_fpkm.csv'
+            jsonArray = []
+            #read csv file
+            with open(csvFilePath, encoding='utf-8') as csvf: 
+                #load csv file data using csv library's dictionary reader
+                csvReader = csv.DictReader(csvf) 
 
-            #convert each csv row into python dict
-            for row in csvReader: 
-                #add this python dict to json array
-                jsonArray.append(row)
-        #print(jsonArray[0])
-        k=0
-        for i in jsonArray:
-            ser = chemicalSerializer(data=i)
-            if ser.is_valid():
-                k+=1
-                print(k)
-                ser.save()
-                time.sleep(0.5)
-            else:
-                print(i)
-                print(ser.errors)
-                break
+                #convert each csv row into python dict
+                for row in csvReader: 
+                    #add this python dict to json array
+                    jsonArray.append(row)
+            #print(jsonArray[0])
+            k=0
+            for i in jsonArray:
+                ser = chemicalSerializer(data=i)
+                if ser.is_valid():
+                    k+=1
+                    print(k)
+                    ser.save()
+                    time.sleep(0.5)
+                    print("********************************")
+                else:
+                    print(i)
+                    print(ser.errors)
+                    return Response({'detail':ser.errors}, status=status.HTTP_400_BAD_REQUEST)
+            return Response(status=status.HTTP_201_CREATED)
+        except Exception as e:
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
+class eachTranscript(APIView):
+    permission_classes = (permissions.AllowAny,)
+    authentication_classes = (
+        CsrfExemptSessionAuthentication, authentication.SessionAuthentication, authentication.BasicAuthentication)
+
+    def post(self, request):
+        try:
+            data = request.data
+            transcript = data.get('tranId', None)
+            assert transcript, 'tranId not found'
+            lncQuery = lnc.objects.get(transcriptId=transcript)
+            gtfQuery = gtf.objects.filter(transcript_id=lncQuery.stringTieId)
+            lncSer = lncSerializer(lncQuery)
+            gtfSer = gtfSerializer(gtfQuery,many=True)
+            response = {}
+            response['lnc'] = lncSer.data
+            response['gtf'] = gtfSer.data
+            return Response(response,status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
