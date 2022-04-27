@@ -108,25 +108,31 @@ class chemical(APIView):
                     data.append(line.split(","))
 
                 for i in data :
-                    ##print(i)
+                    #print(i) #done iaa 
                     #break
                     try:
                         try :
+                            
                             t= dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0]] 
+                            #print(dic[i[4].split()[0]],"1",t)
                             t.append(i[1].split()[0])
+                            #print(dic[i[4].split()[0]],"2",t)
                             dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ]  =t
-                        except :
+                        except Exception as e :
                             #t = dic[i[4].split()[0]]
                             #print(i[:4])
                             dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] = [i[1].split()[0]]
+                            #print("dd",":",e)
                             
-                    except:
+                    except Exception as e: 
                         dic[i[4].split()[0]]=dict()
+                        dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] =[i[1].split()[0]]
+                        #print(e)
 
             id = request.data["id"]
             transcript = chemicalFpk.objects.filter(lncRNAs__contains=id)
             a = dic
-            #print(dic.keys())
+            #print(dic["IAA_treatment"])
             #return Response({"1":1})
             responce = dict()
             #print(dic)
