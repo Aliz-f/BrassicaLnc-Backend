@@ -103,7 +103,7 @@ class chemical(APIView):
         try:
             data = []
             dic = dict()
-            with open("lncRNA/files/Tabledb - Chemical_db.csv", 'r') as myfile:
+            with open("lncRNA/files/Tabledb_Chemical_db.csv", 'r') as myfile:
                 for line in myfile:
                     data.append(line.split(","))
 
