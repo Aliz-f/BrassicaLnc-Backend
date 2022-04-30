@@ -1,3 +1,5 @@
+import os
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, authentication, permissions
@@ -93,8 +95,47 @@ class searchByExp(APIView):
     authentication_classes = (
         CsrfExemptSessionAuthentication, authentication.SessionAuthentication, authentication.BasicAuthentication)
 
-    def post(self, request):
+    def get(self, request):
         try:
-            pass
+            page_size = 10
+            paginator = PageNumberPagination()
+            paginator.page_size = page_size
+            """
+                group list allow : chemical,
+            """
+            group = request.GET.get('group', None)
+            assert group, 'group key not found'
+            startRange = request.GET.get('startRange', None)
+            endRange = request.GET.get('endRange', None)
+            filePath = os.getcwd() + f'/download/files/{group}/{group}_fpkm.txt'
+            list=[]
+            transcripts = []
+            with open(filePath, 'r') as f:
+                iter =0
+                for line in f.readlines():
+                    if iter!=0:
+                        list.append(line.split('\t'))
+                    iter+=1
+
+                for i in range(1,len(list)):
+                    for j in range(1,len(list[i])):
+                        list[i][j] = float(list[i][j]) 
+                                
+                for i in range(1,len(list)):
+                    for j in range(len(list[i])):
+                        if j!=0:
+                            if float(startRange)<list[i][j]<float(endRange):
+                                flag = True
+                            else:
+                                flag=False
+                                break
+                    if flag:
+                        transcripts.append(list[i][0])
+            lncQuery = lnc.objects.filter(transcriptId__in=transcripts)
+            result_page = paginator.paginate_queryset(lncQuery, request)
+            ser = lncSerializer(result_page, many=True)
+            data = {"data": ser.data, 'pages': int(lncQuery.count()/page_size)+1,"group":group}
+            return Response(data, status=status.HTTP_200_OK)
+            
         except Exception as e:
             return Response({"details":str(e)}, status=status.HTTP_400_BAD_REQUEST)
