@@ -22,5 +22,7 @@ urlpatterns = [
     path('blast/', include('blastplus.urls')),
     path('download/', include('download.urls')),
     path('search/', include('search.urls')),
+    path('submit/', include('submit.urls')),
+
 
 ]

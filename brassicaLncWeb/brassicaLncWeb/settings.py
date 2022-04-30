@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'blastplus',
     'download',
     'search',
+    'submit',
 ]
 
 MIDDLEWARE = [
