@@ -6,5 +6,7 @@ urlpatterns = [
     path('txt/', downloadTXT.as_view(), name = 'download-txt'),
     path('fasta/', downloadFASTA.as_view(), name = 'download-fasta'),
     path('gtf/', downloadGTF.as_view(), name = 'download-gtf'),
+    path('', downloadFile.as_view(), name = 'download-files'),
+
 
 ]
