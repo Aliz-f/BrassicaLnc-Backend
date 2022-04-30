@@ -107,7 +107,7 @@ class downloadFile(APIView):
                 fasta-lnc => Final_lncRNA_rename_V2.fa
                 gtf-lnc => lncRNA.gtf
                 gp(chemical):
-                    chemical-lnc-fpkm => Chimical_fpkm.txt
+                    chemical-lnc-fpkm => chemical_fpkm.txt
                     chemical-lnc-db => BrassIcaLnc_Tabledb_Chemical_db.tsv
             '''
             file=request.GET.get('file',None)
@@ -121,7 +121,7 @@ class downloadFile(APIView):
                 "database-lnc":f"{os_path}/BrassicaLnc_Final_lncRAN_Table_Database.tsv",
                 "fasta-lnc" : f"{os_path}/Final_lncRNA_rename_V2.fa",
                 "gtf-lnc":f"{os_path}/lncRNA.gtf",
-                "chemical-lnc-fpkm":f"{os_path}/chemical/Chimical_fpkm.txt",
+                "chemical-lnc-fpkm":f"{os_path}/chemical/chemical_fpkm.txt",
                 "chemical-lnc-db":f"{os_path}/chemical/BrassIcaLnc_Tabledb_Chemical_db.tsv",
             }
 
