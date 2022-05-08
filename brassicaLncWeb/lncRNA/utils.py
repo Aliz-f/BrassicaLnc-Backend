@@ -1,9 +1,14 @@
 # import time 
 # import sys
 # import requests
+import os
+filePath = os.getcwd() +'/files'
 
 #*** Create LNC dataBase
-# fasta_file = "./Final_lncRNA_rename_V2.fa"
+# import requests
+# import time 
+# fasta_file = f"{filePath}/Final_lncRNA_rename_V2.fa"
+# lnc_file = f"{filePath}/BrassicaLnc_Final_lncRAN_Table_Database.tsv"
 
 # def parse_fasta(fname):
 #     with open(fname, "r") as fh:
@@ -28,7 +33,7 @@
 
 # ans = []
 
-# with open("./BrassicaLnc _Final_lncRAN_Table_Database.tsv") as f:
+# with open(lnc_file) as f:
 #   for line in f:
 #     l=line.split('\t')
 #     ans.append(l)
@@ -66,11 +71,13 @@
 
 
 #*** Create GTF dataBase
-
+# import requests
+# import time
+# gtf_file = f"{filePath}/lncRNA.gtf"
 # temp = []
 # data = []
 # each_data=dict()
-# with open('lncRNA.gtf', 'r') as gtf:
+# with open(gtf_file, 'r') as gtf:
 #     for line in gtf:
 #         line= line.strip("\n")
 #         line = line.split('\t')
@@ -98,14 +105,29 @@
 #     print(response)
 #     # time.sleep(0.1)
 
+#*** Create chemical headrs
+# abioticFpkm_file = f"{filePath}/chemical/chemical_fpkm.txt"
+# abioticHeadrs_file = f"{filePath}/chemical/chemical_headrs.txt"
+# with open (abioticFpkm_file, 'r') as fh:
+#     iter = 0
+#     for line in fh.readlines():
+#         if iter == 0:
+#             line = line.split('\t')
+#             with open(abioticHeadrs_file, 'w') as writer:
+#                 for i in range(len(line)):
+#                     if i ==0:
+#                         writer.writelines(line[i]+'=models.CharField(max_length=70, null=False)'+'\n')
+#                     else:
+#                         writer.writelines(line[i]+'=models.FloatField()'+'\n')
+#         iter+=1
 
 #*** Create chemical dataBase
 # import csv
 # import requests
-# csvFilePath = r'lncRNA/files/Chimical_fpkm.csv'
+# chemical_file = f"{filePath}/chemical_fpkm.txt"
 # jsonArray = []
 # #read csv file
-# with open(csvFilePath, encoding='utf-8') as csvf: 
+# with open(chemical_file, encoding='utf-8') as csvf: 
 #     #load csv file data using csv library's dictionary reader
 #     csvReader = csv.DictReader(csvf) 
 
@@ -117,6 +139,61 @@
 # k=0
 # url = 'http://188.121.122.34/lncRNA/create/chemicaldb/'
 # for i in jsonArray:
+#     response = requests.post(url, data=i)
+#     print(response)
+#     # time.sleep(0.1)
+
+
+#*** Create abiotic headers and Create abiotic dataBase
+# import requests
+
+# abioticFpkm_file = f"{filePath}/abiotic/abiotic_fpkm.txt"
+# abioticHeadrs_file = f"{filePath}/abiotic/abiotic_headrs.txt"
+
+# dict = {}
+# headers = []
+# list = []
+# total = []
+# with open (abioticFpkm_file, 'r') as fh:
+#     iter = 0
+#     for line in fh.readlines():
+#         if iter == 0:
+#             line = line.split('\t')
+#             with open(abioticHeadrs_file, 'w') as writer:
+#                 for i in range(len(line)):
+#                     if i ==0:
+#                         writer.writelines(line[i]+'=models.CharField(max_length=70, null=False)'+'\n')
+#                         headers.append(line[i])
+#                     else:
+#                         line[-1] = line[-1].strip('\n')
+#                         writer.writelines(line[i]+'=models.FloatField()'+'\n')
+#                         headers.append(line[i])
+#         else:
+#             break
+
+#
+
+# with open(abioticFpkm_file, 'r') as f:
+#     for line in f.readlines():
+#             temp=line.split('\t')
+#             if len(temp)==1:
+#                 list.append(temp[0].split(' '))
+#             else:
+#                 list.append(temp)
+
+#     for i in range(1,len(list)):
+#         for j in range(1, len(list[i])):
+#             list[i][j] = float(list[i][j]) 
+
+# for data in list:
+#     dict['lncRNAs'] = data[0]
+#     for i in range(1, len(data)):
+#         dict[f'{headers[i]}'] = data[i]
+#     total.append(dict)
+#     dict = {}
+
+# url = 'http://188.121.122.34/lncRNA/create/abioticdb/'
+# for i in total:
 #     response = requests.post(url, data=i)
 #     print(response)
 #     # time.sleep(0.1)

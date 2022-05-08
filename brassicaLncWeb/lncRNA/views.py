@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status, authentication, permissions
 from rest_framework.pagination import PageNumberPagination
 
-from .serializer import lncSerializer, gtfSerializer,chemicalSerializer
+from .serializer import lncSerializer, gtfSerializer,chemicalSerializer, abioticSerializer
 from .models import *
 import csv
 import time
@@ -94,6 +94,27 @@ class transcripts(APIView):
         except Exception as e:
             return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)        
 
+class eachTranscript(APIView):
+    permission_classes = (permissions.AllowAny,)
+    authentication_classes = (
+        CsrfExemptSessionAuthentication, authentication.SessionAuthentication, authentication.BasicAuthentication)
+
+    def post(self, request):
+        try:
+            data = request.data
+            transcript = data.get('tranId', None)
+            assert transcript, 'tranId not found'
+            lncQuery = lnc.objects.get(transcriptId=transcript)
+            gtfQuery = gtf.objects.filter(transcript_id=lncQuery.stringTieId)
+            lncSer = lncSerializer(lncQuery)
+            gtfSer = gtfSerializer(gtfQuery,many=True)
+            response = {}
+            response['lnc'] = lncSer.data
+            response['gtf'] = gtfSer.data
+            return Response(response,status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
 class chemical(APIView):
     permission_classes = (permissions.AllowAny,)
     authentication_classes = (
@@ -130,7 +151,7 @@ class chemical(APIView):
                         #print(e)
 
             id = request.data["id"]
-            transcript = chemicalFpk.objects.filter(lncRNAs__contains=id)
+            transcript = chemicalFpkm.objects.filter(lncRNAs__contains=id)
             a = dic
             #print(dic["IAA_treatment"])
             #return Response({"1":1})
@@ -179,23 +200,15 @@ class create_chemical_db(APIView):
         except Exception as e:
             return Response({"detail":str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
-class eachTranscript(APIView):
-    permission_classes = (permissions.AllowAny,)
-    authentication_classes = (
-        CsrfExemptSessionAuthentication, authentication.SessionAuthentication, authentication.BasicAuthentication)
 
+class create_abiotic_db(APIView):
     def post(self, request):
         try:
-            data = request.data
-            transcript = data.get('tranId', None)
-            assert transcript, 'tranId not found'
-            lncQuery = lnc.objects.get(transcriptId=transcript)
-            gtfQuery = gtf.objects.filter(transcript_id=lncQuery.stringTieId)
-            lncSer = lncSerializer(lncQuery)
-            gtfSer = gtfSerializer(gtfQuery,many=True)
-            response = {}
-            response['lnc'] = lncSer.data
-            response['gtf'] = gtfSer.data
-            return Response(response,status=status.HTTP_200_OK)
+            ser = abioticSerializer(data=request.data)
+            if ser.is_valid():
+                ser.save()
+                return Response(ser.data, status=status.HTTP_201_CREATED)
+            else:
+                return Response(ser.errors, status=status.HTTP_406_NOT_ACCEPTABLE)
         except Exception as e:
-            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"detail":str(e)}, status=status.HTTP_400_BAD_REQUEST)

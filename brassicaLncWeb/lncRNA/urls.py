@@ -7,5 +7,6 @@ urlpatterns = [
     path('transcripts/', transcripts.as_view(), name='transcripts'),
     path("chemical/",chemical.as_view(),name="chemical"),
     path("create/chemicaldb/",create_chemical_db.as_view(),name="createChemical"),
+    path("create/abioticdb/",create_abiotic_db.as_view(),name="createAbiotic"),
     path("transcript/each/", eachTranscript.as_view(), name='eachTranscript'),
 ]
