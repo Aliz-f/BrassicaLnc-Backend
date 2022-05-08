@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status, authentication, permissions
 from rest_framework.pagination import PageNumberPagination
 
-from .serializer import lncSerializer, gtfSerializer,chemicalSerializer, abioticSerializer
+from .serializer import * 
 from .models import *
 import csv
 import time
@@ -205,6 +205,18 @@ class create_abiotic_db(APIView):
     def post(self, request):
         try:
             ser = abioticSerializer(data=request.data)
+            if ser.is_valid():
+                ser.save()
+                return Response(ser.data, status=status.HTTP_201_CREATED)
+            else:
+                return Response(ser.errors, status=status.HTTP_406_NOT_ACCEPTABLE)
+        except Exception as e:
+            return Response({"detail":str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+class create_genetics_db(APIView):
+    def post(self, request):
+        try:
+            ser = geneticsSerializer(data=request.data)
             if ser.is_valid():
                 ser.save()
                 return Response(ser.data, status=status.HTTP_201_CREATED)

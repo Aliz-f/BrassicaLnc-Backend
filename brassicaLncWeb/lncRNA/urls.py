@@ -8,5 +8,7 @@ urlpatterns = [
     path("chemical/",chemical.as_view(),name="chemical"),
     path("create/chemicaldb/",create_chemical_db.as_view(),name="createChemical"),
     path("create/abioticdb/",create_abiotic_db.as_view(),name="createAbiotic"),
+    path("create/geneticsdb/",create_genetics_db.as_view(),name="createGenetics"),
+
     path("transcript/each/", eachTranscript.as_view(), name='eachTranscript'),
 ]

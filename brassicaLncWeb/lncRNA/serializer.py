@@ -3,7 +3,7 @@ from rest_framework import serializers, status
 
 from django.utils.encoding import force_str
 
-from .models import lnc, gtf,chemicalFpkm, abioticFpkm
+from .models import lnc, gtf,chemicalFpkm, abioticFpkm, geneticsFpkm
 
 class CustomValidation(APIException):
     status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
@@ -40,4 +40,10 @@ class chemicalSerializer(serializers.ModelSerializer):
 class abioticSerializer(serializers.ModelSerializer):
     class Meta:
         model=abioticFpkm
+        fields = "__all__"
+
+
+class geneticsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=geneticsFpkm
         fields = "__all__"
