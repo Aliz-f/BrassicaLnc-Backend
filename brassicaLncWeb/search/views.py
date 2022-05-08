@@ -102,29 +102,36 @@ class searchByExp(APIView):
             paginator.page_size = page_size
             """
                 group list allow : chemical,
+                group list allow : developmental,
+                group list allow : abiotic,
+                group list allow : genetics,
             """
             group = request.GET.get('group', None)
             assert group, 'group key not found'
             startRange = request.GET.get('startRange', None)
             endRange = request.GET.get('endRange', None)
-            filePath = os.getcwd() + f'/download/files/{group}/{group}_fpkm.txt'
+            filePath = os.getcwd() + f'/files/{group}/{group}_fpkm.txt'
             list=[]
             transcripts = []
+            flag=False
             with open(filePath, 'r') as f:
                 iter =0
                 for line in f.readlines():
                     if iter!=0:
-                        list.append(line.split('\t'))
+                        temp=line.split('\t')
+                        if len(temp)==1:
+                            list.append(temp[0].split(' '))
+                        else:
+                            list.append(temp)
                     iter+=1
 
-                for i in range(1,len(list)):
-                    for j in range(1,len(list[i])):
-                        list[i][j] = float(list[i][j]) 
-                                
-                for i in range(1,len(list)):
+                for i in range(len(list)):
+                    for j in range(1, len(list[i])):
+                        list[i][j] = float(list[i][j])              
+                for i in range(len(list)):
                     for j in range(len(list[i])):
                         if j!=0:
-                            if float(startRange)<list[i][j]<float(endRange):
+                            if float(startRange)<=list[i][j]<=float(endRange):
                                 flag = True
                             else:
                                 flag=False

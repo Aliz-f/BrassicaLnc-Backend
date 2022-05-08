@@ -123,7 +123,7 @@ class downloadFile(APIView):
             assert file,'files query param not found'
             
             os_path = os.getcwd()
-            os_path+='/download/files'
+            os_path+='/files'
         
             filesTemplate = {
                 "fpkm-lnc":f"{os_path}/all_lncRNAs_fpkm.txt",
