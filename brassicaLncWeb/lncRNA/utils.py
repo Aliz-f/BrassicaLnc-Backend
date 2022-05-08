@@ -249,8 +249,67 @@ filePath = os.getcwd() +'/files'
 
 # print(total[1])
 # k=0
-# url = 'http://188.121.122.34/lncRNA/create/abioticdb/'
-# # url = 'http://127.0.0.1:8000/lncRNA/create/abioticdb/'
+# url = 'http://188.121.122.34/lncRNA/create/geneticsdb/'
+# # url = 'http://127.0.0.1:8000/lncRNA/create/geneticsdb/'
+# for i in range(1, len(total)):
+#     response = requests.post(url, data=total[i])
+#     print(response)
+#     # time.sleep(0.1)
+#     print(k)
+
+#*** Create developmental headers and Create developmental dataBase
+# import requests
+
+# geneticsFpkm_file = f"{filePath}/developmental/developmental_fpkm.txt"
+# geneticsHeadrs_file = f"{filePath}/developmental/developmental_headrs.txt"
+
+# dict = {}
+# headers = []
+# list = []
+# total = []
+# with open (geneticsFpkm_file, 'r') as fh:
+#     iter = 0
+#     for line in fh.readlines():
+#         if iter == 0:
+#             line = line.split('\t')
+#             with open(geneticsHeadrs_file, 'w') as writer:
+#                 for i in range(len(line)):
+#                     if i ==0:
+#                         writer.writelines(line[i]+'=models.CharField(max_length=70, null=False)'+'\n')
+#                         headers.append(line[i])
+#                     else:
+#                         line[i] = line[i].strip('\n')
+#                         writer.writelines(line[i]+'=models.FloatField()'+'\n')
+#                         headers.append(line[i])
+#         else:
+#             break
+
+#         iter+=1
+
+
+# with open(geneticsFpkm_file, 'r') as f:
+#     for line in f.readlines():
+#             temp=line.split('\t')
+#             if len(temp)==1:
+#                 list.append(temp[0].split(' '))
+#             else:
+#                 list.append(temp)
+
+#     for i in range(1,len(list)):
+#         for j in range(1, len(list[i])):
+#             list[i][j] = float(list[i][j]) 
+
+# for data in list:
+#     dict['lncRNAs'] = data[0]
+#     for i in range(1, len(data)):
+#         dict[f'{headers[i]}'] = data[i]
+#     total.append(dict)
+#     dict = {}
+
+# print(total[1])
+# k=0
+# url = 'http://188.121.122.34/lncRNA/create/geneticsdb/'
+# # url = 'http://127.0.0.1:8000/lncRNA/create/geneticsdb/'
 # for i in range(1, len(total)):
 #     response = requests.post(url, data=total[i])
 #     print(response)
