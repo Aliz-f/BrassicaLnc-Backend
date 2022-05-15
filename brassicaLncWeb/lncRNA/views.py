@@ -237,6 +237,19 @@ class create_developmental_db(APIView):
         except Exception as e:
             return Response({"detail":str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
+class create_biotic_db(APIView):
+    def post(self, request):
+        try:
+            ser = bioticSerializer(data=request.data)
+            if ser.is_valid():
+                ser.save()
+                return Response(ser.data, status=status.HTTP_201_CREATED)
+            else:
+                return Response(ser.errors, status=status.HTTP_406_NOT_ACCEPTABLE)
+        except Exception as e:
+            return Response({"detail":str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+
 class abiotic(APIView):
     permission_classes = (permissions.AllowAny,)
     authentication_classes = (
@@ -289,7 +302,6 @@ class abiotic(APIView):
         except Exception as e:
             return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
-
 class genetics(APIView):
     permission_classes = (permissions.AllowAny,)
     authentication_classes = (
@@ -341,8 +353,6 @@ class genetics(APIView):
             return Response(responce,status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
-
-
 
 class developmental(APIView):
     permission_classes = (permissions.AllowAny,)

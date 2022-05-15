@@ -14,6 +14,7 @@ urlpatterns = [
     path("create/abioticdb/",create_abiotic_db.as_view(),name="createAbiotic"),
     path("create/geneticsdb/",create_genetics_db.as_view(),name="createGenetics"),
     path("create/developmentaldb/",create_developmental_db.as_view(),name="createDevelopmental"),
+    path("create/bioticdb/",create_biotic_db.as_view(),name="createBiotic"),
 
     path("transcript/each/", eachTranscript.as_view(), name='eachTranscript'),
 ]
