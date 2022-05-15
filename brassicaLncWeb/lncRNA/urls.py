@@ -9,6 +9,7 @@ urlpatterns = [
     path("abiotic/",abiotic.as_view(),name="Abiotic"),
     path("genetics/",genetics.as_view(),name="genetics"),
     path("developmental/",abiotic.as_view(),name="developmental"),
+    path("biotic/",biotic.as_view(),name="biotic"),
 
     path("create/chemicaldb/",create_chemical_db.as_view(),name="createChemical"),
     path("create/abioticdb/",create_abiotic_db.as_view(),name="createAbiotic"),

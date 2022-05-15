@@ -258,7 +258,7 @@ class abiotic(APIView):
         try:
             data = []
             dic = dict()
-            with open("lncRNA/files/Tabledb_Abiotic_db.csv", 'r') as myfile:
+            with open("lncRNA/files/BrassIcaLnc_Tabledb_Abiotic_db_V2.csv", 'r') as myfile:
                 for line in myfile:
                     data.append(line.split(","))
 
@@ -310,7 +310,7 @@ class genetics(APIView):
         try:
             data = []
             dic = dict()
-            with open("lncRNA/files/Tabledb_Genetics_db.csv", 'r') as myfile:
+            with open("lncRNA/files/BrassIcaLnc_Tabledb_Genetics_db_V2.csv", 'r') as myfile:
                 for line in myfile:
                     data.append(line.split(","))
 
@@ -406,3 +406,54 @@ class developmental(APIView):
         except Exception as e:
             return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
+class biotic(APIView):
+    permission_classes = (permissions.AllowAny,)
+    authentication_classes = (
+        CsrfExemptSessionAuthentication, authentication.SessionAuthentication, authentication.BasicAuthentication)
+    def post(self,request):
+        try:
+            data = []
+            dic = dict()
+            with open("lncRNA/files/BrassIcaLnc_Tabledb_Biotic_db.csv", 'r') as myfile:
+                for line in myfile:
+                    data.append(line.split(","))
+
+                for i in data :
+                    try:
+                        try :
+                            t= dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0]] 
+                            t.append(i[1].split()[0])
+                            dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ]  =t
+                        except Exception as e :
+                            dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] = [i[1].split()[0]]
+                            
+                            
+                    except Exception as e: 
+                        dic[i[4].split()[0]]=dict()
+                        dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] =[i[1].split()[0]]
+                       
+
+            id = request.data.get('id')
+            transcript = bioticFpkm.objects.filter(lncRNAs__contains=id)
+            a = dic
+            responce = dict()
+            for t in transcript :
+                for i in dic.keys():
+                    s=0
+                    for j in dic[i].keys():
+                        k = dic[i][j]
+                        dat = bioticSerializer(t).data      
+                        try:              
+                            for z in k :
+                                s += dat[z]
+                            s/=len(k)
+                            a[i][j]=s
+                        except :
+                            responce[dat["lncRNAs"]] = dic
+                            return Response(responce)
+
+                
+                responce[dat["lncRNAs"]] = a 
+            return Response(responce,status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
