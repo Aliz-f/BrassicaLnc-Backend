@@ -105,6 +105,8 @@ class searchByExp(APIView):
                 group list allow : developmental,
                 group list allow : abiotic,
                 group list allow : genetics,
+                group list allow : biotic,
+
             """
             group = request.GET.get('group', None)
             assert group, 'group key not found'
