@@ -447,7 +447,7 @@ class biotic(APIView):
                             for z in k :
                                 s += dat[z]
                             s/=len(k)
-                            a[i][j]=s
+                            a[i][j]=round(s,4)
                         except :
                             responce[dat["lncRNAs"]] = dic
                             return Response(responce)
