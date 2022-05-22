@@ -118,6 +118,9 @@ class downloadFile(APIView):
                 gp(abiotic):
                     abiotic-lnc-fpkm => abiotic_fpkm.txt
                     abiotic-lnc-db => BrassIcaLnc_Tabledb_Abiotic_db.tsv
+                gp(biotic):
+                    biotic-lnc-fpkm => biotic_fpkm.txt
+                    biotic-lnc-db => BrassIcaLnc_Tabledb_Biotic_db.tsv
             '''
             file=request.GET.get('file',None)
             assert file,'files query param not found'
@@ -132,6 +135,8 @@ class downloadFile(APIView):
                 "gtf-lnc":f"{os_path}/lncRNA.gtf",
                 "abiotic-lnc-fpkm":f"{os_path}/abiotic/abiotic_fpkm.txt",
                 "abiotic-lnc-db":f"{os_path}/abiotic/BrassIcaLnc_Tabledb_Abiotic_db.tsv",
+                "biotic-lnc-fpkm":f"{os_path}/biotic/biotic_fpkm.txt",
+                "biotic-lnc-db":f"{os_path}/biotic/BrassIcaLnc_Tabledb_Biotic_db.tsv",
                 "chemical-lnc-fpkm":f"{os_path}/chemical/chemical_fpkm.txt",
                 "chemical-lnc-db":f"{os_path}/chemical/BrassIcaLnc_Tabledb_Chemical_db.tsv",
                 "developmental-lnc-fpkm":f"{os_path}/developmental/developmental_fpkm.txt",
