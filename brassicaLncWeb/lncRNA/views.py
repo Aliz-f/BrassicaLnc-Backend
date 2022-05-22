@@ -172,7 +172,7 @@ class chemical(APIView):
                             for z in k :
                                 s += dat[z]
                             s/=len(k)
-                            a[i][j]=s
+                            a[i][j]=round(s,4)
                         except :
                             #print(k , "i:",i,"  j:",j)
                             #print(dic)
@@ -278,7 +278,7 @@ class abiotic(APIView):
                             for z in k :
                                 s += dat[z]
                             s/=len(k)
-                            a[i][j]=s
+                            a[i][j]=round(s,4)
                         except :
                             responce[dat["lncRNAs"]] = dic
                             return Response(responce)
@@ -331,7 +331,7 @@ class genetics(APIView):
                             for z in k :
                                 s += dat[z]
                             s/=len(k)
-                            a[i][j]=s
+                            a[i][j]=round(s,4)
                         except :
                             responce[dat["lncRNAs"]] = dic
                             return Response(responce)
@@ -385,7 +385,7 @@ class developmental(APIView):
                             for z in k :
                                 s += dat[z]
                             s/=len(k)
-                            a[i][j]=s
+                            a[i][j]=round(s,4)
                         except :
                             responce[dat["lncRNAs"]] = dic
                             return Response(responce)
