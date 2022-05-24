@@ -112,7 +112,7 @@ class searchByExp(APIView):
             assert group, 'group key not found'
             startRange = request.GET.get('startRange', None)
             endRange = request.GET.get('endRange', None)
-            filePath = os.getcwd() + f'/files/{group}/{group}_fpkm.txt'
+            filePath = os.getcwd() + f'/files/{group}/v2/{group}_fpkm.txt'
             list=[]
             transcripts = []
             flag=False

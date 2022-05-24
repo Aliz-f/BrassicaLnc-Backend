@@ -129,20 +129,20 @@ class downloadFile(APIView):
             os_path+='/files'
         
             filesTemplate = {
-                "fpkm-lnc":f"{os_path}/all_lncRNAs_fpkm.txt",
-                "database-lnc":f"{os_path}/BrassicaLnc_Final_lncRAN_Table_Database.tsv",
-                "fasta-lnc" : f"{os_path}/Final_lncRNA_rename_V2.fa",
-                "gtf-lnc":f"{os_path}/lncRNA.gtf",
-                "abiotic-lnc-fpkm":f"{os_path}/abiotic/abiotic_fpkm.txt",
-                "abiotic-lnc-db":f"{os_path}/abiotic/BrassIcaLnc_Tabledb_Abiotic_db.tsv",
-                "biotic-lnc-fpkm":f"{os_path}/biotic/biotic_fpkm.txt",
-                "biotic-lnc-db":f"{os_path}/biotic/BrassIcaLnc_Tabledb_Biotic_db.tsv",
-                "chemical-lnc-fpkm":f"{os_path}/chemical/chemical_fpkm.txt",
-                "chemical-lnc-db":f"{os_path}/chemical/BrassIcaLnc_Tabledb_Chemical_db.tsv",
-                "developmental-lnc-fpkm":f"{os_path}/developmental/developmental_fpkm.txt",
-                "developmental-lnc-db":f"{os_path}/developmental/BrassIcaLnc_Tabledb_Developmental_db.tsv",
-                "genetics-lnc-fpkm":f"{os_path}/genetics/genetics_fpkm.txt",
-                "genetics-lnc-db":f"{os_path}/genetics/BrassIcaLnc_Tabledb_Genetics_db.tsv",
+                "fpkm-lnc":f"{os_path}/lncRNAs_fpkm.txt",
+                "database-lnc":f"{os_path}/lncRANs_Table.tsv",
+                "fasta-lnc" : f"{os_path}/lncRNAs.fa",
+                "gtf-lnc":f"{os_path}/lncRNAs.gtf",
+                "abiotic-lnc-fpkm":f"{os_path}/abiotic/v2/abiotic_fpkm.txt",
+                "abiotic-lnc-db":f"{os_path}/abiotic/v2/Abiotic_Table.tsv",
+                "biotic-lnc-fpkm":f"{os_path}/biotic/v2/biotic_fpkm.txt",
+                "biotic-lnc-db":f"{os_path}/biotic/v2/Biotic_Table.tsv",
+                "chemical-lnc-fpkm":f"{os_path}/chemical/v2/chemical_fpkm.txt",
+                "chemical-lnc-db":f"{os_path}/chemical/v2/Chemical_Table.tsv",
+                "developmental-lnc-fpkm":f"{os_path}/developmental/v2/developmental_fpkm.txt",
+                "developmental-lnc-db":f"{os_path}/developmental/v2/Developmental_Table.tsv",
+                "genetics-lnc-fpkm":f"{os_path}/genetics/v2/genetics_fpkm.txt",
+                "genetics-lnc-db":f"{os_path}/genetics/v2/Genetics_Table.tsv",
 
             }
 

@@ -23,7 +23,7 @@ class submittedDataSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         try:
-            needed_keys = ["email", 'chromosome', 'location', 'strand', 'exonLocation', 'sequence']
+            needed_keys = ["email", 'chromosome', 'location', 'strand', 'sequence']
             flag = False
             for value in validated_data:
                 if all(key in validated_data for key in needed_keys):

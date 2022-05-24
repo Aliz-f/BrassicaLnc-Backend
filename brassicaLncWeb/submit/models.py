@@ -6,7 +6,7 @@ class submittedData(models.Model):
     chromosome = models.CharField(verbose_name="Chromosome", max_length=80)
     location=models.CharField(verbose_name="Location", max_length=80)
     strand=models.CharField(verbose_name="Strand", max_length=10)
-    exonLocation = models.CharField(verbose_name="Exon Location", max_length=255)
+    # exonLocation = models.CharField(verbose_name="Exon Location", max_length=255)
     sequence = models.TextField(verbose_name="Sequence" )
     name=models.CharField(verbose_name="Name", max_length=50, null=True, blank=True)
     expressionValue=models.CharField(verbose_name="Expression Value", max_length=50, null=True, blank=True)

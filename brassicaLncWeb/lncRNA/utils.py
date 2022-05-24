@@ -315,3 +315,28 @@ filePath = os.getcwd() +'/files'
 #     print(response)
 #     # time.sleep(0.1)
 #     print(k)
+
+
+{
+    "chart1": {
+        "chromosome":41,
+        "mRNA":101040,
+        "lncRNA":1856
+    },
+    "chart2":{
+        "Potential transcripts (Class codes: i, u, x, o,e)":31777,
+        "Transcripts with length > 200 bp and < 15 kb":30905,
+        "Transcripts with FPKM > 0.5 in at least 495 samples":5990,
+        "Transcripts after filter out tRNAs and rRNAs":5947,
+        "Noncoding transcripts predicted by cpc2":4766,
+        "lncRNAs predicted by PLncPRO, FEElnc, and CREMA":2321,
+        "Transcripts with no signification hit against UniProt, Pfam, and Rfam.":1852
+    },
+    "chart3":
+    {
+        "intronic lncRNAs (i)":0,
+        "generic exonic overlap lncRNAs with reference transcripts (o)":0,
+        "intergenic lncRNAs (u)":0,
+        "antisense lncRNAs (x)":0,
+    }
+}

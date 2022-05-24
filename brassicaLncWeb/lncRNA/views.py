@@ -457,3 +457,13 @@ class biotic(APIView):
             return Response(responce,status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+# class statistics(APIView):
+#     permission_classes = (permissions.AllowAny,)
+#     authentication_classes = (
+#         CsrfExemptSessionAuthentication, authentication.SessionAuthentication, authentication.BasicAuthentication)
+#     def get(self,request):
+#         try:
+#             pass
+#         except Exception as e:
+#             return Response({"detail":str(e)}, status=status.HTTP_400_BAD_REQUEST)

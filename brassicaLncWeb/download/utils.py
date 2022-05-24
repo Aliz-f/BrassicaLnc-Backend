@@ -9,7 +9,7 @@ def exportCSV(lncList):
         headers={'Content-Disposition': 'attachment; filename="lncRNA.csv"'},
     )
 
-    writer = csv.writer(response)
+    writer = csv.writer(response, delimiter='\t')
     writer.writerow(['geneId', 'transcriptId', 'stringTieId', 'chr', 'location', 'length', 'exonNumber', 'classification' ])
     for value in lncList:
         writer.writerow([value.geneId, value.transcriptId, value.stringTieId, value.chr, value.location, value.length, value.exonNumber, value.classification])
