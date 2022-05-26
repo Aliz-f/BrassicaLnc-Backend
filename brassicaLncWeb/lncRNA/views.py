@@ -146,14 +146,14 @@ class chemical(APIView):
                 for i in data :
                     try:
                         try :
-                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]
+                            desc[i[4].split()[0]]  = i[5].split()[0]
                         except Exception as e :
                     
-                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]            
+                            desc[i[4].split()[0]]  = i[5].split()[0]            
                     except Exception as e: 
                         
                         desc[i[4].split()[0]] = dict() 
-                        desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]
+                        desc[i[4].split()[0]]  = i[5].split()[0]
                        
 
             id = request.data.get('id')
@@ -338,14 +338,14 @@ class abiotic(APIView):
             for i in data :
                     try:
                         try :
-                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]
+                            desc[i[4].split()[0]]  = i[5].split()[0]
                         except Exception as e :
                     
-                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]            
+                            desc[i[4].split()[0]] = i[5].split()[0]            
                     except Exception as e: 
                         
                         desc[i[4].split()[0]] = dict() 
-                        desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]          
+                        desc[i[4].split()[0]]  = i[5].split()[0]          
 
             id = request.data["id"]
             transcript = abioticFpkm.objects.filter(lncRNAs__contains=id)
@@ -402,14 +402,14 @@ class genetics(APIView):
             for i in data :
                     try:
                         try :
-                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]
+                            desc[i[4].split()[0]] = i[5].split()[0]
                         except Exception as e :
                     
-                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]            
+                            desc[i[4].split()[0]]  = i[5].split()[0]            
                     except Exception as e: 
                         
                         desc[i[4].split()[0]] = dict() 
-                        desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]         
+                        desc[i[4].split()[0]]= i[5].split()[0]         
 
             id = request.data["id"]
             transcript = geneticsFpkm.objects.filter(lncRNAs__contains=id)
@@ -466,14 +466,14 @@ class developmental(APIView):
                 for i in data :
                     try:
                         try :
-                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]
+                            desc[i[4].split()[0]]  = i[5].split()[0]
                         except Exception as e :
                     
-                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]            
+                            desc[i[4].split()[0]]  = i[5].split()[0]            
                     except Exception as e: 
                         
                         desc[i[4].split()[0]] = dict() 
-                        desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]       
+                        desc[i[4].split()[0]] = i[5].split()[0]       
 
             id = request.data["id"]
             transcript = developmentalFpkm.objects.filter(lncRNAs__contains=id)
@@ -530,14 +530,14 @@ class biotic(APIView):
                 for i in data :
                     try:
                         try :
-                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]
+                            desc[i[4].split()[0]] = i[5].split()[0]
                         except Exception as e :
                     
-                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]            
+                            desc[i[4].split()[0]] = i[5].split()[0]            
                     except Exception as e: 
                         
                         desc[i[4].split()[0]] = dict() 
-                        desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]       
+                        desc[i[4].split()[0]]= i[5].split()[0]       
 
             id = request.data.get('id')
             transcript = bioticFpkm.objects.filter(lncRNAs__contains=id)
