@@ -65,3 +65,22 @@ def exportGTF(lncList):
             writer.writerow([strTemp])
 
     return response
+
+def exportCSVFPKM(fpkm):
+    # Create the HttpResponse object with the appropriate CSV header.
+    fieldsList=[]
+    valueList =[]
+    for key in fpkm.keys():
+        fieldsList.append(key)
+    for value in fpkm.values():
+        valueList.append(value)
+    response = HttpResponse(
+        content_type='text/csv',
+        headers={'Content-Disposition': 'attachment; filename="{}.csv"'.format(valueList[1])},
+    )
+
+    writer = csv.writer(response, delimiter='\t')
+    writer.writerow(fieldsList)
+    writer.writerow(valueList)
+
+    return response
