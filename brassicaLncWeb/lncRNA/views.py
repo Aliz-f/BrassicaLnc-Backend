@@ -124,8 +124,66 @@ class chemical(APIView):
         try:
             data = []
             dic = dict()
-            with open("lncRNA/files/Tabledb_Chemical_db.csv", 'r') as myfile:
+            desc = dict()
+            with open("lncRNA/files/Chemical_Table_v3.csv", 'r') as myfile:
                 for line in myfile:
+                    data.append(line.split(","))
+
+                for i in data :
+                    try:
+                        try :
+                            t= dic[i[4].split()[0]] [i[3].split()[0] ] 
+                            t.append(i[1].split()[0])
+                            dic[i[4].split()[0]] [i[3].split()[0] ]  = t
+
+                          
+                        except Exception as e :
+                            dic[i[4].split()[0]] [i[3].split()[0] ] = [i[1].split()[0]]
+                    except Exception as e: 
+                        dic[i[4].split()[0]]=dict()
+                        dic[i[4].split()[0]] [i[3].split()[0]] =[i[1].split()[0]]
+
+                for i in data :
+                    try:
+                        try :
+                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]
+                        except Exception as e :
+                    
+                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]            
+                    except Exception as e: 
+                        
+                        desc[i[4].split()[0]] = dict() 
+                        desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]
+                       
+
+            id = request.data.get('id')
+            transcript = chemicalFpkm.objects.filter(lncRNAs__contains=id)
+            a = dic
+            responce = dict()
+            for t in transcript :
+                for i in dic.keys():
+                    s=0
+                    for j in dic[i].keys():
+                        k = dic[i][j]
+                        dat = chemicalSerializer(t).data      
+                        try:              
+                            for z in k :
+                                s += dat[z]
+                            s/=len(k)
+                            a[i][j]=round(s,4)
+                        except :
+                            responce[dat["lncRNAs"]] = dic
+                            #responce["desc"]=desc
+                            return Response(responce)
+
+                
+                responce[dat["lncRNAs"]] = a 
+                responce["desc"]=desc
+            return Response(responce,status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+"""for line in myfile:
                     data.append(line.split(","))
 
                 for i in data :
@@ -134,27 +192,27 @@ class chemical(APIView):
                     try:
                         try :
                             
-                            t= dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0]] 
+                            t= dic[i[3].split()[0]]  
                             #print(dic[i[4].split()[0]],"1",t)
                             t.append(i[1].split()[0])
                             #print(dic[i[4].split()[0]],"2",t)
-                            dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ]  =t
+                            dic[i[3].split()[0]]  =t
                         except Exception as e :
                             #t = dic[i[4].split()[0]]
                             #print(i[:4])
-                            dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] = [i[1].split()[0]]
+                            dic[i[3].split()[0]] = [i[1].split()[0]]
                             #print("dd",":",e)
                             
                     except Exception as e: 
-                        dic[i[4].split()[0]]=dict()
-                        dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] =[i[1].split()[0]]
+                        dic[i[3].split()[0]]=dict()
+                        dic[i[3].split()[0]]  =[i[1].split()[0]]
                         #print(e)
 
             id = request.data["id"]
             transcript = chemicalFpkm.objects.filter(lncRNAs__contains=id)
             a = dic
-            #print(dic["IAA_treatment"])
-            #return Response({"1":1})
+            #print(dic)
+            #return Response({"1":dic})
             responce = dict()
             #print(dic)
             #{"id":"BnaCnnLNG0002300"}
@@ -162,23 +220,23 @@ class chemical(APIView):
             for t in transcript :
                 for i in dic.keys():
                     s=0
-                    for j in dic[i].keys():
-                        k = dic[i][j]
-                        #print(dic,"i",i,"  j :",j, "ppp   ", dic[i][j])
-                        #return Response({"1":1})
-                        #print(t)
-                        dat = chemicalSerializer(t).data      
-                        try:              
-                            for z in k :
-                                s += dat[z]
-                            s/=len(k)
-                            a[i][j]=round(s,4)
-                        except :
-                            #print(k , "i:",i,"  j:",j)
-                            #print(dic)
-                            responce[dat["lncRNAs"]] = dic
-                            #print(responce)
-                            return Response(responce)
+                    #for j in dic[i].keys():
+                    k = dic[i]
+                    #print(dic,"i",i,"  j :",j, "ppp   ", dic[i][j])
+                    #return Response({"1":1})
+                    #print(t)
+                    dat = chemicalSerializer(t).data      
+                    try:              
+                        for z in k :
+                            s += dat[z]
+                        s/=len(k)
+                        a[i]=round(s,4)
+                    except :
+                        #print(k , "i:",i,"  j:",j)
+                        #print(dic)
+                        responce[dat["lncRNAs"]] = dic
+                        #print(responce)
+                        return Response(responce)
 
                 #print(dat["lncRNAs"])
                 #return Response({"1":1})
@@ -186,7 +244,7 @@ class chemical(APIView):
             #print(a)
             return Response(responce,status=status.HTTP_200_OK)
         except Exception as e:
-            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)"""
 
 class create_chemical_db(APIView):
     def post(self, request):
@@ -258,24 +316,36 @@ class abiotic(APIView):
         try:
             data = []
             dic = dict()
-            with open("lncRNA/files/BrassIcaLnc_Tabledb_Abiotic_db_V2.csv", 'r') as myfile:
+            desc = dict()
+            with open("lncRNA/files/Abiotic_Table_v3.csv", 'r') as myfile:
                 for line in myfile:
                     data.append(line.split(","))
 
                 for i in data :
                     try:
                         try :
-                            t= dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0]] 
+                            t= dic[i[4].split()[0]] [i[3].split()[0] ] 
                             t.append(i[1].split()[0])
-                            dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ]  =t
+                            dic[i[4].split()[0]] [i[3].split()[0] ]  = t
                         except Exception as e :
-                            dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] = [i[1].split()[0]]
+                            dic[i[4].split()[0]] [i[3].split()[0] ] = [i[1].split()[0]]
                             
                             
                     except Exception as e: 
                         dic[i[4].split()[0]]=dict()
-                        dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] =[i[1].split()[0]]
-                       
+                        dic[i[4].split()[0]] [i[3].split()[0]] =[i[1].split()[0]]
+
+            for i in data :
+                    try:
+                        try :
+                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]
+                        except Exception as e :
+                    
+                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]            
+                    except Exception as e: 
+                        
+                        desc[i[4].split()[0]] = dict() 
+                        desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]          
 
             id = request.data["id"]
             transcript = abioticFpkm.objects.filter(lncRNAs__contains=id)
@@ -298,6 +368,7 @@ class abiotic(APIView):
 
                 
                 responce[dat["lncRNAs"]] = a 
+                responce["desc"]=desc
             return Response(responce,status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
@@ -310,24 +381,35 @@ class genetics(APIView):
         try:
             data = []
             dic = dict()
-            with open("lncRNA/files/BrassIcaLnc_Tabledb_Genetics_db_V2.csv", 'r') as myfile:
+            desc = dict()
+            with open("lncRNA/files/Genetics_Table_v3.csv", 'r') as myfile:
                 for line in myfile:
                     data.append(line.split(","))
 
                 for i in data :
                     try:
                         try :
-                            t= dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0]] 
+                            t= dic[i[4].split()[0]] [i[3].split()[0] ] 
                             t.append(i[1].split()[0])
-                            dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ]  =t
+                            dic[i[4].split()[0]] [i[3].split()[0] ]  = t
                         except Exception as e :
-                            dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] = [i[1].split()[0]]
+                            dic[i[4].split()[0]] [i[3].split()[0] ] = [i[1].split()[0]]
                             
                             
                     except Exception as e: 
                         dic[i[4].split()[0]]=dict()
-                        dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] =[i[1].split()[0]]
-                       
+                        dic[i[4].split()[0]] [i[3].split()[0]] =[i[1].split()[0]]
+            for i in data :
+                    try:
+                        try :
+                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]
+                        except Exception as e :
+                    
+                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]            
+                    except Exception as e: 
+                        
+                        desc[i[4].split()[0]] = dict() 
+                        desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]         
 
             id = request.data["id"]
             transcript = geneticsFpkm.objects.filter(lncRNAs__contains=id)
@@ -350,6 +432,7 @@ class genetics(APIView):
 
                 
                 responce[dat["lncRNAs"]] = a 
+                responce["desc"]=desc
             return Response(responce,status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
@@ -362,24 +445,35 @@ class developmental(APIView):
         try:
             data = []
             dic = dict()
-            with open("lncRNA/files/Tabledb_Developmental_db.csv", 'r') as myfile:
+            desc=dict()
+            with open("lncRNA/files/Developmental_Table_v3.csv", 'r') as myfile:
                 for line in myfile:
                     data.append(line.split(","))
 
                 for i in data :
                     try:
                         try :
-                            t= dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0]] 
+                            t= dic[i[4].split()[0]] [i[3].split()[0] ] 
                             t.append(i[1].split()[0])
-                            dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ]  =t
+                            dic[i[4].split()[0]] [i[3].split()[0] ]  = t
                         except Exception as e :
-                            dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] = [i[1].split()[0]]
+                            dic[i[4].split()[0]] [i[3].split()[0] ] = [i[1].split()[0]]
                             
                             
                     except Exception as e: 
                         dic[i[4].split()[0]]=dict()
-                        dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] =[i[1].split()[0]]
-                       
+                        dic[i[4].split()[0]] [i[3].split()[0]] =[i[1].split()[0]]
+                for i in data :
+                    try:
+                        try :
+                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]
+                        except Exception as e :
+                    
+                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]            
+                    except Exception as e: 
+                        
+                        desc[i[4].split()[0]] = dict() 
+                        desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]       
 
             id = request.data["id"]
             transcript = developmentalFpkm.objects.filter(lncRNAs__contains=id)
@@ -402,6 +496,7 @@ class developmental(APIView):
 
                 
                 responce[dat["lncRNAs"]] = a 
+                responce["desc"]=desc
             return Response(responce,status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
@@ -414,24 +509,35 @@ class biotic(APIView):
         try:
             data = []
             dic = dict()
-            with open("lncRNA/files/BrassIcaLnc_Tabledb_Biotic_db.csv", 'r') as myfile:
+            desc= dict()
+            with open("lncRNA/files/Biotic_Table_v3.csv", 'r') as myfile:
                 for line in myfile:
                     data.append(line.split(","))
 
                 for i in data :
                     try:
                         try :
-                            t= dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0]] 
+                            t= dic[i[4].split()[0]] [i[3].split()[0] ] 
                             t.append(i[1].split()[0])
-                            dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ]  =t
+                            dic[i[4].split()[0]] [i[3].split()[0] ]  = t
                         except Exception as e :
-                            dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] = [i[1].split()[0]]
+                            dic[i[4].split()[0]] [i[3].split()[0] ] = [i[1].split()[0]]
                             
                             
                     except Exception as e: 
                         dic[i[4].split()[0]]=dict()
-                        dic[i[4].split()[0]] [i[3].split()[0] +"_"+ i[2].split()[0] ] =[i[1].split()[0]]
-                       
+                        dic[i[4].split()[0]] [i[3].split()[0]] =[i[1].split()[0]]
+                for i in data :
+                    try:
+                        try :
+                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]
+                        except Exception as e :
+                    
+                            desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]            
+                    except Exception as e: 
+                        
+                        desc[i[4].split()[0]] = dict() 
+                        desc[i[4].split()[0]] [i[3].split()[0] ] = i[5].split()[0]       
 
             id = request.data.get('id')
             transcript = bioticFpkm.objects.filter(lncRNAs__contains=id)
@@ -454,6 +560,7 @@ class biotic(APIView):
 
                 
                 responce[dat["lncRNAs"]] = a 
+                responce["desc"]=desc
             return Response(responce,status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
