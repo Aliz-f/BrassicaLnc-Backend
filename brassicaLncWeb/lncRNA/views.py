@@ -146,14 +146,14 @@ class chemical(APIView):
                 for i in data :
                     try:
                         try :
-                            desc[i[4].split()[0]]  = i[5].split()[0]
+                            desc[i[4].split()[0]]  = i[5].split()[0].replace("_"," ")
                         except Exception as e :
                     
-                            desc[i[4].split()[0]]  = i[5].split()[0]            
+                            desc[i[4].split()[0]]  = i[5].split()[0].replace("_"," ")            
                     except Exception as e: 
                         
                         desc[i[4].split()[0]] = dict() 
-                        desc[i[4].split()[0]]  = i[5].split()[0]
+                        desc[i[4].split()[0]]  = i[5].split()[0].replace("_"," ")
                        
 
             id = request.data.get('id')
@@ -170,7 +170,10 @@ class chemical(APIView):
                             for z in k :
                                 s += dat[z]
                             s/=len(k)
-                            a[i][j]=round(s,4)
+                            if round(s,4)==0:
+                                 a[i][j]=round(s,8)
+                            else:
+                                a[i][j]=round(s,4)
                         except :
                             responce[dat["lncRNAs"]] = dic
                             #responce["desc"]=desc
@@ -338,14 +341,14 @@ class abiotic(APIView):
             for i in data :
                     try:
                         try :
-                            desc[i[4].split()[0]]  = i[5].split()[0]
+                            desc[i[4].split()[0]]  = i[5].split()[0].replace("_"," ")
                         except Exception as e :
                     
-                            desc[i[4].split()[0]] = i[5].split()[0]            
+                            desc[i[4].split()[0]] = i[5].split()[0].replace("_"," ")            
                     except Exception as e: 
                         
                         desc[i[4].split()[0]] = dict() 
-                        desc[i[4].split()[0]]  = i[5].split()[0]          
+                        desc[i[4].split()[0]]  = i[5].split()[0].replace("_"," ")          
 
             id = request.data["id"]
             transcript = abioticFpkm.objects.filter(lncRNAs__contains=id)
@@ -361,7 +364,10 @@ class abiotic(APIView):
                             for z in k :
                                 s += dat[z]
                             s/=len(k)
-                            a[i][j]=round(s,4)
+                            if round(s,4)==0:
+                                 a[i][j]=round(s,8)
+                            else:
+                                a[i][j]=round(s,4)
                         except :
                             responce[dat["lncRNAs"]] = dic
                             return Response(responce)
@@ -402,14 +408,14 @@ class genetics(APIView):
             for i in data :
                     try:
                         try :
-                            desc[i[4].split()[0]] = i[5].split()[0]
+                            desc[i[4].split()[0]] = i[5].split()[0].replace("_"," ")
                         except Exception as e :
                     
-                            desc[i[4].split()[0]]  = i[5].split()[0]            
+                            desc[i[4].split()[0]]  = i[5].split()[0].replace("_"," ")            
                     except Exception as e: 
                         
                         desc[i[4].split()[0]] = dict() 
-                        desc[i[4].split()[0]]= i[5].split()[0]         
+                        desc[i[4].split()[0]]= i[5].split()[0].replace("_"," ")         
 
             id = request.data["id"]
             transcript = geneticsFpkm.objects.filter(lncRNAs__contains=id)
@@ -425,7 +431,10 @@ class genetics(APIView):
                             for z in k :
                                 s += dat[z]
                             s/=len(k)
-                            a[i][j]=round(s,4)
+                            if round(s,4)==0:
+                                 a[i][j]=round(s,8)
+                            else:
+                                a[i][j]=round(s,4)
                         except :
                             responce[dat["lncRNAs"]] = dic
                             return Response(responce)
@@ -466,14 +475,14 @@ class developmental(APIView):
                 for i in data :
                     try:
                         try :
-                            desc[i[4].split()[0]]  = i[5].split()[0]
+                            desc[i[4].split()[0]] = i[5].split()[0].replace("_"," ")
                         except Exception as e :
                     
-                            desc[i[4].split()[0]]  = i[5].split()[0]            
+                            desc[i[4].split()[0]] = i[5].split()[0].replace("_"," ")            
                     except Exception as e: 
                         
                         desc[i[4].split()[0]] = dict() 
-                        desc[i[4].split()[0]] = i[5].split()[0]       
+                        desc[i[4].split()[0]]= i[5].split()[0].replace("_"," ")         
 
             id = request.data["id"]
             transcript = developmentalFpkm.objects.filter(lncRNAs__contains=id)
@@ -489,7 +498,10 @@ class developmental(APIView):
                             for z in k :
                                 s += dat[z]
                             s/=len(k)
-                            a[i][j]=round(s,4)
+                            if round(s,4)==0:
+                                 a[i][j]=round(s,8)
+                            else:
+                                a[i][j]=round(s,4)
                         except :
                             responce[dat["lncRNAs"]] = dic
                             return Response(responce)
@@ -530,14 +542,14 @@ class biotic(APIView):
                 for i in data :
                     try:
                         try :
-                            desc[i[4].split()[0]] = i[5].split()[0]
+                            desc[i[4].split()[0]] = i[5].split()[0].replace("_"," ")
                         except Exception as e :
                     
-                            desc[i[4].split()[0]] = i[5].split()[0]            
+                            desc[i[4].split()[0]] = i[5].split()[0].replace("_"," ")           
                     except Exception as e: 
                         
                         desc[i[4].split()[0]] = dict() 
-                        desc[i[4].split()[0]]= i[5].split()[0]       
+                        desc[i[4].split()[0]]= i[5].split()[0].replace("_"," ")       
 
             id = request.data.get('id')
             transcript = bioticFpkm.objects.filter(lncRNAs__contains=id)
@@ -553,7 +565,10 @@ class biotic(APIView):
                             for z in k :
                                 s += dat[z]
                             s/=len(k)
-                            a[i][j]=round(s,4)
+                            if round(s,4)==0:
+                                 a[i][j]=round(s,8)
+                            else:
+                                a[i][j]=round(s,4)
                         except :
                             responce[dat["lncRNAs"]] = dic
                             return Response(responce)
