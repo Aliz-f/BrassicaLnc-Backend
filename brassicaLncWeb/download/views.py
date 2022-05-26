@@ -7,8 +7,8 @@ from rest_framework import status, authentication, permissions
 
 from django.http import HttpResponse
 
-from lncRNA.models import lnc
-from .utils import exportCSV, exportTXT, exportFasta, exportGTF
+from lncRNA.models import lnc, abioticFpkm, bioticFpkm, geneticsFpkm, developmentalFpkm, chemicalFpkm
+from .utils import exportCSV, exportTXT, exportFasta, exportGTF, exportCSVFPKM
 
 
 # Create your views here.
@@ -154,5 +154,46 @@ class downloadFile(APIView):
             content_type='text/csv',
             headers={'Content-Disposition': 'attachment; filename="{}"'.format(fileName)})
             return response
+        except Exception as e:
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+class downloadCSVFpkm(APIView):
+    permission_classes = (permissions.AllowAny,)
+    authentication_classes = (
+        CsrfExemptSessionAuthentication, authentication.SessionAuthentication, authentication.BasicAuthentication)
+
+    def get(self, request):
+        try:
+            tranId  = request.GET.get('id', None)
+            groupName = request.GET.get('group', None)
+            assert tranId, 'transcript id key not found'
+            assert groupName, 'group name key not found'
+            if groupName == "chemical":
+                fpkmQuery = chemicalFpkm.objects.filter(lncRNAs=tranId).values()[0]
+                if fpkmQuery:
+                    return exportCSVFPKM(fpkmQuery)
+            elif groupName == "developmental":
+                fpkmQuery = developmentalFpkm.objects.filter(lncRNAs=tranId).values()[0]
+                if fpkmQuery:
+                    return exportCSVFPKM(fpkmQuery)
+            elif groupName == "abiotic":
+                fpkmQuery = abioticFpkm.objects.filter(lncRNAs=tranId).values()[0]
+                if fpkmQuery:
+                    return exportCSVFPKM(fpkmQuery)
+            elif groupName == "biotic":
+                fpkmQuery = bioticFpkm.objects.filter(lncRNAs=tranId).values()[0]
+                if fpkmQuery:
+                    return exportCSVFPKM(fpkmQuery)
+            elif groupName == "genetics":
+                fpkmQuery = geneticsFpkm.objects.filter(lncRNAs=tranId).values()[0]
+                if fpkmQuery:
+                    return exportCSVFPKM(fpkmQuery)
+            else:
+                return Response({'details': "group name not correct"}, 
+                                status=status.HTTP_406_NOT_ACCEPTABLE)
+
+            if not fpkmQuery:
+                return Response({'details': "Query does not exist"}, 
+                                status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)

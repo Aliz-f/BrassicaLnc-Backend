@@ -23,6 +23,6 @@ urlpatterns = [
     path('download/', include('download.urls')),
     path('search/', include('search.urls')),
     path('submit/', include('submit.urls')),
-
+    path('statistic/', include('statistic.urls')),
 
 ]

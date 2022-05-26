@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'download',
     'search',
     'submit',
+    'statistic',
 ]
 
 MIDDLEWARE = [
