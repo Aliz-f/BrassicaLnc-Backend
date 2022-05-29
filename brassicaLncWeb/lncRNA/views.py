@@ -132,16 +132,16 @@ class chemical(APIView):
                 for i in data :
                     try:
                         try :
-                            t= dic[i[4].split()[0]] [i[3].split()[0] ] 
-                            t.append(i[1].split()[0])
-                            dic[i[4].split()[0]] [i[3].split()[0] ]  = t
-
-                          
+                            t= dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",") ] 
+                            t.append(i[1].split()[0].replace("&"," ").replace("$","-").replace("%",","))
+                            dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",") ]  = t
                         except Exception as e :
-                            dic[i[4].split()[0]] [i[3].split()[0] ] = [i[1].split()[0]]
+                            dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",") ] = [i[1].split()[0].replace("&"," ").replace("$","-").replace("%",",")]
+                            
+                            
                     except Exception as e: 
-                        dic[i[4].split()[0]]=dict()
-                        dic[i[4].split()[0]] [i[3].split()[0]] =[i[1].split()[0]]
+                        dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")]=dict()
+                        dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",")] =[i[1].split()[0].replace("&"," ").replace("$","-").replace("%",",")]
 
                 for i in data :
                     try:
@@ -149,7 +149,7 @@ class chemical(APIView):
                             desc[i[4].split()[0]]  = i[5].split()[0].replace("&"," ").replace("$",",")
                         except Exception as e :
                     
-                            desc[i[4].split()[0]]  = i[5].split()[0].replace("&"," ").replace("$","-").repale("%",",")           
+                            desc[i[4].split()[0]]  = i[5].split()[0].replace("&"," ").replace("$","-").replace("%",",")           
                     except Exception as e: 
                         
                         desc[i[4].split()[0]] = dict() 
@@ -327,28 +327,28 @@ class abiotic(APIView):
                 for i in data :
                     try:
                         try :
-                            t= dic[i[4].split()[0]] [i[3].split()[0] ] 
-                            t.append(i[1].split()[0])
-                            dic[i[4].split()[0]] [i[3].split()[0] ]  = t
+                            t= dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",") ] 
+                            t.append(i[1].split()[0].replace("&"," ").replace("$","-").replace("%",","))
+                            dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",") ]  = t
                         except Exception as e :
-                            dic[i[4].split()[0]] [i[3].split()[0] ] = [i[1].split()[0]]
+                            dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",") ] = [i[1].split()[0].replace("&"," ").replace("$","-").replace("%",",")]
                             
                             
                     except Exception as e: 
-                        dic[i[4].split()[0]]=dict()
-                        dic[i[4].split()[0]] [i[3].split()[0]] =[i[1].split()[0]]
+                        dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")]=dict()
+                        dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",")] =[i[1].split()[0].replace("&"," ").replace("$","-").replace("%",",")]
 
             for i in data :
                     try:
                         try :
-                            desc[i[4].split()[0]]  = i[5].split()[0].replace("&"," ").replace("$","-").repale("%",",")
+                            desc[i[4].split()[0]]  = i[5].split()[0].replace("&"," ").replace("$","-").replace("%",",")
                         except Exception as e :
                     
-                            desc[i[4].split()[0]] = i[5].split()[0].replace("&"," ").replace("$","-").repale("%",",")           
+                            desc[i[4].split()[0]] = i[5].split()[0].replace("&"," ").replace("$","-").replace("%",",")           
                     except Exception as e: 
                         
                         desc[i[4].split()[0]] = dict() 
-                        desc[i[4].split()[0]]  = i[5].split()[0].replace("&"," ").replace("$","-").repale("%",",")         
+                        desc[i[4].split()[0]]  = i[5].split()[0].replace("&"," ").replace("$","-").replace("%",",")         
 
             id = request.data["id"]
             transcript = abioticFpkm.objects.filter(lncRNAs__contains=id)
@@ -395,11 +395,17 @@ class genetics(APIView):
                 for i in data :
                     try:
                         try :
-                            t= dic[i[4].split()[0]] [i[3].split()[0] ] 
-                            t.append(i[1].split()[0])
-                            dic[i[4].split()[0]] [i[3].split()[0] ]  = t
+                            t= dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",") ] 
+                            t.append(i[1].split()[0].replace("&"," ").replace("$","-").replace("%",","))
+                            dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",") ]  = t
                         except Exception as e :
-                            dic[i[4].split()[0]] [i[3].split()[0] ] = [i[1].split()[0]]
+                            dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",") ] = [i[1].split()[0].replace("&"," ").replace("$","-").replace("%",",")]
+                            
+                            
+                    except Exception as e: 
+                        dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")]=dict()
+                        dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",")] =[i[1].split()[0].replace("&"," ").replace("$","-").replace("%",",")]
+
                             
                             
                     except Exception as e: 
@@ -411,11 +417,11 @@ class genetics(APIView):
                             desc[i[4].split()[0]] = i[5].split()[0].replace("&"," ").replace("$",",")
                         except Exception as e :
                     
-                            desc[i[4].split()[0]]  = i[5].split()[0].replace("&"," ").replace("$","-").repale("%",",")           
+                            desc[i[4].split()[0]]  = i[5].split()[0].replace("&"," ").replace("$","-").replace("%",",")           
                     except Exception as e: 
                         
                         desc[i[4].split()[0]] = dict() 
-                        desc[i[4].split()[0]]= i[5].split()[0].replace("&"," ").replace("$","-").repale("%",",")        
+                        desc[i[4].split()[0]]= i[5].split()[0].replace("&"," ").replace("$","-").replace("%",",")        
 
             id = request.data["id"]
             transcript = geneticsFpkm.objects.filter(lncRNAs__contains=id)
@@ -462,11 +468,17 @@ class developmental(APIView):
                 for i in data :
                     try:
                         try :
-                            t= dic[i[4].split()[0]] [i[3].split()[0] ] 
-                            t.append(i[1].split()[0])
-                            dic[i[4].split()[0]] [i[3].split()[0] ]  = t
+                            t= dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",") ] 
+                            t.append(i[1].split()[0].replace("&"," ").replace("$","-").replace("%",","))
+                            dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",") ]  = t
                         except Exception as e :
-                            dic[i[4].split()[0]] [i[3].split()[0] ] = [i[1].split()[0]]
+                            dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",") ] = [i[1].split()[0].replace("&"," ").replace("$","-").replace("%",",")]
+                            
+                            
+                    except Exception as e: 
+                        dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")]=dict()
+                        dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",")] =[i[1].split()[0].replace("&"," ").replace("$","-").replace("%",",")]
+
                             
                             
                     except Exception as e: 
@@ -478,11 +490,11 @@ class developmental(APIView):
                             desc[i[4].split()[0]] = i[5].split()[0].replace("&"," ").replace("$",",")
                         except Exception as e :
                     
-                            desc[i[4].split()[0]] = i[5].split()[0].replace("&"," ").replace("$","-").repale("%",",")           
+                            desc[i[4].split()[0]] = i[5].split()[0].replace("&"," ").replace("$","-").replace("%",",")           
                     except Exception as e: 
                         
                         desc[i[4].split()[0]] = dict() 
-                        desc[i[4].split()[0]]= i[5].split()[0].replace("&"," ").replace("$","-").repale("%",",")        
+                        desc[i[4].split()[0]]= i[5].split()[0].replace("&"," ").replace("$","-").replace("%",",")        
 
             id = request.data["id"]
             transcript = developmentalFpkm.objects.filter(lncRNAs__contains=id)
@@ -529,27 +541,31 @@ class biotic(APIView):
                 for i in data :
                     try:
                         try :
-                            t= dic[i[4].split()[0]] [i[3].split()[0] ] 
-                            t.append(i[1].split()[0])
-                            dic[i[4].split()[0]] [i[3].split()[0] ]  = t
+                            t= dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",") ] 
+                            t.append(i[1].split()[0].replace("&"," ").replace("$","-").replace("%",","))
+                            dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",") ]  = t
                         except Exception as e :
-                            dic[i[4].split()[0]] [i[3].split()[0] ] = [i[1].split()[0]]
+                            dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",") ] = [i[1].split()[0].replace("&"," ").replace("$","-").replace("%",",")]
                             
                             
                     except Exception as e: 
-                        dic[i[4].split()[0]]=dict()
-                        dic[i[4].split()[0]] [i[3].split()[0]] =[i[1].split()[0]]
+                        dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")]=dict()
+                        dic[i[4].split()[0].replace("&"," ").replace("$","-").replace("%",",")] [i[3].split()[0].replace("&"," ").replace("$","-").replace("%",",")] =[i[1].split()[0].replace("&"," ").replace("$","-").replace("%",",")]
+
+                            
+                            
+                    
                 for i in data :
                     try:
                         try :
                             desc[i[4].split()[0]] = i[5].split()[0].replace("&"," ").replace("$",",")
                         except Exception as e :
                     
-                            desc[i[4].split()[0]] = i[5].split()[0].replace("&"," ").replace("$","-").repale("%",",")          
+                            desc[i[4].split()[0]] = i[5].split()[0].replace("&"," ").replace("$","-").replace("%",",")          
                     except Exception as e: 
                         
                         desc[i[4].split()[0]] = dict() 
-                        desc[i[4].split()[0]]= i[5].split()[0].replace("&"," ").replace("$","-").repale("%",",")      
+                        desc[i[4].split()[0]]= i[5].split()[0].replace("&"," ").replace("$","-").replace("%",",")      
 
             id = request.data.get('id')
             transcript = bioticFpkm.objects.filter(lncRNAs__contains=id)
