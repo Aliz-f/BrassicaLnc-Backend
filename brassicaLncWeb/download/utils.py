@@ -1,86 +1,100 @@
-from django.http import HttpResponse
+"""LncRna project utils for download app"""
 import csv
-from lncRNA.models import gtf, lnc
+from django.http import HttpResponse
+from lncRNA.models import Gtf, Lnc
 
-def exportCSV(lncList):
-    # Create the HttpResponse object with the appropriate CSV header.
+def export_csv(lnc_list) -> HttpResponse:
+    """generate cvs file format"""
     response = HttpResponse(
         content_type='text/csv',
         headers={'Content-Disposition': 'attachment; filename="lncRNA.csv"'},
     )
-
     writer = csv.writer(response, delimiter='\t')
-    writer.writerow(['geneId', 'transcriptId', 'stringTieId', 'chr', 'location', 'length', 'exonNumber', 'classification' ])
-    for value in lncList:
-        writer.writerow([value.geneId, value.transcriptId, value.stringTieId, value.chr, value.location, value.length, value.exonNumber, value.classification])
-
+    writer.writerow(
+        [
+            'geneId', 'transcriptId',
+            'stringTieId', 'chr', 'location',
+            'length', 'exonNumber', 'classification'
+        ]
+    )
+    for value in lnc_list:
+        writer.writerow(
+            [
+                value.geneId, value.transcriptId,
+                value.stringTieId, value.chr,
+                value.location, value.length,
+                value.exonNumber, value.classification
+            ]
+        )
     return response
 
-def exportTXT(lncList):
-    # Create the HttpResponse object with the appropriate CSV header.
+def export_txt(lnc_list) -> HttpResponse:
+    """generate txt file format"""
     response = HttpResponse(
         content_type='text/csv',
         headers={'Content-Disposition': 'attachment; filename="lncRNA.txt"'},
     )
-
     writer = csv.writer(response)
-    writer.writerow(['geneId', 'transcriptId', 'stringTieId', 'chr', 'location', 'length', 'exonNumber', 'classification' ])
-    for value in lncList:
-        writer.writerow([value.geneId, value.transcriptId, value.stringTieId, value.chr, value.location, value.length, value.exonNumber, value.classification])
-
+    writer.writerow(
+        [
+            'geneId', 'transcriptId',
+            'stringTieId', 'chr',
+            'location', 'length',
+            'exonNumber', 'classification'
+        ]
+    )
+    for value in lnc_list:
+        writer.writerow(
+            [
+                value.geneId, value.transcriptId,
+                value.stringTieId, value.chr,
+                value.location, value.length,
+                value.exonNumber, value.classification
+            ]
+        )
     return response
 
-def exportFasta(lncList):
-    # Create the HttpResponse object with the appropriate CSV header.
+def export_fasta(lnc_list) -> HttpResponse:
+    """generate fasta file format"""
     response = HttpResponse(
         content_type='text/csv',
         headers={'Content-Disposition': 'attachment; filename="lncRNA.fa"'},
     )
-
     writer = csv.writer(response)
-    for value in lncList:
-        temp = '>{}'.format(value.transcriptId)
+    for value in lnc_list:
+        temp = f">{value.transcriptId}"
         writer.writerow([temp])
         writer.writerow([value.sequence])
-
     return response
 
-def exportGTF(lncList):
-    # Create the HttpResponse object with the appropriate CSV header.
+def export_gtf(lnc_list) -> HttpResponse:
+    """generate gtf file format"""
     response = HttpResponse(
         content_type='text/csv',
         headers={'Content-Disposition': 'attachment; filename="lncRNA.gtf"'},
     )
-
     writer = csv.writer(response)
-    lncQuery = lnc.objects.filter(id__in = lncList)
-    for value in lncQuery:
-        gtfQuery = gtf.objects.filter(transcript_id = value.stringTieId)
-        for eachGTF in gtfQuery:
-            strTemp = """{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\tgene_id {}; transcript_id {}; exon_number {}; """.format(
-                eachGTF.chromosome, eachGTF.stringTie, 
-                eachGTF.exon, eachGTF.locStart, eachGTF.locEnd,
-                eachGTF.number, eachGTF.strand1, eachGTF.strand2,
-                eachGTF.gene_id, eachGTF.transcript_id, eachGTF.exon_number)
-            writer.writerow([strTemp])
-
+    lnc_query = Lnc.objects.filter(id__in = lnc_list)
+    for value in lnc_query:
+        gtf_query = Gtf.objects.filter(transcript_id = value.stringTieId)
+        for each_gtf in gtf_query:
+            str_temp = f"{each_gtf.chromosome}\t{each_gtf.stringTie}\t{each_gtf.exon}\t{each_gtf.locStart}\t{each_gtf.locEnd}\t{each_gtf.number}\t{each_gtf.strand1}\t{each_gtf.strand2}\tgene_id {each_gtf.gene_id}; \transcript_id {each_gtf.transcript_id}; exon_number {each_gtf.exon_number}; "
+            writer.writerow([str_temp])
     return response
 
-def exportCSVFPKM(fpkm):
-    # Create the HttpResponse object with the appropriate CSV header.
-    fieldsList=[]
-    valueList =[]
+def export_csv_fpkm(fpkm) -> HttpResponse:
+    """generate cvs fpkm file format"""
+    fields_list=[]
+    value_list =[]
     for key in fpkm.keys():
-        fieldsList.append(key)
+        fields_list.append(key)
     for value in fpkm.values():
-        valueList.append(value)
+        value_list.append(value)
     response = HttpResponse(
         content_type='text/csv',
-        headers={'Content-Disposition': 'attachment; filename="{}.csv"'.format(valueList[1])},
+        headers={'Content-Disposition': f'attachment; filename="{value_list[1]}.csv"'},
     )
-
     writer = csv.writer(response, delimiter='\t')
-    writer.writerow(fieldsList)
-    writer.writerow(valueList)
-
+    writer.writerow(fields_list)
+    writer.writerow(value_list)
     return response

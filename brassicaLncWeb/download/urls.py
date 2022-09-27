@@ -1,12 +1,17 @@
+"""LncRna project urls for download app"""
 from django.urls import path
-from .views import *
+from .views import (DownloadAllFiles, LncDownloadCsvFormat,
+        LncDownloadTxtFormat, LncDownloadFastaFormat,
+        LncDownloadGtfFormat, GroupDownloadCsvFpkm,
+        DownloadStructurePremiRna)
 
 urlpatterns = [
-    path('csv/', downloadCSV.as_view(), name = 'download-csv'),
-    path('txt/', downloadTXT.as_view(), name = 'download-txt'),
-    path('fasta/', downloadFASTA.as_view(), name = 'download-fasta'),
-    path('gtf/', downloadGTF.as_view(), name = 'download-gtf'),
-    path('', downloadFile.as_view(), name = 'download-files'),
-    path('fpkm/csv/', downloadCSVFpkm.as_view(), name = 'download-csv-fpkm'),
-
+    path('', DownloadAllFiles.as_view(), name = 'download_all_files'),
+    path('csv/', LncDownloadCsvFormat.as_view(), name = 'download_csv_format'),
+    path('txt/', LncDownloadTxtFormat.as_view(), name = 'download_txt_format'),
+    path('fasta/', LncDownloadFastaFormat.as_view(), name = 'download_fasta_format'),
+    path('gtf/', LncDownloadGtfFormat.as_view(), name = 'download_gtf_format'),
+    path('fpkm/csv/', GroupDownloadCsvFpkm.as_view(), name = 'download_csv_fpkm'),
+    path("premi_rna/structure/",
+            DownloadStructurePremiRna.as_view(),name="download_premiRNA_structure"),
 ]
