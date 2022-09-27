@@ -1,3 +1,2 @@
-from django.db import models
-
-# Create your models here.
+"""LncRna project models for search app"""
+# from django.db import models

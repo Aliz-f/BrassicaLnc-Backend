@@ -1,3 +1,2 @@
-from django.contrib import admin
-
-# Register your models here.
+"""LncRna project admin panel config for search app"""
+# from django.contrib import admin
