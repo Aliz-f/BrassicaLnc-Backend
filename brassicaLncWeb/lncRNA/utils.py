@@ -1,3 +1,5 @@
+"""LncRna project utils for lncRNA app"""
+
 # import time 
 # import sys
 # import requests
@@ -316,27 +318,119 @@ filePath = os.getcwd() +'/files'
 #     # time.sleep(0.1)
 #     print(k)
 
+#*** Statistics
+# {
+#     "chart1": {
+#         "chromosome":41,
+#         "mRNA":101040,
+#         "lncRNA":1856
+#     },
+#     "chart2":{
+#         "Potential transcripts (Class codes: i, u, x, o,e)":31777,
+#         "Transcripts with length > 200 bp and < 15 kb":30905,
+#         "Transcripts with FPKM > 0.5 in at least 495 samples":5990,
+#         "Transcripts after filter out tRNAs and rRNAs":5947,
+#         "Noncoding transcripts predicted by cpc2":4766,
+#         "lncRNAs predicted by PLncPRO, FEElnc, and CREMA":2321,
+#         "Transcripts with no signification hit against UniProt, Pfam, and Rfam.":1852
+#     },
+#     "chart3":
+#     {
+#         "intronic lncRNAs (i)":0,
+#         "generic exonic overlap lncRNAs with reference transcripts (o)":0,
+#         "intergenic lncRNAs (u)":0,
+#         "antisense lncRNAs (x)":0,
+#     }
+# }
 
-{
-    "chart1": {
-        "chromosome":41,
-        "mRNA":101040,
-        "lncRNA":1856
-    },
-    "chart2":{
-        "Potential transcripts (Class codes: i, u, x, o,e)":31777,
-        "Transcripts with length > 200 bp and < 15 kb":30905,
-        "Transcripts with FPKM > 0.5 in at least 495 samples":5990,
-        "Transcripts after filter out tRNAs and rRNAs":5947,
-        "Noncoding transcripts predicted by cpc2":4766,
-        "lncRNAs predicted by PLncPRO, FEElnc, and CREMA":2321,
-        "Transcripts with no signification hit against UniProt, Pfam, and Rfam.":1852
-    },
-    "chart3":
-    {
-        "intronic lncRNAs (i)":0,
-        "generic exonic overlap lncRNAs with reference transcripts (o)":0,
-        "intergenic lncRNAs (u)":0,
-        "antisense lncRNAs (x)":0,
-    }
-}
+#***Small RNA
+# import requests
+
+# smallrna_list = list()
+# iter = 0
+# with open('files/BrassicaLnc_V2 - SmallRNATargets.tsv', 'r') as f:
+#     for line in f.readlines():
+#         temp = line.split('\t')
+#         if iter == 0:
+#             pass
+#         else:
+#             smallrna_list.append(temp)
+#         iter+=1
+        
+# data = list()
+# for each in smallrna_list:
+#     data.append(
+#         dict(
+#             lncrna_id = each[0],
+#             mirna_id = each[1],
+#             expectation= each[2],
+#             lncrna_start = each[3],
+#             lncrna_end = each[4],
+#             mirna_start = each[5],
+#             mirna_end = each[6],
+#             inhibition = each[7],
+#             lncrna_aligned_fragment = each[8],
+#             mirna_aligned_fragment = each[9],
+#         )
+#     )
+# # print(len(data))
+
+# import time
+# k=0
+# # url = 'http://188.121.122.34/lncRNA/create/geneticsdb/'
+# url = 'http://127.0.0.1:8000/lncRNA/small_rna_target/db/'
+# for i in range(len(data)):
+#     print(data)
+#     response = requests.post(url, data=data[i])
+#     print(response)
+#     time.sleep(0.1)
+#     print(k)
+#     k+=1
+
+
+#***Premi RNA
+# import requests
+
+# premirna_list = list()
+# iter = 0
+# with open('files/BrassicaLnc_V2 - PremiRNA.tsv', 'r') as f:
+#     for line in f.readlines():
+#         temp = line.split('\t')
+#         if iter == 0:
+#             pass
+#         else:
+#             premirna_list.append(temp)
+#         iter+=1
+        
+# data = list()
+# for each in premirna_list:
+#     data.append(
+#         dict(
+#             lncrna_id = each[0],
+#             premi_rna = each[1],
+#             identity= each[2],
+#             alignment_length = each[3],
+#             mismatches = each[4],
+#             lncrna_start = each[5],
+#             Lncrna_end = each[6],
+#             premi_rna_start = each[7],
+#             premi_rna_end = each[8],
+#             e_value = each[9],
+#             bitscore = each[10],
+#         )
+#     )
+# # print(data)
+
+# # print(len(data))
+
+# import time
+# k=0
+# # url = 'http://188.121.122.34/lncRNA/create/geneticsdb/'
+# url = 'http://127.0.0.1:8000/lncRNA/premi_rna/db/'
+# for i in range(len(data)):
+#     # print(data)
+#     response = requests.post(url, data=data[i])
+#     print(response)
+#     time.sleep(0.1)
+#     print(k)
+#     k+=1

@@ -1,59 +1,101 @@
+"""LncRna project serializer for lncRNA app"""
+
 from rest_framework.exceptions import APIException
 from rest_framework import serializers, status
 
 from django.utils.encoding import force_str
 
-from .models import lnc, gtf,chemicalFpkm, abioticFpkm, geneticsFpkm, developmentalFpkm, bioticFpkm
+from .models import (Lnc, Gtf, ChemicalFpkm,
+    AbioticFpkm, GeneticsFpkm, DevelopmentalFpkm,
+    BioticFpkm, Transposon, SmallRnaTarget, PremiRna, Etms
+)
 
 class CustomValidation(APIException):
+    """Custom validation for serializers """
     status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
     default_detail = 'A server error occurred.'
 
     def __init__(self, detail, field, status_code):
-        if status_code is not None: self.status_code = status_code
+        if status_code is not None:
+            self.status_code = status_code
         if detail is not None:
             self.detail = {field: force_str(detail)}
         else:
             self.detail = {'detail': force_str(self.default_detail)}
 
-class lncSerializer(serializers.ModelSerializer):
+class LncSerializer(serializers.ModelSerializer):
+    """Serializer for Lnc model"""
     class Meta:
-        model = lnc
+        """no docstring"""
+        model = Lnc
         fields = "__all__"
 
-    def create(self, validated_data):
-        return lnc.objects.create(**validated_data)
-
-class gtfSerializer(serializers.ModelSerializer):
+class GtfSerializer(serializers.ModelSerializer):
+    """Serializer for Gtf model"""
     class Meta:
-        model= gtf
+        """no docstring"""
+        model= Gtf
         fields = "__all__"
 
-    def create(self, validated_data):
-        return gtf.objects.create(**validated_data)
-
-class chemicalSerializer(serializers.ModelSerializer):
+class ChemicalSerializer(serializers.ModelSerializer):
+    """Serializer for ChemicalFpkm model"""
     class Meta:
-        model=chemicalFpkm
+        """no docstring"""
+        model=ChemicalFpkm
         fields = "__all__"
 
-class abioticSerializer(serializers.ModelSerializer):
+class AbioticSerializer(serializers.ModelSerializer):
+    """Serializer for AbioticFpkm model"""
     class Meta:
-        model=abioticFpkm
+        """no docstring"""
+        model=AbioticFpkm
         fields = "__all__"
 
-
-class geneticsSerializer(serializers.ModelSerializer):
+class GeneticsSerializer(serializers.ModelSerializer):
+    """Serializer for GeneticsFpkm model"""
     class Meta:
-        model=geneticsFpkm
+        """no docstring"""
+        model=GeneticsFpkm
         fields = "__all__"
 
-class developmentalSerializer(serializers.ModelSerializer):
+class DevelopmentalSerializer(serializers.ModelSerializer):
+    """Serializer for DevelopmentalFpkm model"""
     class Meta:
-        model=developmentalFpkm
+        """no docstring"""
+        model=DevelopmentalFpkm
         fields = "__all__"
 
-class bioticSerializer(serializers.ModelSerializer):
+class BioticSerializer(serializers.ModelSerializer):
+    """Serializer for BioticFpkm model"""
     class Meta:
-        model=bioticFpkm
+        """no docstring"""
+        model=BioticFpkm
+        fields = "__all__"
+
+class TransposonSerializer(serializers.ModelSerializer):
+    """Serializer for Transposon model"""
+    class Meta:
+        """no docstring"""
+        model=Transposon
+        fields = "__all__"
+
+class SmallRnaTargetSerializer(serializers.ModelSerializer):
+    """Serializer for SmallRnaTarget model"""
+    class Meta:
+        """no docstring"""
+        model=SmallRnaTarget
+        fields = "__all__"
+
+class PremiRnaSerializer(serializers.ModelSerializer):
+    """Serializer for PremiRna model"""
+    class Meta:
+        """no docstring"""
+        model=PremiRna
+        fields = "__all__"
+
+class EtmsSerializer(serializers.ModelSerializer):
+    """Serializer for Etms model"""
+    class Meta:
+        """no docstring"""
+        model = Etms
         fields = "__all__"

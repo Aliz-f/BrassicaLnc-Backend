@@ -1,39 +1,121 @@
+"""LncRna project models for lncRNA app"""
 from django.db import models
 
-# Create your models here.
+class Lnc (models.Model):
+    """Lnc data model"""
+    geneId = models.CharField(
+        verbose_name="Gene ID",
+        max_length=70,
+        null=False
+    )
+    transcriptId = models.CharField(
+        verbose_name="Transcript ID",
+        max_length=70,
+        null=False
+    )
+    stringTieId  = models.CharField(
+        verbose_name="StringTie ID",
+        max_length=70,
+        null=False
+    )
+    chr = models.CharField(
+        verbose_name="Chr",
+        max_length=20,
+        null=False
+    )
+    location = models.CharField(
+        verbose_name="Location",
+        max_length=70,
+        null=False
+    )
+    locStart = models.IntegerField(
+        verbose_name='location start',
+        null=False
+    )
+    locEnd = models.IntegerField(
+        verbose_name='location End',
+        null=False
+    )
+    length = models.PositiveIntegerField(
+        verbose_name="Length",
+        null=False
+    )
+    classification = models.CharField(
+        verbose_name="Classification",
+        max_length=5,
+        null=False
+    )
+    exonNumber = models.PositiveIntegerField(
+        verbose_name="Exon number",
+        null=False
+    )
+    sequence = models.TextField(
+        verbose_name="Fasta",
+        null=False
+    )
+    def __str__(self) -> str:
+        """no docstring"""
+        return str(self.geneId)
 
-class lnc (models.Model):
-    geneId = models.CharField(verbose_name="Gene ID", max_length=70, null=False)
-    transcriptId = models.CharField(verbose_name="Transcript ID", max_length=70, null=False)
-    stringTieId  = models.CharField(verbose_name="StringTie ID", max_length=70, null=False)
-    chr = models.CharField(verbose_name="Chr", max_length=20, null=False)
-    location = models.CharField(verbose_name="Location", max_length=70, null=False)
-    locStart = models.IntegerField(verbose_name='location start', null=False)
-    locEnd = models.IntegerField(verbose_name='location End', null=False)
-    length = models.PositiveIntegerField(verbose_name="Length", null=False)
-    classification = models.CharField(verbose_name="Classification", max_length=5, null=False)
-    exonNumber = models.PositiveIntegerField(verbose_name="Exon number", null=False)
-    sequence = models.TextField(verbose_name="Fasta", null=False)
-    def __str__(self):
-        return self.geneId
+class Gtf(models.Model):
+    """Gtf data model"""
+    gene_id = models.CharField(
+        verbose_name="Gene_id",
+        null=False,
+        max_length=100
+    )
+    transcript_id = models.CharField(
+        verbose_name="Transcript_id",
+        null=False,
+        max_length=100
+    )
+    stringTie = models.CharField(
+        verbose_name="StringTie",
+        null=False,
+        max_length=100
+    )
+    exon = models.CharField(
+        verbose_name="Exon",
+        null=False,
+        max_length=100
+    )
+    locStart = models.IntegerField(
+        verbose_name="Location start",
+        null=False
+    )
+    locEnd = models.IntegerField(
+        verbose_name="Location end",
+        null=False
+    )
+    number = models.IntegerField(
+        verbose_name="Number",
+        null=False
+    )
+    strand1 = models.CharField(
+        verbose_name="strand 1",
+        null=False,
+        max_length=100
+    )
+    strand2 = models.CharField(
+        verbose_name="strand 2",
+        null=False,
+        max_length=100
+    )
+    exon_number = models.IntegerField(
+        verbose_name="Exon_Number",
+        null=False
+    )
+    chromosome = models.CharField(
+        verbose_name="Chr",
+        null=False,
+        max_length=100
+    )
+    def __str__(self) -> str:
+        """no docstring"""
+        return str(self.transcript_id)
 
-class gtf(models.Model):
-    gene_id = models.CharField(verbose_name="Gene_id", null=False, max_length=100)
-    transcript_id = models.CharField(verbose_name="Transcript_id", null=False, max_length=100)
-    stringTie = models.CharField(verbose_name="StringTie", null=False, max_length=100)
-    exon = models.CharField(verbose_name="Exon", null=False, max_length=100)
-    locStart = models.IntegerField(verbose_name="Location start", null=False)
-    locEnd = models.IntegerField(verbose_name="Location end", null=False)
-    number = models.IntegerField(verbose_name="Number", null=False)
-    strand1 = models.CharField(verbose_name="strand 1", null=False, max_length=100)
-    strand2 = models.CharField(verbose_name="strand 2", null=False, max_length=100)
-    exon_number = models.IntegerField(verbose_name="Exon_Number", null=False)
-    chromosome = models.CharField(verbose_name="Chr", null=False, max_length=100)
-
-    def __str__(self):
-        return self.transcript_id
-
-class chemicalFpkm(models.Model):
+class ChemicalFpkm(models.Model):
+    """Chemical fpkm headers """
     lncRNAs=models.CharField(max_length=70, null=False)
     SRR5816403=models.FloatField()
     SRR5816404=models.FloatField()
@@ -237,12 +319,12 @@ class chemicalFpkm(models.Model):
     SRR13167940=models.FloatField()
     SRR13167938=models.FloatField()
     SRR13167936=models.FloatField()
+    def __str__(self)-> str:
+        """no docstring"""
+        return str(self.lncRNAs)
 
-    def __str__(self):
-        return self.lncRNAs
-
-
-class abioticFpkm(models.Model):
+class AbioticFpkm(models.Model):
+    """Abiotic fpkm headers """
     lncRNAs=models.CharField(max_length=70, null=False)
     SRR14825793=models.FloatField()
     SRR14825794=models.FloatField()
@@ -767,11 +849,12 @@ class abioticFpkm(models.Model):
     SRR10539000=models.FloatField()
     SRR10538999=models.FloatField()
     SRR10538998=models.FloatField()
-        
-    def __str__(self):
-        return self.lncRNAs
+    def __str__(self) -> str:
+        """no docstring"""
+        return str(self.lncRNAs)
 
-class geneticsFpkm(models.Model):
+class GeneticsFpkm(models.Model):
+    """Genetics fpkm headers """
     lncRNAs=models.CharField(max_length=70, null=False)
     SRR2036392=models.FloatField()
     SRR2036393=models.FloatField()
@@ -1027,11 +1110,12 @@ class geneticsFpkm(models.Model):
     SRR11607792=models.FloatField()
     SRR11607785=models.FloatField()
     SRR11607784=models.FloatField()
+    def __str__(self) -> str:
+        """no docstring"""
+        return str(self.lncRNAs)
 
-    def __str__(self):
-        return self.lncRNAs
-
-class developmentalFpkm(models.Model):
+class DevelopmentalFpkm(models.Model):
+    """Developmental fpkm headers """
     lncRNAs=models.CharField(max_length=70, null=False)
     SRR1604976=models.FloatField()
     SRR1604973=models.FloatField()
@@ -1529,10 +1613,12 @@ class developmentalFpkm(models.Model):
     SRR9944851=models.FloatField()
     SRR9944852=models.FloatField()
     SRR9944853=models.FloatField()
-    def __str__(self):
-        return self.lncRNAs
+    def __str__(self) -> str:
+        """no docstring"""
+        return str(self.lncRNAs)
 
-class bioticFpkm(models.Model):
+class BioticFpkm(models.Model):
+    """Biotic fpkm headers """
     lncRNAs=models.CharField(max_length=70, null=False)
     SRR1793815=models.FloatField()
     SRR1793826=models.FloatField()
@@ -1891,6 +1977,271 @@ class bioticFpkm(models.Model):
     SRR10070419=models.FloatField()
     SRR10070417=models.FloatField()
     SRR10070416=models.FloatField()
+    def __str__(self) -> str:
+        """no docstring"""
+        return str(self.lncRNAs)
 
-    def __str__(self):
-        return self.lncRNAs
+class Transposon(models.Model):
+    """Transposon data model"""
+    lncrna_id = models.CharField(
+        verbose_name="lncRNA ID",
+        max_length=100,
+        null = False
+    )
+    transposon_id = models.CharField(
+        verbose_name="Transposon ID",
+        max_length=400,
+        null = False
+    )
+    chrom = models.CharField(
+        verbose_name="Chrom",
+        max_length=50,
+        null = False
+    )
+    strand = models.CharField(
+        verbose_name="Strand",
+        max_length=20,
+        null = False
+    )
+    start = models.IntegerField(
+        verbose_name="Start"
+    )
+    end = models.IntegerField(
+        verbose_name="End"
+    )
+    overlap = models.IntegerField(
+        verbose_name="Overlap"
+    )
+    def __str__(self) -> str:
+        """no docstring"""
+        return str(self.lncrna_id)
+
+class SmallRnaTarget(models.Model):
+    """Small Rna data model"""
+    lncrna_id  = models.CharField(
+        verbose_name="lncRNA ID",
+        max_length=100,
+        null = False,
+        blank=False
+    )
+    mirna_id = models.CharField(
+        verbose_name="MiRNA ID",
+        max_length=400,
+        null = False,
+        blank=False
+    )
+    expectation = models.FloatField(
+        verbose_name="Expectation"
+    )
+    lncrna_start = models.IntegerField(
+        verbose_name="lncRNA Start"
+    )
+    lncrna_end = models.IntegerField(
+        verbose_name="lncRNA End"
+    )
+    mirna_start = models.IntegerField(
+        verbose_name="miRNA Start"
+    )
+    mirna_end = models.IntegerField(
+        verbose_name="miRNA End"
+    )
+    inhibition = models.CharField(
+        verbose_name="Inhibition",
+        max_length=100,
+        null = False,
+        blank=False
+    )
+    lncrna_aligned_fragment = models.CharField(
+        verbose_name="lncRNA_aligned_fragment",
+        max_length=500,
+        null = False,
+        blank=False
+    )
+    mirna_aligned_fragment = models.CharField(
+        verbose_name="lncRNA_aligned_fragment",
+        max_length=500,
+        null = False,
+        blank=False
+    )
+    def __str__(self) -> str:
+        """no docstring"""
+        return str(self.lncrna_id)
+
+class PremiRna(models.Model):
+    """Premi Rna data model"""
+    lncrna_id  = models.CharField(
+        verbose_name="lncRNA ID",
+        max_length=100,
+        null = False
+    )
+    premi_rna = models.CharField(
+        verbose_name="Pre-miRNA",
+        max_length=400,
+        null = False
+    )
+    identity = models.FloatField(
+        verbose_name="Identity(%)"
+    )
+    alignment_length = models.IntegerField(
+        verbose_name="Alignment Length"
+    )
+    mismatches = models.FloatField(
+        verbose_name="Mismatches"
+    )
+    lncrna_start = models.IntegerField(
+        verbose_name="LncRNA start"
+    )
+    Lncrna_end = models.IntegerField(
+        verbose_name="LncRNA end"
+    )
+    premi_rna_start = models.IntegerField(
+        verbose_name="Pre-miRNA start"
+    )
+    premi_rna_end = models.IntegerField(
+        verbose_name="Pre-miRNA end"
+    )
+    e_value = models.FloatField(
+        verbose_name="E-value"
+    )
+    bitscore =  models.FloatField(
+        verbose_name="Bitscore"
+    )
+    structure = models.BooleanField(
+        default=False
+    )
+    def __str__(self) -> str:
+        """no docstring"""
+        return str(self.lncrna_id)
+
+class Etms(models.Model):
+    """Etms data model"""
+    lncrna_id  = models.CharField(
+        verbose_name="lncRNA ID",
+        max_length=100,
+        null = False
+    )
+    mirna_id = models.CharField(
+        verbose_name="MiRNA ID",
+        max_length=400,
+        null = False,
+        blank=False
+    )
+    score = models.FloatField(
+        verbose_name="Score"
+    )
+    lncrna_start = models.IntegerField(
+        verbose_name="lncRNA Start"
+    )
+    lncrna_end = models.IntegerField(
+        verbose_name="lncRNA End"
+    )
+    mirna_start = models.IntegerField(
+        verbose_name="miRNA Start"
+    )
+    mirna_end = models.IntegerField(
+        verbose_name="miRNA End"
+    )
+    alignment = models.CharField(
+        verbose_name="Alignment",
+        null = False,
+        blank = False,
+        max_length=100
+    )
+    lnc_alignment = models.CharField(
+        verbose_name="Lnc Alignment",
+        null=False,
+        blank=False,
+        max_length=300
+    )
+    mirna_alignment = models.CharField(
+        verbose_name="miRNA Alignment",
+        null=False,
+        blank=False,
+        max_length=300
+    )
+    def __str__(self) -> str:
+        """no docstring"""
+        return str(self.lncrna_id)
+
+class TargetDowngene(models.Model):
+    """Target Downgenes data model"""
+    query = models.CharField(
+        verbose_name="Query",
+        max_length=100,
+        null = False
+    )
+    length_query = models.FloatField(
+        verbose_name="Length_Query",
+        null = False
+    )
+    target =  models.CharField(
+        verbose_name="Target",
+        max_length=100,
+        null = False
+    )
+    length_target =  models.FloatField(
+        verbose_name="Length_Target",
+        null = False
+    )
+    dg =  models.FloatField(
+        verbose_name="dG",
+        null = False
+    )
+    ndg =  models.FloatField(
+        verbose_name="ndG",
+        null = False
+    )
+    start_position_query =  models.FloatField(
+        verbose_name="Start_Position_Query",
+        null = False
+    )
+    end_position_query =  models.FloatField(
+        verbose_name="End_Position_Query",
+        null = False
+    )
+    start_position_target =  models.FloatField(
+        verbose_name="Start_Position_Target",
+        null = False
+    )
+    end_position_target =  models.FloatField(
+        verbose_name="End_Position_Target",
+        null = False
+    )
+
+    def __str__(self) -> str:
+        return str(self.query)
+
+
+class DowngeneDescription(models.Model):
+    """DowngeneDescription data model"""
+    gene_id =  models.CharField(
+        verbose_name="GeneID",
+        max_length=100,
+        null = False
+    )
+    chromosome =  models.CharField(
+        verbose_name="Chromosome",
+        max_length=100,
+        null = False
+    )
+    start =  models.FloatField(
+        verbose_name="Start",
+        null = False
+    )
+    stop =  models.FloatField(
+        verbose_name="Stop",
+        null = False
+    )
+    strand =  models.CharField(
+        verbose_name="Strand",
+        max_length=100,
+        null = False
+    )
+    description =  models.CharField(
+        verbose_name="Description",
+        max_length=100,
+        null = False
+    )
+
+    def __str__(self) -> str:
+        return str(self.gene_id)
