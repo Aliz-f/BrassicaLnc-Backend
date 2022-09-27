@@ -1,3 +1,3 @@
-from django.test import TestCase
+"""LncRna project tests for statistic app"""
 
-# Create your tests here.
+# from django.test import TestCase
