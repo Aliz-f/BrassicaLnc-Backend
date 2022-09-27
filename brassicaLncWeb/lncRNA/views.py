@@ -130,12 +130,14 @@ class GetEachTranscript(APIView):
             smallrna_query = SmallRnaTarget.objects.filter(lncrna_id=lnc_query.geneId)
             premirna_query = PremiRna.objects.filter(lncrna_id = lnc_query.geneId)
             transposon_query = Transposon.objects.filter(lncrna_id = lnc_query.geneId)
-
+            target_downgene_query = TargetDowngene.objects.filter(query=lnc_query.geneId)
+            
             lnc_serializer = LncSerializer(lnc_query)
             gtf_serializer = GtfSerializer(gtf_query,many=True)
             smallrna_serializer = SmallRnaTargetSerializer(smallrna_query, many=True)
             permirna_serializer = PremiRnaSerializer(premirna_query, many=True)
             transposon_serializer = TransposonSerializer(transposon_query, many=True)
+            target_downgene_serializer = TargetDowngeneSerializer(target_downgene_query, many=True)
             response = dict()
             response.update(
                 dict(
@@ -143,7 +145,8 @@ class GetEachTranscript(APIView):
                     gtf = gtf_serializer.data,
                     smallRNA = smallrna_serializer.data,
                     premiRNA = permirna_serializer.data,
-                    transposon = transposon_serializer.data
+                    transposon = transposon_serializer.data,
+                    target_downgene = target_downgene_serializer.data
                 )
             )
             return Response(response,status=status.HTTP_200_OK)
