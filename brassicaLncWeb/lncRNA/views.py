@@ -8,11 +8,12 @@ from rest_framework.parsers import JSONParser
 from django.db.models import Q
 from .serializer import (LncSerializer, GtfSerializer, SmallRnaTargetSerializer,
     PremiRnaSerializer, TransposonSerializer, ChemicalSerializer, DevelopmentalSerializer,
-    GeneticsSerializer, AbioticSerializer, BioticSerializer, EtmsSerializer
+    GeneticsSerializer, AbioticSerializer, BioticSerializer, EtmsSerializer,
+    TargetDowngeneSerializer, DowngeneDescriptionSerializer
 )
 from .models import (Lnc, Gtf, ChemicalFpkm, DevelopmentalFpkm,
     GeneticsFpkm, AbioticFpkm, BioticFpkm, Transposon, SmallRnaTarget,
-    PremiRna, Etms
+    PremiRna, Etms, TargetDowngene, DowngeneDescription
 )
 
 class CsrfExemptSessionAuthentication(authentication.SessionAuthentication):
@@ -640,8 +641,8 @@ class GetTransposonIds(APIView):
     def get(self,request) -> Response:
         """no docstring"""
         try:
-            smallrna_id_query = Transposon.objects.all().values_list('transposon_id', flat=True)
-            return Response(smallrna_id_query,status=status.HTTP_200_OK)
+            transposon_id_query = Transposon.objects.all().values_list('transposon_id', flat=True)
+            return Response(transposon_id_query,status=status.HTTP_200_OK)
         except Exception as error:
             return Response({"detail":str(error)}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -699,13 +700,13 @@ class GetSmallRnaTarget(APIView):
                     Q(lncrna_end__lte = binding_locus[1])
             small_rna_query = SmallRnaTarget.objects.filter(query).order_by('id')
             result_page = paginator.paginate_queryset(small_rna_query, request)
-            transposon_serializer = SmallRnaTargetSerializer(result_page, many=True)
+            small_rna_serializer = SmallRnaTargetSerializer(result_page, many=True)
             pages = small_rna_query.count()/page_size if \
                 isinstance(int, type(small_rna_query.count()/page_size)) else \
                     int(small_rna_query.count()/page_size)+1
             return Response(
                 dict(
-                    data = transposon_serializer.data,
+                    data = small_rna_serializer.data,
                     page = pages,
                     count = small_rna_query.count()
                 ),
@@ -782,13 +783,13 @@ class GetPremiRna(APIView):
 
             premi_rna_query = PremiRna.objects.filter(query).order_by('id')
             result_page = paginator.paginate_queryset(premi_rna_query, request)
-            transposon_serializer = PremiRnaSerializer(result_page, many=True)
+            premi_rna_serializer = PremiRnaSerializer(result_page, many=True)
             pages = premi_rna_query.count()/page_size if \
                 isinstance(int, type(premi_rna_query.count()/page_size)) else \
                     int(premi_rna_query.count()/page_size)+1
             return Response(
                 dict(
-                    data = transposon_serializer.data,
+                    data = premi_rna_serializer.data,
                     page = pages,
                     count = premi_rna_query.count()
                 ),
@@ -810,8 +811,8 @@ class GetPremiRnaIds(APIView):
     def get(self,request) -> Response:
         """no docstring"""
         try:
-            smallrna_id_query = PremiRna.objects.all().values_list('premi_rna', flat=True)
-            return Response(smallrna_id_query,status=status.HTTP_200_OK)
+            premirna_id_query = PremiRna.objects.all().values_list('premi_rna', flat=True)
+            return Response(premirna_id_query,status=status.HTTP_200_OK)
         except Exception as error:
             return Response({"detail":str(error)}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -828,12 +829,143 @@ class GetEtms(APIView):
     def get(self,request) -> Response:
         """no docstring"""
         try:
-            premi_rna_query = Etms.objects.all().order_by('id')
-            transposon_serializer = EtmsSerializer(premi_rna_query, many=True)
+            etms_query = Etms.objects.all().order_by('id')
+            etms_serializer = EtmsSerializer(etms_query, many=True)
             return Response(
                 dict(
-                    data = transposon_serializer.data,
-                    count = premi_rna_query.count()
+                    data = etms_serializer.data,
+                    count = etms_query.count()
+                ),
+                status=status.HTTP_200_OK
+            )
+        except Exception as error:
+            return Response({"detail":str(error)}, status=status.HTTP_400_BAD_REQUEST)
+
+class GetTargetDowngene(APIView):
+    """
+    Api for get Premi Rna information
+    Query params:
+        - query=BnaA01LNG0001100
+        - len_query=10,1000
+        - target=BnaA01g11750D
+        - len_target=10,1000
+        - dg = -10,1000
+        - ndg = -0.400,-0.305
+        - position_query = 10,1000
+        - position_target = 10,1000
+        - per_page = 10
+        - page = 2
+
+        test1 : ?len_query=10,1000&len_target=10,1000&dg=-10,1000&ndg=-0.400,-0.105&position_target=10,10000
+        test2 : ?target=BnaA01g11750D
+    """
+    permission_classes = (permissions.AllowAny,)
+    parser_classes = (JSONParser,)
+    authentication_classes = (
+        CsrfExemptSessionAuthentication,
+        authentication.SessionAuthentication,
+        authentication.BasicAuthentication
+    )
+
+    def get(self,request) -> Response:
+        """no docstring"""
+        try:
+            target_query = request.GET.get('query', None)
+            len_query = request.GET.get('len_query', None)
+            target = request.GET.get('target', None)
+            len_target = request.GET.get('len_target', None)
+            target_dg = request.GET.get('dg', None)
+            ndg = request.GET.get('ndg', None)
+            position_query = request.GET.get('position_query', None)
+            position_target = request.GET.get('position_target', None)
+            page_size = request.GET.get('per_page', 10)
+
+            page_size = int(page_size)
+            paginator = PageNumberPagination()
+            paginator.page_size = page_size
+            query = Q()
+            if target_query:
+                target_query = target_query.strip()
+                query &= Q(query = target_query)
+            if len_query:
+                len_query = len_query.split(',')
+                len_query = [each.strip() for each in len_query]
+                query &= Q(length_query__gt = len_query[0]) & \
+                    Q(length_query__lt = len_query[1])
+            if target:
+                target = target.strip()
+                query &= Q(target=target)
+            if len_target:
+                len_target = len_target.split(',')
+                len_target = [each.strip() for each in len_target]
+                query &= Q(length_target__gt = len_target[0]) & \
+                    Q(length_target__lt = len_target[1])
+            if target_dg:
+                target_dg = target_dg.split(',')
+                target_dg = [each.strip() for each in target_dg]
+                query &= Q(dg__gt = target_dg[0]) & \
+                    Q(dg__lt = target_dg[1])
+            if ndg:
+                ndg = ndg.split(',')
+                ndg = [each.strip() for each in ndg]
+                query &= Q(ndg__gt = ndg[0]) & \
+                    Q(ndg__lt = ndg[1])
+            if position_query:
+                position_query = position_query.split(',')
+                position_query = [each.strip() for each in position_query]
+                query &= Q(start_position_query__gt = position_query[0]) & \
+                    Q(end_position_query__lt = position_query[1])
+            if position_target:
+                position_target = position_target.split(',')
+                position_target = [each.strip() for each in position_target]
+                query &= Q(start_position_target__gt = position_target[0]) & \
+                    Q(end_position_target__lt = position_target[1])
+
+            targetdown_query = TargetDowngene.objects.filter(query).order_by('id')
+            result_page = paginator.paginate_queryset(targetdown_query, request)
+            targetdown_serializer = TargetDowngeneSerializer(result_page, many=True)
+            pages = targetdown_query.count()/page_size if \
+                isinstance(int, type(targetdown_query.count()/page_size)) else \
+                    int(targetdown_query.count()/page_size)+1
+            return Response(
+                dict(
+                    data = targetdown_serializer.data,
+                    page = pages,
+                    count = targetdown_query.count()
+                ),
+                status=status.HTTP_200_OK
+            )
+        except Exception as error:
+            return Response({"detail":str(error)}, status=status.HTTP_400_BAD_REQUEST)
+
+class GetDowngeneDescription(APIView):
+    """
+    Api for get Premi Rna information
+    Query params:
+        - gene_id=BnaUnng04540D
+
+        test1 : ?gene_id=BnaUnng04540D
+    """
+    permission_classes = (permissions.AllowAny,)
+    parser_classes = (JSONParser,)
+    authentication_classes = (
+        CsrfExemptSessionAuthentication,
+        authentication.SessionAuthentication,
+        authentication.BasicAuthentication
+    )
+
+    def get(self,request) -> Response:
+        """no docstring"""
+        try:
+            gene_id = request.GET.get('gene_id', None)
+            assert gene_id, 'gene_id key not found'
+            query = Q(gene_id = gene_id)
+            downgene_query = DowngeneDescription.objects.filter(query).order_by('id')
+            downgene_serializer = DowngeneDescriptionSerializer(downgene_query, many=True)
+            return Response(
+                dict(
+                    data = downgene_serializer.data,
+                    count = downgene_query.count()
                 ),
                 status=status.HTTP_200_OK
             )

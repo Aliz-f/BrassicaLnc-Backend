@@ -4,7 +4,8 @@ from .views import (GetTranscripts, GetEachTranscript,
     GetChemicalFpkm, GetAbioticFpkm, GetGeneticsFpkm,
     GetDevelopmentalFpkm, GetBioticFpkm, GetTransposon,
     GetTransposonIds, GetSmallRnaTarget, GetSmallRnaTargetIds,
-    GetPremiRna, GetPremiRnaIds, GetEtms
+    GetPremiRna, GetPremiRnaIds, GetEtms, GetTargetDowngene,
+    GetDowngeneDescription
 )
 
 urlpatterns = [
@@ -30,5 +31,10 @@ urlpatterns = [
     path("premi_rna/ids/", GetPremiRnaIds.as_view(),name="premi_rna_ids"),
     #etms
     path("etms/", GetEtms.as_view(),name="etms"),
+    #targetDown
+    path("target/down/", GetTargetDowngene.as_view(),name="target_down"),
+    path("target/down/des/", GetDowngeneDescription.as_view(),name="target_down_description"),
+
+
 
 ]
