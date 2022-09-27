@@ -1,0 +1,562 @@
+[
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 1,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0003900",
+            "mirna_id": "bna-miR6029",
+            "expectation": "2.5",
+            "lncrna_start": "376",
+            "lncrna_end": "396",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "AAACCUGAAAUUACAACUUCA",
+            "mirna_aligned_fragment": "UGGGGUUGUGAUUUCAGGCUU"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 2,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006800",
+            "mirna_id": "bna-miR156d",
+            "expectation": "2",
+            "lncrna_start": "2054",
+            "lncrna_end": "2073",
+            "mirna_start": "1",
+            "mirna_end": "20",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUUUUCACUCUCUUUUGUCA",
+            "mirna_aligned_fragment": "UGACAGAAGAGAGUGAGCAC"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 3,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006800",
+            "mirna_id": "bna-miR156e",
+            "expectation": "2",
+            "lncrna_start": "2054",
+            "lncrna_end": "2073",
+            "mirna_start": "1",
+            "mirna_end": "20",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUUUUCACUCUCUUUUGUCA",
+            "mirna_aligned_fragment": "UGACAGAAGAGAGUGAGCAC"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 4,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006800",
+            "mirna_id": "bna-miR156a",
+            "expectation": "2",
+            "lncrna_start": "2053",
+            "lncrna_end": "2073",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUUUUUCACUCUCUUUUGUCA",
+            "mirna_aligned_fragment": "UGACAGAAGAGAGUGAGCACA"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 5,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006800",
+            "mirna_id": "bna-miR156f",
+            "expectation": "2",
+            "lncrna_start": "2054",
+            "lncrna_end": "2073",
+            "mirna_start": "1",
+            "mirna_end": "20",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUUUUCACUCUCUUUUGUCA",
+            "mirna_aligned_fragment": "UGACAGAAGAGAGUGAGCAC"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 6,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006900",
+            "mirna_id": "bna-miR156d",
+            "expectation": "2",
+            "lncrna_start": "1034",
+            "lncrna_end": "1053",
+            "mirna_start": "1",
+            "mirna_end": "20",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUUUUCACUCUCUUUUGUCA",
+            "mirna_aligned_fragment": "UGACAGAAGAGAGUGAGCAC"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 7,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006900",
+            "mirna_id": "bna-miR156e",
+            "expectation": "2",
+            "lncrna_start": "1034",
+            "lncrna_end": "1053",
+            "mirna_start": "1",
+            "mirna_end": "20",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUUUUCACUCUCUUUUGUCA",
+            "mirna_aligned_fragment": "UGACAGAAGAGAGUGAGCAC"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 8,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006900",
+            "mirna_id": "bna-miR156a",
+            "expectation": "2",
+            "lncrna_start": "1033",
+            "lncrna_end": "1053",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUUUUUCACUCUCUUUUGUCA",
+            "mirna_aligned_fragment": "UGACAGAAGAGAGUGAGCACA"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 9,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006900",
+            "mirna_id": "bna-miR156f",
+            "expectation": "2",
+            "lncrna_start": "1034",
+            "lncrna_end": "1053",
+            "mirna_start": "1",
+            "mirna_end": "20",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUUUUCACUCUCUUUUGUCA",
+            "mirna_aligned_fragment": "UGACAGAAGAGAGUGAGCAC"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 10,
+        "fields": {
+            "lncrna_id": "BnaA02LNG0001200",
+            "mirna_id": "bna-miR6031",
+            "expectation": "3",
+            "lncrna_start": "43",
+            "lncrna_end": "66",
+            "mirna_start": "1",
+            "mirna_end": "24",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "GCUUCAACCCGCUCCGAAUCUCAU",
+            "mirna_aligned_fragment": "AAGAGGUUCGGAGCGGUUUGAAGC"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 11,
+        "fields": {
+            "lncrna_id": "BnaA05LNG0003600",
+            "mirna_id": "bna-miR6031",
+            "expectation": "2.5",
+            "lncrna_start": "1444",
+            "lncrna_end": "1467",
+            "mirna_start": "1",
+            "mirna_end": "24",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "GCUUCAAACCGUUCUAAACCUCUU",
+            "mirna_aligned_fragment": "AAGAGGUUCGGAGCGGUUUGAAGC"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 12,
+        "fields": {
+            "lncrna_id": "BnaA07LNG0000100",
+            "mirna_id": "bna-miR6030",
+            "expectation": "3",
+            "lncrna_start": "2387",
+            "lncrna_end": "2408",
+            "mirna_start": "1",
+            "mirna_end": "22",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUUUCUAUAUUGUGUGGGUGGA",
+            "mirna_aligned_fragment": "UCCACCCAUACCAUACAGACCC"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 13,
+        "fields": {
+            "lncrna_id": "BnaA07LNG0002300",
+            "mirna_id": "bna-miR156d",
+            "expectation": "3",
+            "lncrna_start": "466",
+            "lncrna_end": "485",
+            "mirna_start": "1",
+            "mirna_end": "20",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "GUGUUAAUUUUCUUUUGUCA",
+            "mirna_aligned_fragment": "UGACAGAAGAGAGUGAGCAC"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 14,
+        "fields": {
+            "lncrna_id": "BnaA07LNG0002300",
+            "mirna_id": "bna-miR156e",
+            "expectation": "3",
+            "lncrna_start": "466",
+            "lncrna_end": "485",
+            "mirna_start": "1",
+            "mirna_end": "20",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "GUGUUAAUUUUCUUUUGUCA",
+            "mirna_aligned_fragment": "UGACAGAAGAGAGUGAGCAC"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 15,
+        "fields": {
+            "lncrna_id": "BnaA07LNG0002300",
+            "mirna_id": "bna-miR156a",
+            "expectation": "3",
+            "lncrna_start": "465",
+            "lncrna_end": "485",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "GGUGUUAAUUUUCUUUUGUCA",
+            "mirna_aligned_fragment": "UGACAGAAGAGAGUGAGCACA"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 16,
+        "fields": {
+            "lncrna_id": "BnaA07LNG0002300",
+            "mirna_id": "bna-miR156f",
+            "expectation": "3",
+            "lncrna_start": "466",
+            "lncrna_end": "485",
+            "mirna_start": "1",
+            "mirna_end": "20",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "GUGUUAAUUUUCUUUUGUCA",
+            "mirna_aligned_fragment": "UGACAGAAGAGAGUGAGCAC"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 17,
+        "fields": {
+            "lncrna_id": "BnaA07LNG0003500",
+            "mirna_id": "bna-miR6035",
+            "expectation": "3",
+            "lncrna_start": "1329",
+            "lncrna_end": "1349",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UGGAUUUCGUUUUCUACUUCG",
+            "mirna_aligned_fragment": "UGGAGUAGAAAAUGCAGUCGU"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 18,
+        "fields": {
+            "lncrna_id": "BnaA08LNG0003600",
+            "mirna_id": "bna-miR6034",
+            "expectation": "3",
+            "lncrna_start": "133",
+            "lncrna_end": "153",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "GCCAAAUAUAUAUAUAUUAGA",
+            "mirna_aligned_fragment": "UCUGAUGUAUAUAGCUUUGGG"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 19,
+        "fields": {
+            "lncrna_id": "BnaA09LNG0008000",
+            "mirna_id": "bna-miR6033",
+            "expectation": "3",
+            "lncrna_start": "96",
+            "lncrna_end": "116",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUUCCUCUUCUAUCUGGUUCU",
+            "mirna_aligned_fragment": "UGAACCAGAUAGAGUGGGACU"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 20,
+        "fields": {
+            "lncrna_id": "BnaA10LNG0003100",
+            "mirna_id": "bna-miR6035",
+            "expectation": "2",
+            "lncrna_start": "1129",
+            "lncrna_end": "1149",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "AUUACUCCAUUUUCUACUCCA",
+            "mirna_aligned_fragment": "UGGAGUAGAAAAUGCAGUCGU"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 21,
+        "fields": {
+            "lncrna_id": "BnaC02LNG0002000",
+            "mirna_id": "bna-miR6034",
+            "expectation": "3",
+            "lncrna_start": "1641",
+            "lncrna_end": "1661",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "CCUAUAUUUAUAUACAUCAGA",
+            "mirna_aligned_fragment": "UCUGAUGUAUAUAGCUUUGGG"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 22,
+        "fields": {
+            "lncrna_id": "BnaC02LNG0002000",
+            "mirna_id": "bna-miR6034",
+            "expectation": "3",
+            "lncrna_start": "2397",
+            "lncrna_end": "2417",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "CCUAUAUUUAUAUACAUCAGA",
+            "mirna_aligned_fragment": "UCUGAUGUAUAUAGCUUUGGG"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 23,
+        "fields": {
+            "lncrna_id": "BnaC04LNG0006600",
+            "mirna_id": "bna-miR824",
+            "expectation": "2.5",
+            "lncrna_start": "1150",
+            "lncrna_end": "1170",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUCUUUCUUACAAAUGGUUUU",
+            "mirna_aligned_fragment": "UAGACCAUUUGUGAGAAGGGA"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 24,
+        "fields": {
+            "lncrna_id": "BnaC04LNG0007700",
+            "mirna_id": "bna-miR172b",
+            "expectation": "2.5",
+            "lncrna_start": "573",
+            "lncrna_end": "593",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "GAGCGCCAUUAUCGAGAUUCC",
+            "mirna_aligned_fragment": "GGAAUCUUGAUGAUGCUGCAU"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 25,
+        "fields": {
+            "lncrna_id": "BnaC04LNG0007700",
+            "mirna_id": "bna-miR172c",
+            "expectation": "2.5",
+            "lncrna_start": "573",
+            "lncrna_end": "593",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "GAGCGCCAUUAUCGAGAUUCC",
+            "mirna_aligned_fragment": "GGAAUCUUGAUGAUGCUGCAU"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 26,
+        "fields": {
+            "lncrna_id": "BnaC05LNG0001300",
+            "mirna_id": "bna-miR6035",
+            "expectation": "3",
+            "lncrna_start": "1131",
+            "lncrna_end": "1151",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UGGAUUUCGUUUUCUACUUCG",
+            "mirna_aligned_fragment": "UGGAGUAGAAAAUGCAGUCGU"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 27,
+        "fields": {
+            "lncrna_id": "BnaC05LNG0001900",
+            "mirna_id": "bna-miR172a",
+            "expectation": "2",
+            "lncrna_start": "155",
+            "lncrna_end": "175",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUGCUUCAUCAUCAAGAUUCU",
+            "mirna_aligned_fragment": "AGAAUCUUGAUGAUGCUGCAU"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 28,
+        "fields": {
+            "lncrna_id": "BnaC05LNG0001900",
+            "mirna_id": "bna-miR172d",
+            "expectation": "2",
+            "lncrna_start": "155",
+            "lncrna_end": "175",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUGCUUCAUCAUCAAGAUUCU",
+            "mirna_aligned_fragment": "AGAAUCUUGAUGAUGCUGCAG"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 29,
+        "fields": {
+            "lncrna_id": "BnaC05LNG0001900",
+            "mirna_id": "bna-miR172b",
+            "expectation": "2.5",
+            "lncrna_start": "155",
+            "lncrna_end": "175",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUGCUUCAUCAUCAAGAUUCU",
+            "mirna_aligned_fragment": "GGAAUCUUGAUGAUGCUGCAU"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 30,
+        "fields": {
+            "lncrna_id": "BnaC05LNG0001900",
+            "mirna_id": "bna-miR172c",
+            "expectation": "2.5",
+            "lncrna_start": "155",
+            "lncrna_end": "175",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUGCUUCAUCAUCAAGAUUCU",
+            "mirna_aligned_fragment": "GGAAUCUUGAUGAUGCUGCAU"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 31,
+        "fields": {
+            "lncrna_id": "BnaC05LNG0007500",
+            "mirna_id": "bna-miR824",
+            "expectation": "3",
+            "lncrna_start": "320",
+            "lncrna_end": "340",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UUUCUUCUUGCAAAUGGUUUC",
+            "mirna_aligned_fragment": "UAGACCAUUUGUGAGAAGGGA"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 32,
+        "fields": {
+            "lncrna_id": "BnaC06LNG0005000",
+            "mirna_id": "bna-miR395f",
+            "expectation": "2",
+            "lncrna_start": "252",
+            "lncrna_end": "272",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UCGACUUCCCAAACACUUCAG",
+            "mirna_aligned_fragment": "CUGAAGUGUUUGGGGGGACUC"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 33,
+        "fields": {
+            "lncrna_id": "BnaC06LNG0005000",
+            "mirna_id": "bna-miR395d",
+            "expectation": "2",
+            "lncrna_start": "252",
+            "lncrna_end": "272",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UCGACUUCCCAAACACUUCAG",
+            "mirna_aligned_fragment": "CUGAAGUGUUUGGGGGGACUC"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 34,
+        "fields": {
+            "lncrna_id": "BnaC06LNG0005000",
+            "mirna_id": "bna-miR395e",
+            "expectation": "2",
+            "lncrna_start": "252",
+            "lncrna_end": "272",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "UCGACUUCCCAAACACUUCAG",
+            "mirna_aligned_fragment": "CUGAAGUGUUUGGGGGGACUC"
+        }
+    },
+    {
+        "model": "lncRNA.smallrnatarget",
+        "pk": 35,
+        "fields": {
+            "lncrna_id": "BnaC08LNG0003800",
+            "mirna_id": "bna-miR6031",
+            "expectation": "3",
+            "lncrna_start": "734",
+            "lncrna_end": "757",
+            "mirna_start": "1",
+            "mirna_end": "24",
+            "inhibition": "Cleavage",
+            "lncrna_aligned_fragment": "GCUACAAAUCGCUUCAAACUUCUU",
+            "mirna_aligned_fragment": "AAGAGGUUCGGAGCGGUUUGAAGC"
+        }
+    }
+]

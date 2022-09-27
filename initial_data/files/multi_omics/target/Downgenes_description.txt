@@ -1,0 +1,1104 @@
+GeneID	Chromosome	Start	Stop	Strand	Description
+BnaA01g01720D	chrA01	905678	905810	-	--
+BnaA01g05650D	chrA01	2632908	2632988	-	--
+BnaA01g08740D	chrA01	4211515	4211583	+	--
+BnaA01g11750D	chrA01	5860946	5861299	+	uncharacterized protein LOC106347887
+BnaA01g11790D	chrA01	5885702	5888399	+	calcium-dependent protein kinase 15
+BnaA01g11860D	chrA01	5926067	5927360	-	uncharacterized protein BNAA01G11860D
+BnaA01g13150D	chrA01	6598640	6598753	-	--
+BnaA01g14930D	chrA01	7519034	7519774	-	--
+BnaA01g15590D	chrA01	7983791	7986626	+	uncharacterized protein At4g26450-like
+BnaA01g15650D	chrA01	8021034	8024079	-	LRR receptor-like serine/threonine-protein kinase
+BnaA01g15670D	chrA01	8035832	8037745	-	protein transport protein sft2
+BnaA01g15690D	chrA01	8046887	8049252	-	calcineurin B-like protein 3 isoform X1
+BnaA01g16920D	chrA01	8840780	8840956	-	--
+BnaA01g16930D	chrA01	8844662	8844848	-	--
+BnaA01g18180D	chrA01	9699630	9701519	-	shikimate O-hydroxycinnamoyltransferase-like
+BnaA01g18190D	chrA01	9708878	9711728	-	--
+BnaA01g18220D	chrA01	9771034	9771204	-	nudix hydrolase 7-like
+BnaA01g18240D	chrA01	9774125	9776201	+	--
+BnaA01g18830D	chrA01	10314795	10315137	-	--
+BnaA01g19070D	chrA01	10556411	10556789	+	--
+BnaA01g20870D	chrA01	12766372	12766539	+	--
+BnaA01g20910D	chrA01	12824706	12825152	+	--
+BnaA01g22470D	chrA01	14837660	14838671	+	--
+BnaA01g22530D	chrA01	14855033	14855137	+	--
+BnaA01g23260D	chrA01	15653239	15653685	-	--
+BnaA01g23310D	chrA01	15676533	15677428	+	uncharacterized protein LOC106451496
+BnaA01g24170D	chrA01	16595879	16595992	-	--
+BnaA01g24930D	chrA01	17368347	17368688	-	septum-promoting GTP-binding protein 1-like
+BnaA01g24960D	chrA01	17434454	17434606	+	zinc finger A20 and AN1 domain-containing stress-associated protein 7-like
+BnaA01g25030D	chrA01	17510362	17511783	+	uncharacterized protein LOC106454948 isoform X2
+BnaA01g25040D	chrA01	17512205	17512285	+	--
+BnaA01g25080D	chrA01	17516658	17518363	-	guanine nucleotide-binding protein subunit gamma 2 isoform X2
+BnaA01g25160D	chrA01	17581724	17581931	-	uncharacterized protein LOC106434110 isoform X1
+BnaA01g26110D	chrA01	18196752	18198436	+	transcription factor bHLH113 isoform X1
+BnaA01g26150D	chrA01	18228542	18228628	-	probable cysteine protease RDL2
+BnaA01g27960D	chrA01	19489799	19490451	+	--
+BnaA01g27980D	chrA01	19500639	19509589	-	putative F-box/kelch-repeat protein At3g17570
+BnaA01g28730D	chrA01	19959861	19960176	+	--
+BnaA01g29330D	chrA01	20279716	20279908	-	--
+BnaA01g29340D	chrA01	20280130	20280496	-	--
+BnaA01g29540D	chrA01	20456788	20459260	+	dormancy-associated protein homolog 4-like
+BnaA01g29620D	chrA01	20484775	20484861	+	uncharacterized protein LOC106348669
+BnaA01g29640D	chrA01	20488989	20489379	+	uncharacterized protein LOC106375105
+BnaA01g29670D	chrA01	20499846	20500037	+	--
+BnaA01g31780D	chrA01	21526215	21526358	+	lysM domain receptor-like kinase 3
+BnaA01g32320D	chrA01	21770966	21772613	-	ubiquitin-conjugating enzyme E2 11
+BnaA01g32730D	chrA01	22119702	22120505	+	uncharacterized protein BNAA01G32730D
+BnaA01g33180D	chrA01	22548001	22548187	-	--
+BnaA01g35610D	chrA01_random	831787	832189	-	--
+BnaA01g35620D	chrA01_random	845031	845210	-	--
+BnaA01g35630D	chrA01_random	850538	851896	+	camelliol C synthase-like isoform X2
+BnaA01g35690D	chrA01_random	908547	908968	-	"uncharacterized protein At3g60930
+BnaA01g35700D	chrA01_random	909113	909175	-	--
+BnaA02g08020D	chrA02	3795347	3795601	-	uncharacterized protein LOC106387804
+BnaA02g08310D	chrA02	3959249	3959611	+	macrophage migration inhibitory factor homolog
+BnaA02g10150D	chrA02	5145549	5146892	-	growth-regulating factor 7
+BnaA02g12490D	chrA02	6697226	6699078	+	protein ACCELERATED CELL DEATH 6-like
+BnaA02g12500D	chrA02	6699159	6699203	+	--
+BnaA02g12620D	chrA02	6781323	6787042	+	LEAF RUST 10 DISEASE-RESISTANCE LOCUS RECEPTOR-LIKE PROTEIN KINASE-like 1.3 isoform X6
+BnaA02g14330D	chrA02	8088022	8089554	+	expansin-A1-like
+BnaA02g14340D	chrA02	8089629	8091374	+	expansin-A1
+BnaA02g14380D	chrA02	8098694	8101507	-	--
+BnaA02g14420D	chrA02	8139643	8140290	+	CLAVATA3/ESR (CLE)-related protein 45-like
+BnaA02g15590D	chrA02	9014642	9015164	+	EPIDERMAL PATTERNING FACTOR-like protein 7
+BnaA02g16270D	chrA02	9700806	9700960	-	--
+BnaA02g17780D	chrA02	10691412	10692494	-	sm-like protein LSM3B
+BnaA02g17800D	chrA02	10694726	10695252	+	probable methyltransferase PMT24
+BnaA02g19280D	chrA02	11983344	11984222	-	putative F-box/FBD/LRR-repeat protein At1g22000
+BnaA02g19380D	chrA02	12036731	12036991	+	"pentatricopeptide repeat-containing protein At1g80880
+BnaA02g19430D	chrA02	12056603	12057215	-	uncharacterized protein At4g04775-like
+BnaA02g20150D	chrA02	12465215	12465292	+	--
+BnaA02g20250D	chrA02	12526869	12527916	+	uncharacterized protein LOC106423140 isoform X1
+BnaA02g20290D	chrA02	12553634	12553827	-	--
+BnaA02g22510D	chrA02	15044968	15045422	-	--
+BnaA02g22740D	chrA02	15276624	15276671	-	--
+BnaA02g26720D	chrA02	19731587	19731619	+	--
+BnaA02g26730D	chrA02	19734262	19740658	-	DNA polymerase alpha catalytic subunit-like
+BnaA02g28210D	chrA02	20791189	20791794	-	--
+BnaA02g28480D	chrA02	20962945	20963093	-	--
+BnaA02g28560D	chrA02	21014057	21014331	-	uncharacterized protein BNAC02G36620D
+BnaA02g28630D	chrA02	21044199	21044464	-	ATPase family AAA domain-containing protein FIGL1-like
+BnaA02g31990D	chrA02	23043244	23043972	-	cytochrome b-c1 complex subunit 7-2
+BnaA02g32680D	chrA02	23481566	23481803	-	--
+BnaA02g33950D	chrA02	24289058	24289347	-	--
+BnaA02g35790D	chrA02_random	531634	531918	+	uncharacterized protein LOC106428518
+BnaA02g35800D	chrA02_random	535120	535295	-	--
+BnaA03g07270D	chrA03	3229456	3229581	-	--
+BnaA03g07600D	chrA03	3382373	3383669	+	uncharacterized protein LOC106434323
+BnaA03g11020D	chrA03	4963319	4963532	+	uncharacterized protein LOC111198015 isoform X2
+BnaA03g11220D	chrA03	5039412	5040198	-	uncharacterized protein LOC111212706
+BnaA03g11380D	chrA03	5113615	5113875	-	--
+BnaA03g11410D	chrA03	5122160	5122912	-	putative lipid-transfer protein DIR1
+BnaA03g11460D	chrA03	5146737	5147060	+	probable long-chain-alcohol O-fatty-acyltransferase 4
+BnaA03g11530D	chrA03	5166096	5166311	-	--
+BnaA03g11560D	chrA03	5174012	5175398	-	--
+BnaA03g11740D	chrA03	5286027	5286307	+	--
+BnaA03g12060D	chrA03	5458276	5459292	+	UDP-glycosyltransferase 79B9-like
+BnaA03g12070D	chrA03	5461429	5461950	-	B3 domain-containing transcription factor NGA4-like
+BnaA03g12170D	chrA03	5490336	5490596	-	auxin-responsive protein SAUR32-like
+BnaA03g13940D	chrA03	6387733	6388042	+	--
+BnaA03g16840D	chrA03	7880285	7880377	-	--
+BnaA03g16850D	chrA03	7880453	7880500	-	--
+BnaA03g16890D	chrA03	7921051	7922195	-	zinc finger protein 593 homolog
+BnaA03g19430D	chrA03	9201431	9201954	-	uncharacterized protein BNAC03G23310D
+BnaA03g20890D	chrA03	9883138	9883338	+	"chloroplastic group IIA intron splicing facilitator CRS1
+BnaA03g20970D	chrA03	9940749	9940817	-	--
+BnaA03g20980D	chrA03	9941100	9942017	-	protein transport protein Sec61 subunit beta
+BnaA03g20990D	chrA03	9942364	9942441	+	--
+BnaA03g21150D	chrA03	10021766	10021904	-	--
+BnaA03g21990D	chrA03	10406039	10407383	-	tropinone reductase homolog At2g29320 isoform X1
+BnaA03g22220D	chrA03	10542864	10542896	+	--
+BnaA03g23430D	chrA03	11212605	11215676	-	elongator complex protein 3
+BnaA03g24200D	chrA03	11633517	11633927	-	S-protein homolog 9-like
+BnaA03g24260D	chrA03	11665368	11666548	+	phytolongin Phyl1.1-like
+BnaA03g24280D	chrA03	11671263	11671856	+	22.0 kDa heat shock protein
+BnaA03g24320D	chrA03	11688235	11689329	+	uncharacterized protein LOC106436440 isoform X1
+BnaA03g24370D	chrA03	11714083	11722792	-	probable aquaporin NIP5-1
+BnaA03g26220D	chrA03	12840782	12841536	+	"protein SENESCENCE-ASSOCIATED GENE 21
+BnaA03g26230D	chrA03	12846778	12847660	-	uncharacterized protein BNAC03G30980D
+BnaA03g26420D	chrA03	12931095	12933425	+	"pentatricopeptide repeat-containing protein At4g01990
+BnaA03g27280D	chrA03	13470208	13471510	-	uncharacterized protein LOC106438874
+BnaA03g29590D	chrA03	14413725	14415236	-	--
+BnaA03g36100D	chrA03	17650521	17651417	+	"ATP synthase subunit epsilon
+BnaA03g36280D	chrA03	17733036	17733554	-	--
+BnaA03g38060D	chrA03	18919595	18920796	+	glycine-rich protein 3 short isoform
+BnaA03g38080D	chrA03	18927012	18927859	-	"protein PROTON GRADIENT REGULATION 5
+BnaA03g38180D	chrA03	18972041	18974046	-	xyloglucan endotransglucosylase/hydrolase
+BnaA03g38680D	chrA03	19222585	19224901	+	receptor like protein 30-like
+BnaA03g38710D	chrA03	19233512	19233885	+	--
+BnaA03g38830D	chrA03	19300078	19300517	+	nucleoside diphosphate kinase 1-like
+BnaA03g40050D	chrA03	20004797	20007376	+	probable leucine-rich repeat receptor-like protein kinase At1g35710
+BnaA03g40400D	chrA03	20196757	20198006	+	probable transcription factor At5g61620
+BnaA03g41110D	chrA03	20616505	20616564	+	--
+BnaA03g41990D	chrA03	21090959	21091006	-	--
+BnaA03g42000D	chrA03	21091132	21091848	-	heavy metal-associated isoprenylated plant protein 19-like
+BnaA03g44760D	chrA03	22749531	22749714	-	--
+BnaA03g44800D	chrA03	22768352	22768797	-	splicing factor 3B subunit 2
+BnaA03g50260D	chrA03	26092103	26092138	-	--
+BnaA03g50440D	chrA03	26175172	26175246	+	--
+BnaA03g51250D	chrA03	26601992	26602233	-	chloroplast envelope membrane protein-like
+BnaA03g51980D	chrA03	27071554	27072777	+	uncharacterized protein BNAA03G51980D isoform X1
+BnaA03g52140D	chrA03	27155914	27159770	-	potassium channel KAT3-like
+BnaA03g52300D	chrA03	27266204	27266943	+	--
+BnaA03g52980D	chrA03	27686593	27686907	+	--
+BnaA03g53000D	chrA03	27696491	27698098	+	NADH dehydrogenase [ubiquinone] 1 beta subcomplex subunit 9
+BnaA03g53650D	chrA03	28235599	28236880	-	--
+BnaA03g53660D	chrA03	28237000	28238116	-	uncharacterized protein LOC106361522
+BnaA03g54020D	chrA03	28505103	28505141	+	--
+BnaA03g54630D	chrA03	29506523	29506795	+	--
+BnaA03g56210D	chrA03_random	605921	606167	-	1-aminocyclopropane-1-carboxylate oxidase homolog 12-like
+BnaA03g58550D	chrA03_random	1735920	1736883	-	uncharacterized protein BNAA03G58550D
+BnaA03g59450D	chrA03_random	3199545	3199737	+	--
+BnaA03g59640D	chrA03_random	3621494	3623465	+	"DExH-box ATP-dependent RNA helicase DExH4
+BnaA03g60070D	chrA03_random	4462682	4464721	+	--
+BnaA03g60120D	chrA03_random	4515292	4515456	-	--
+BnaA04g02260D	chrA04	1462058	1462243	-	arabinogalactan peptide 23
+BnaA04g03170D	chrA04	2074926	2075074	+	--
+BnaA04g06010D	chrA04	4616780	4617248	-	--
+BnaA04g06030D	chrA04	4625540	4625860	-	"uncharacterized protein At4g14450
+BnaA04g06310D	chrA04	4895248	4895662	+	--
+BnaA04g06430D	chrA04	5057272	5057325	-	--
+BnaA04g06470D	chrA04	5080829	5080864	+	--
+BnaA04g06730D	chrA04	5359488	5359538	+	--
+BnaA04g07100D	chrA04	5797549	5797986	+	tRNA(His) guanylyltransferase 1-like
+BnaA04g07150D	chrA04	5855247	5855312	-	--
+BnaA04g07860D	chrA04	6884015	6884167	-	uncharacterized protein At4g04775-like
+BnaA04g09210D	chrA04	8261813	8262055	-	--
+BnaA04g09280D	chrA04	8323824	8324010	+	--
+BnaA04g11620D	chrA04	10038398	10038496	-	--
+BnaA04g18410D	chrA04	14724400	14724453	+	--
+BnaA04g19680D	chrA04	15409561	15410226	+	--
+BnaA04g19730D	chrA04	15422584	15422803	+	--
+BnaA04g20110D	chrA04	15574024	15574121	+	--
+BnaA04g20260D	chrA04	15633346	15633872	-	uncharacterized protein BNAA04G20260D
+BnaA04g20270D	chrA04	15635871	15636371	+	protein TIFY 5B-like
+BnaA04g20480D	chrA04	15774149	15775190	-	uncharacterized protein LOC106441197 isoform X3
+BnaA04g24940D	chrA04	18125643	18126141	-	--
+BnaA04g27410D	chrA04_random	69599	71139	+	uncharacterized protein LOC111215149
+BnaA04g27430D	chrA04_random	90126	91183	-	auxin-responsive protein IAA30-like
+BnaA04g28090D	chrA04_random	632408	632601	-	--
+BnaA04g28210D	chrA04_random	708185	709404	+	uncharacterized protein LOC106373105
+BnaA05g00910D	chrA05	517604	519836	-	ycf3 gene product (chloroplast)
+BnaA05g01070D	chrA05	589053	590459	-	transcription factor bHLH70-like isoform X1
+BnaA05g01850D	chrA05	1038258	1039117	+	ubiquinol-cytochrome c reductase complex 6.7 kDa protein
+BnaA05g04360D	chrA05	2353289	2353989	+	serine/threonine-protein kinase D6PKL1-like
+BnaA05g04400D	chrA05	2368473	2370144	+	"thylakoid lumenal 15 kDa protein 1
+BnaA05g04620D	chrA05	2460264	2460382	-	--
+BnaA05g04630D	chrA05	2465700	2467022	+	probable protein S-acyltransferase 22 isoform X2
+BnaA05g04670D	chrA05	2476363	2477889	+	tRNA 2'-phosphotransferase 1-like isoform X2
+BnaA05g04700D	chrA05	2485422	2486288	+	tRNA 2'-phosphotransferase 1-like
+BnaA05g04810D	chrA05	2530321	2531842	-	uncharacterized protein LOC106450901
+BnaA05g06390D	chrA05	3383150	3383726	+	uncharacterized protein LOC106453411
+BnaA05g06420D	chrA05	3451331	3452852	+	uncharacterized protein LOC106408669
+BnaA05g07680D	chrA05	4182164	4182713	+	uncharacterized protein LOC106453452
+BnaA05g07750D	chrA05	4202307	4203149	-	homeobox-leucine zipper protein ATHB-22
+BnaA05g07830D	chrA05	4262229	4263596	-	UPF0481 protein At3g47200
+BnaA05g08040D	chrA05	4419383	4420216	-	pentatricopeptide repeat-containing protein At2g36240-like
+BnaA05g08070D	chrA05	4423792	4424562	-	uncharacterized protein LOC106451130
+BnaA05g08330D	chrA05	4625813	4626316	+	--
+BnaA05g09320D	chrA05	5179073	5179961	+	uncharacterized protein LOC106450287
+BnaA05g09330D	chrA05	5180912	5184160	+	uncharacterized protein LOC106447492
+BnaA05g09360D	chrA05	5195103	5195312	-	agamous-like MADS-box protein AGL29
+BnaA05g09420D	chrA05	5206788	5207906	-	protein REDUCED WALL ACETYLATION 3 isoform X2
+BnaA05g09430D	chrA05	5207973	5209949	-	protein REDUCED WALL ACETYLATION 3
+BnaA05g09440D	chrA05	5210471	5212273	-	pentatricopeptide repeat-containing protein At2g34400-like
+BnaA05g09490D	chrA05	5227541	5227744	-	--
+BnaA05g09520D	chrA05	5257883	5258473	+	uncharacterized protein LOC106447505 isoform X2
+BnaA05g09570D	chrA05	5271037	5273645	-	protein transport protein Sec61 subunit alpha-like
+BnaA05g11280D	chrA05	6319256	6320200	-	uncharacterized protein BNAA05G11280D
+BnaA05g12260D	chrA05	7075564	7076071	-	--
+BnaA05g15390D	chrA05	9825223	9825661	-	--
+BnaA05g15930D	chrA05	10461889	10461939	-	--
+BnaA05g15970D	chrA05	10516865	10523185	+	--
+BnaA05g17890D	chrA05	12988246	12988509	-	uncharacterized protein LOC111212932
+BnaA05g19060D	chrA05	14405928	14406274	+	uncharacterized protein LOC106428820
+BnaA05g24390D	chrA05	18250437	18251319	-	ethylene-responsive transcription factor 4-like
+BnaA05g25950D	chrA05	19120640	19120910	-	high mobility group B protein 10-like
+BnaA05g26030D	chrA05	19167082	19167523	+	"chaperone protein dnaJ 11
+BnaA05g26040D	chrA05	19167670	19168025	+	"chaperone protein dnaJ 11
+BnaA05g26340D	chrA05	19316454	19316528	-	--
+BnaA05g33100D	chrA05	22536171	22536565	-	uncharacterized protein BNAA05G33100D
+BnaA05g35280D	chrA05_random	695434	696039	-	--
+BnaA05g35520D	chrA05_random	909271	909423	+	--
+BnaA05g35610D	chrA05_random	1063752	1065742	+	aspartic proteinase-like protein 2
+BnaA05g35720D	chrA05_random	1137847	1138399	-	--
+BnaA05g35840D	chrA05_random	1328218	1328368	+	--
+BnaA05g35850D	chrA05_random	1328443	1329060	+	putative F-box protein At1g46984
+BnaA05g35910D	chrA05_random	1392421	1392474	-	--
+BnaA05g35990D	chrA05_random	1447301	1448679	+	E3 ubiquitin-protein ligase RNF14 isoform X1
+BnaA06g01720D	chrA06	1021170	1021254	-	--
+BnaA06g01820D	chrA06	1070780	1071078	+	uncharacterized protein LOC111207073
+BnaA06g07280D	chrA06	3877982	3878176	+	golgin subfamily A member 6-like protein 22
+BnaA06g10070D	chrA06	5345548	5345772	-	uncharacterized protein LOC106380244
+BnaA06g12380D	chrA06	6432507	6432690	-	--
+BnaA06g14060D	chrA06	7547796	7548076	-	--
+BnaA06g14120D	chrA06	7617499	7617561	-	--
+BnaA06g14170D	chrA06	7651466	7651624	+	uncharacterized protein LOC106356452
+BnaA06g14650D	chrA06	7949865	7951432	+	"outer envelope pore protein 21A
+BnaA06g14660D	chrA06	7955864	7956556	+	RING-H2 finger protein ATL80-like
+BnaA06g14700D	chrA06	7975068	7976704	+	cysteine protease XCP2-like
+BnaA06g14830D	chrA06	8097607	8098563	-	replication protein A 70 kDa DNA-binding subunit-like
+BnaA06g15120D	chrA06	8287175	8289821	-	TOM1-like protein 3
+BnaA06g15220D	chrA06	8333100	8334068	-	uncharacterized serine-rich protein C215.13
+BnaA06g15230D	chrA06	8341564	8341731	-	uncharacterized protein BNAC07G14460D
+BnaA06g15240D	chrA06	8343844	8344062	-	--
+BnaA06g15260D	chrA06	8371086	8371295	-	uncharacterized protein LOC111198867
+BnaA06g16020D	chrA06	8847969	8848622	+	FAS1 domain-containing protein SELMODRAFT_448915-like
+BnaA06g16030D	chrA06	8852911	8853774	+	uncharacterized protein LOC106399961
+BnaA06g16070D	chrA06	8882679	8885035	+	protein DEFECTIVE IN MERISTEM SILENCING 3-like
+BnaA06g18190D	chrA06	10418586	10419769	-	--
+BnaA06g18660D	chrA06	10948618	10948880	-	--
+BnaA06g18690D	chrA06	10973989	10974400	-	--
+BnaA06g19480D	chrA06	11895976	11896310	+	--
+BnaA06g20770D	chrA06	14313582	14314627	+	uncharacterized protein LOC111198639
+BnaA06g20890D	chrA06	14482927	14483037	+	uncharacterized protein LOC106428921
+BnaA06g21660D	chrA06	15098467	15103859	+	uncharacterized protein LOC106374057
+BnaA06g21780D	chrA06	15192771	15194069	-	protein ODORANT1-like
+BnaA06g21790D	chrA06	15210517	15211131	+	pectinesterase inhibitor 11-like
+BnaA06g21830D	chrA06	15255492	15256198	-	--
+BnaA06g22150D	chrA06	15477842	15477907	-	--
+BnaA06g22190D	chrA06	15493051	15493185	-	--
+BnaA06g22210D	chrA06	15518502	15518555	+	--
+BnaA06g25750D	chrA06	17813373	17813453	-	--
+BnaA06g26450D	chrA06	18191708	18191946	+	--
+BnaA06g27340D	chrA06	18761615	18761958	+	--
+BnaA06g27420D	chrA06	18819291	18819602	+	uncharacterized protein LOC106405544
+BnaA06g32770D	chrA06	21743796	21743933	-	--
+BnaA06g35440D	chrA06	23295433	23296673	+	"NADH dehydrogenase [ubiquinone] 1 beta subcomplex subunit 8
+BnaA06g36510D	chrA06	23910478	23910888	+	S-protein homolog 9-like
+BnaA06g38210D	chrA06_random	416556	416825	-	--
+BnaA06g38250D	chrA06_random	451688	452026	+	uncharacterized protein BNAA06G38250D
+BnaA06g38720D	chrA06_random	806326	808987	+	uncharacterized protein LOC106398718
+BnaA06g38740D	chrA06_random	830498	831217	+	uncharacterized protein LOC106347712
+BnaA06g39600D	chrA06_random	1636081	1636212	-	--
+BnaA06g39640D	chrA06_random	1655364	1655699	+	--
+BnaA07g01340D	chrA07	1078449	1078972	+	--
+BnaA07g01900D	chrA07	1589592	1589847	-	--
+BnaA07g02110D	chrA07	1788079	1788246	-	60S ribosomal protein L8-3-like
+BnaA07g02140D	chrA07	1805603	1805929	-	auxin-responsive protein SAUR50-like
+BnaA07g02750D	chrA07	2442788	2442892	-	--
+BnaA07g02770D	chrA07	2454258	2454467	+	uncharacterized protein LOC111214972
+BnaA07g02850D	chrA07	2494358	2494560	-	serine/threonine-protein kinase STY8-like
+BnaA07g03230D	chrA07	2864545	2864598	-	--
+BnaA07g03980D	chrA07	4042806	4045989	-	--
+BnaA07g04470D	chrA07	4825681	4826549	+	uncharacterized protein LOC111208819
+BnaA07g05120D	chrA07	5514611	5514792	-	--
+BnaA07g06280D	chrA07	6604767	6605683	+	transcription factor ORG3-like
+BnaA07g06470D	chrA07	6788781	6788966	+	--
+BnaA07g06480D	chrA07	6789043	6789222	+	--
+BnaA07g07860D	chrA07	8142235	8142476	+	--
+BnaA07g12850D	chrA07	11503894	11505524	-	"peptide chain release factor APG3
+BnaA07g14190D	chrA07	12582747	12584169	-	paired amphipathic helix protein Sin3-like 4 isoform X1
+BnaA07g15210D	chrA07	13231455	13231664	-	uncharacterized protein LOC106446221
+BnaA07g15240D	chrA07	13240424	13240805	+	probable protein S-acyltransferase 6
+BnaA07g19090D	chrA07	15402991	15403602	+	uncharacterized protein LOC111208767
+BnaA07g19800D	chrA07	15718863	15719707	-	beta-galactosidase 15-like
+BnaA07g21840D	chrA07	16855520	16855786	-	mitochondrial import inner membrane translocase subunit Tim13
+BnaA07g21880D	chrA07	16873455	16874849	+	"calcium uniporter protein 5
+BnaA07g21890D	chrA07	16875822	16876620	+	uncharacterized protein BNAA07G21890D
+BnaA07g21940D	chrA07	16894274	16898001	+	"3-oxoacyl-[acyl-carrier-protein] synthase II
+BnaA07g22010D	chrA07	16915646	16916937	+	two-component response regulator ARR15-like
+BnaA07g22420D	chrA07	17110155	17110214	-	--
+BnaA07g22460D	chrA07	17128800	17129635	-	uncharacterized protein LOC106430185
+BnaA07g22960D	chrA07	17376576	17378261	-	COPII coat assembly protein SEC16-like
+BnaA07g22970D	chrA07	17381306	17381653	-	uncharacterized protein LOC106442282
+BnaA07g22980D	chrA07	17389919	17393559	-	uncharacterized protein LOC111202918 isoform X1
+BnaA07g23080D	chrA07	17441522	17443325	+	40S ribosomal protein SA-like
+BnaA07g23130D	chrA07	17449672	17451326	-	uncharacterized protein LOC106357050
+BnaA07g23820D	chrA07	17838178	17838285	+	phenolic glucoside malonyltransferase 2-like
+BnaA07g23840D	chrA07	17841669	17842150	+	--
+BnaA07g24330D	chrA07	18206433	18207813	-	ninja-family protein AFP1-like
+BnaA07g24540D	chrA07	18353991	18354743	-	uncharacterized protein LOC106353846
+BnaA07g24610D	chrA07	18419773	18420143	+	zinc finger protein CONSTANS-LIKE 6-like
+BnaA07g25870D	chrA07	19114756	19116284	-	uncharacterized protein At1g66480-like isoform X1
+BnaA07g27080D	chrA07	19719634	19721400	+	putative two-component response regulator-like APRR6 isoform X1
+BnaA07g27110D	chrA07	19731454	19731882	-	uncharacterized protein BNAA07G27110D
+BnaA07g27700D	chrA07	20111461	20111511	-	--
+BnaA07g28150D	chrA07	20363206	20363550	+	putative defensin-like protein 66
+BnaA07g29360D	chrA07	21045015	21045253	+	--
+BnaA07g32900D	chrA07	22667616	22669219	+	uncharacterized protein LOC106421515 isoform X2
+BnaA07g32920D	chrA07	22678176	22678643	+	S-protein homolog 5-like
+BnaA07g33000D	chrA07	22714787	22714927	-	--
+BnaA07g34760D	chrA07	23562569	23563005	-	uncharacterized protein LOC111197889
+BnaA07g35660D	chrA07	23903556	23904676	+	auxin-responsive protein IAA15
+BnaA07g35720D	chrA07	23927326	23927515	-	probable 2-oxoglutarate-dependent dioxygenase AOP1
+BnaA07g35820D	chrA07	23971006	23971258	-	pre-mRNA-processing-splicing factor 8A-like
+BnaA07g36020D	chrA07_random	54813	58694	+	"ATP-dependent Clp protease proteolytic subunit-related protein 2
+BnaA07g37690D	chrA07_random	1238746	1238793	-	--
+BnaA07g38570D	chrA07_random	1708653	1709134	-	uncharacterized protein BNAA07G38570D
+BnaA07g38580D	chrA07_random	1710312	1710545	-	uncharacterized protein BNAC06G26240D
+BnaA07g38640D	chrA07_random	1761523	1762525	-	uncharacterized protein LOC106371743
+BnaA08g01040D	chrA08	745824	747879	+	"DNA-directed RNA polymerases II
+BnaA08g02710D	chrA08	2151400	2152142	+	CASP-like protein 5C3
+BnaA08g03270D	chrA08	2688194	2688592	-	pre-mRNA cleavage factor Im 25 kDa subunit 1
+BnaA08g03290D	chrA08	2699662	2701405	+	DNA-binding protein RHL1-like
+BnaA08g04390D	chrA08	3748847	3750558	+	--
+BnaA08g04790D	chrA08	4606100	4606309	-	--
+BnaA08g04830D	chrA08	4623348	4623422	+	--
+BnaA08g05180D	chrA08	5166625	5166735	+	--
+BnaA08g05480D	chrA08	5400599	5401089	-	--
+BnaA08g05790D	chrA08	5695796	5696022	-	--
+BnaA08g05800D	chrA08	5696084	5696418	-	--
+BnaA08g05990D	chrA08	5905460	5908579	+	oligopeptide transporter 3 isoform X2
+BnaA08g06850D	chrA08	6904547	6905049	+	--
+BnaA08g07770D	chrA08	7672296	7672793	-	--
+BnaA08g07810D	chrA08	7695395	7698103	+	--
+BnaA08g07820D	chrA08	7701491	7701894	-	--
+BnaA08g07890D	chrA08	7743800	7744017	+	--
+BnaA08g08700D	chrA08	8490219	8490542	-	--
+BnaA08g08830D	chrA08	8581541	8581675	-	uncharacterized protein LOC106372929
+BnaA08g09600D	chrA08	9154788	9154889	+	--
+BnaA08g09640D	chrA08	9173184	9173787	-	"glycine
+BnaA08g10210D	chrA08	9524815	9526195	+	alkaline ceramidase
+BnaA08g10340D	chrA08	9592999	9598239	-	oxysterol-binding protein-related protein 2A isoform X2
+BnaA08g10970D	chrA08	10111960	10112283	+	auxin-responsive protein SAUR50
+BnaA08g12230D	chrA08	10911550	10912032	+	--
+BnaA08g14280D	chrA08	12166935	12168209	-	small ubiquitin-related modifier 1
+BnaA08g14330D	chrA08	12181085	12182176	+	V-type proton ATPase subunit e2-like
+BnaA08g14340D	chrA08	12182709	12183441	+	uncharacterized protein LOC106435723
+BnaA08g14380D	chrA08	12219101	12219607	-	uncharacterized protein LOC106414731
+BnaA08g14460D	chrA08	12243523	12243865	-	regulatory protein NPR1-like
+BnaA08g15080D	chrA08	12609332	12612940	-	cation/H(+) antiporter 17-like
+BnaA08g17250D	chrA08	13757911	13758093	+	uncharacterized protein BNAA08G17250D
+BnaA08g22400D	chrA08	16295353	16296771	+	protein PHYTOCHROME KINASE SUBSTRATE 3
+BnaA08g22430D	chrA08	16304442	16304870	+	uncharacterized protein LOC106359297
+BnaA08g22450D	chrA08	16308334	16308759	+	uncharacterized protein LOC106359297
+BnaA09g00210D	chrA09	103927	104181	+	UDP-glycosyltransferase 72B1
+BnaA09g00240D	chrA09	113069	113574	-	--
+BnaA09g02560D	chrA09	1307902	1309529	-	vesicle transport v-SNARE 13
+BnaA09g02600D	chrA09	1327463	1327756	-	plant-specific TFIIB-related protein 2-like
+BnaA09g03450D	chrA09	1772293	1774326	-	GRF1-interacting factor 1-like isoform X1
+BnaA09g06430D	chrA09	3155943	3156050	-	--
+BnaA09g06940D	chrA09	3374999	3376196	-	uncharacterized protein LOC106371736
+BnaA09g07100D	chrA09	3464644	3465603	+	uncharacterized protein LOC106444831
+BnaA09g07110D	chrA09	3470112	3470333	-	uncharacterized protein LOC106444830
+BnaA09g12130D	chrA09	6366387	6367637	+	uncharacterized protein LOC111211862
+BnaA09g12690D	chrA09	6748989	6749198	+	--
+BnaA09g12720D	chrA09	6771804	6773687	+	uncharacterized protein BNAA09G12720D
+BnaA09g13930D	chrA09	7947084	7947241	-	--
+BnaA09g15630D	chrA09	9105649	9105865	-	--
+BnaA09g16520D	chrA09	9920216	9920614	-	ethylene-responsive transcription factor ERF096
+BnaA09g17190D	chrA09	10386325	10387569	+	putative F-box/kelch-repeat protein At4g39756
+BnaA09g18350D	chrA09	11428427	11428768	-	cysteine proteinase inhibitor 5-like
+BnaA09g18400D	chrA09	11446337	11447022	+	nuclear transcription factor Y subunit B-2-like
+BnaA09g18480D	chrA09	11473400	11473582	-	--
+BnaA09g18490D	chrA09	11483670	11484209	+	E3 ubiquitin-protein ligase RHA2B
+BnaA09g18540D	chrA09	11502847	11503493	-	uncharacterized protein BNAA09G18540D
+BnaA09g18910D	chrA09	11842073	11842470	-	--
+BnaA09g20520D	chrA09	13408535	13408947	-	"malonyl-CoA decarboxylase
+BnaA09g20590D	chrA09	13423686	13424064	-	--
+BnaA09g21020D	chrA09	13768806	13769176	-	--
+BnaA09g21140D	chrA09	13854110	13854393	+	--
+BnaA09g22220D	chrA09	14778604	14778831	-	--
+BnaA09g23570D	chrA09	16206148	16206465	-	--
+BnaA09g23610D	chrA09	16237095	16238506	+	uncharacterized protein BNAA09G23610D
+BnaA09g23950D	chrA09	16619823	16619927	-	--
+BnaA09g24120D	chrA09	16822168	16824457	+	"beta-1
+BnaA09g24130D	chrA09	16824687	16824932	-	uncharacterized protein LOC106402907
+BnaA09g25960D	chrA09	19118318	19119529	+	V-type proton ATPase subunit E2
+BnaA09g26380D	chrA09	19535019	19535846	-	uncharacterized protein LOC106362439
+BnaA09g27590D	chrA09	20715466	20715510	-	--
+BnaA09g29280D	chrA09	21921992	21922195	-	E3 ubiquitin-protein ligase SIRP1-like
+BnaA09g30690D	chrA09	22850424	22850537	+	UDP-glycosyltransferase 85A2 isoform X1
+BnaA09g32930D	chrA09	24356585	24356745	-	--
+BnaA09g33000D	chrA09	24396325	24396615	-	uncharacterized protein BNAC08G23800D
+BnaA09g33050D	chrA09	24412872	24414986	+	uncharacterized protein BNAA09G33050D
+BnaA09g33140D	chrA09	24464182	24465719	-	cytochrome b-c1 complex subunit 9-like
+BnaA09g33420D	chrA09	24639597	24639856	+	"carotene epsilon-monooxygenase
+BnaA09g35090D	chrA09	25612836	25613350	+	--
+BnaA09g35170D	chrA09	25652267	25652533	+	uncharacterized protein BNAUNNG03200D
+BnaA09g37120D	chrA09	26759164	26759271	+	--
+BnaA09g37150D	chrA09	26767246	26768280	+	--
+BnaA09g38140D	chrA09	27318092	27320341	+	guanosine nucleotide diphosphate dissociation inhibitor 2-like
+BnaA09g38220D	chrA09	27348641	27351786	+	methylenetetrahydrofolate reductase 1
+BnaA09g39500D	chrA09	28015923	28016255	+	uncharacterized protein BNAA09G39500D
+BnaA09g39550D	chrA09	28046919	28047733	-	uncharacterized protein LOC106368495
+BnaA09g42600D	chrA09	29659343	29659423	-	--
+BnaA09g43310D	chrA09	30037695	30037730	+	--
+BnaA09g44090D	chrA09	30338603	30339677	+	--
+BnaA09g44580D	chrA09	30622713	30622820	-	--
+BnaA09g45760D	chrA09	31229574	31230481	+	casparian strip membrane protein 6
+BnaA09g45860D	chrA09	31256552	31257010	+	uncharacterized protein LOC106369126
+BnaA09g46800D	chrA09	31686778	31688352	+	putative F-box protein At1g12855
+BnaA09g46920D	chrA09	31728305	31728632	+	"pentatricopeptide repeat-containing protein At1g12300
+BnaA09g46930D	chrA09	31728707	31728840	+	--
+BnaA09g46940D	chrA09	31728897	31729135	+	--
+BnaA09g47710D	chrA09	32119765	32119894	-	--
+BnaA09g49570D	chrA09	32951289	32951333	+	--
+BnaA09g49580D	chrA09	32952016	32952199	-	--
+BnaA09g49630D	chrA09	32979554	32980288	-	--
+BnaA09g51360D	chrA09	33760717	33763055	+	uncharacterized protein BNAA09G51360D isoform X1
+BnaA09g51380D	chrA09	33768452	33768732	+	--
+BnaA09g53690D	chrA09_random	1477115	1477239	+	--
+BnaA10g00020D	chrA10	26318	26980	-	"cytochrome c oxidase-assembly factor COX23
+BnaA10g00080D	chrA10	40132	40639	+	--
+BnaA10g00900D	chrA10	458484	458738	-	--
+BnaA10g02700D	chrA10	1416380	1417350	+	uncharacterized protein BNAA10G02700D
+BnaA10g02840D	chrA10	1474445	1474657	-	--
+BnaA10g04410D	chrA10	2314468	2314635	+	uncharacterized protein LOC106350570
+BnaA10g05690D	chrA10	3751252	3751308	+	--
+BnaA10g07080D	chrA10	5528559	5528972	+	G-type lectin S-receptor-like serine/threonine-protein kinase At1g11330 isoform X1
+BnaA10g07690D	chrA10	6165681	6165866	+	MADS-box protein AGL72-like isoform X4
+BnaA10g08250D	chrA10	7067289	7067631	-	--
+BnaA10g08270D	chrA10	7078764	7079438	-	uncharacterized protein LOC111201299 isoform X2
+BnaA10g09060D	chrA10	7994774	7995121	+	--
+BnaA10g12820D	chrA10	10451667	10452926	-	40S ribosomal protein S15a
+BnaA10g18800D	chrA10	13522106	13522849	-	uncharacterized protein LOC106424688
+BnaA10g18840D	chrA10	13552749	13553626	-	--
+BnaA10g28910D	chrA10_random	1413066	1413911	+	NDR1/HIN1-like protein 10
+BnaA10g28930D	chrA10_random	1460925	1461256	-	--
+BnaA10g30220D	chrA10_random	2113289	2113432	-	--
+BnaAnng01260D	chrAnn_random	774967	776336	-	phenylalanine N-monooxygenase-like isoform X2
+BnaAnng01270D	chrAnn_random	783723	787970	-	phenylalanine N-monooxygenase-like isoform X2
+BnaAnng01360D	chrAnn_random	818560	818799	+	non-classical arabinogalactan protein 30-like
+BnaAnng01390D	chrAnn_random	836165	842875	+	uncharacterized protein BNAANNG01390D isoform X2
+BnaAnng01450D	chrAnn_random	864669	864922	+	--
+BnaAnng01470D	chrAnn_random	865411	865828	+	--
+BnaAnng06070D	chrAnn_random	6156958	6157260	-	uncharacterized protein At5g08430-like
+BnaAnng07510D	chrAnn_random	7320082	7320408	+	protein YIPF5 homolog
+BnaAnng08640D	chrAnn_random	9114069	9114222	-	--
+BnaAnng08740D	chrAnn_random	9157662	9159546	+	uncharacterized protein BNAANNG08740D
+BnaAnng11190D	chrAnn_random	12196793	12197135	+	--
+BnaAnng11200D	chrAnn_random	12197220	12197354	+	--
+BnaAnng16040D	chrAnn_random	17033680	17033889	+	uncharacterized protein LOC106400254
+BnaAnng18680D	chrAnn_random	19935340	19937158	-	CLAVATA3/ESR (CLE)-related protein 25
+BnaAnng25170D	chrAnn_random	29213274	29213634	-	uncharacterized protein LOC106408627
+BnaAnng25180D	chrAnn_random	29215636	29217741	+	"2-Cys peroxiredoxin BAS1-like
+BnaAnng28720D	chrAnn_random	32904174	32904934	+	--
+BnaAnng30280D	chrAnn_random	34542357	34542584	-	ER membrane protein complex subunit 3
+BnaAnng30580D	chrAnn_random	34940984	34941190	+	--
+BnaAnng34900D	chrAnn_random	39722277	39722956	+	--
+BnaAnng38120D	chrAnn_random	43193436	43193741	+	cytochrome P450 86A1
+BnaAnng38150D	chrAnn_random	43203758	43204929	+	uncharacterized protein At5g65660
+BnaAnng38170D	chrAnn_random	43245311	43245742	+	60S ribosomal protein L23
+BnaAnng38180D	chrAnn_random	43252319	43252522	-	--
+BnaAnng38190D	chrAnn_random	43252580	43252807	-	syntaxin-112
+BnaAnng39320D	chrAnn_random	44759021	44760506	+	protein SULFUR DEFICIENCY-INDUCED 1
+BnaAnng40750D	chrAnn_random	46691776	46692076	-	--
+BnaAnng41860D	chrAnn_random	48447069	48447247	-	--
+BnaAnng41950D	chrAnn_random	48519738	48519830	+	--
+BnaC01g00850D	chrC01	355724	356759	-	--
+BnaC01g01190D	chrC01	518782	519598	+	"cytochrome c oxidase subunit 6a
+BnaC01g01910D	chrC01	974779	975884	-	methylesterase 9-like
+BnaC01g02030D	chrC01	1037143	1037570	-	--
+BnaC01g02820D	chrC01	1494574	1494706	-	--
+BnaC01g08390D	chrC01	4588281	4588467	+	--
+BnaC01g09130D	chrC01	5202888	5203463	-	F-box/kelch-repeat protein At5g39560-like
+BnaC01g09140D	chrC01	5219404	5219580	-	F-box/kelch-repeat protein At5g39560-like
+BnaC01g10690D	chrC01	6435107	6435456	+	--
+BnaC01g12490D	chrC01	7987919	7989013	+	uncharacterized protein BNAC01G12490D
+BnaC01g14470D	chrC01	9700823	9711010	-	"separase-like
+BnaC01g14480D	chrC01	9712482	9714120	-	putative cysteine-rich repeat secretory protein 37
+BnaC01g14490D	chrC01	9716986	9717135	+	uncharacterized protein LOC106379441
+BnaC01g14500D	chrC01	9725058	9725225	-	--
+BnaC01g14510D	chrC01	9728615	9728770	-	putative cysteine-rich repeat secretory protein 35 isoform X1
+BnaC01g14530D	chrC01	9732552	9734288	-	putative cysteine-rich repeat secretory protein 37
+BnaC01g14550D	chrC01	9754718	9754849	-	coatomer subunit alpha-2-like
+BnaC01g14560D	chrC01	9760860	9760982	-	--
+BnaC01g15020D	chrC01	10181286	10182307	+	pectinesterase/pectinesterase inhibitor 18-like
+BnaC01g15040D	chrC01	10207184	10210743	+	uncharacterized protein LOC106441366
+BnaC01g15070D	chrC01	10228751	10229995	-	protein SGT1 homolog A-like
+BnaC01g15110D	chrC01	10274953	10275174	+	uncharacterized protein LOC111206258
+BnaC01g15130D	chrC01	10306024	10306247	+	probable polygalacturonase
+BnaC01g15220D	chrC01	10405272	10406673	+	protein PHLOEM PROTEIN 2-LIKE A5-like
+BnaC01g15230D	chrC01	10408384	10409922	+	protein PHLOEM PROTEIN 2-LIKE A8-like
+BnaC01g15330D	chrC01	10495087	10496712	-	protein PHLOEM PROTEIN 2-LIKE A8-like isoform X3
+BnaC01g15400D	chrC01	10544388	10544564	+	--
+BnaC01g15580D	chrC01	10679931	10680017	-	uncharacterized protein LOC106416889
+BnaC01g15590D	chrC01	10680085	10680556	-	--
+BnaC01g15600D	chrC01	10680776	10681716	-	--
+BnaC01g16800D	chrC01	11478638	11478808	+	--
+BnaC01g17350D	chrC01	11891535	11891615	-	--
+BnaC01g19680D	chrC01	13693104	13693862	-	--
+BnaC01g19730D	chrC01	13718011	13718437	+	uncharacterized protein LOC111215091
+BnaC01g19780D	chrC01	13748691	13748882	-	RGG repeats nuclear RNA binding protein A-like
+BnaC01g19810D	chrC01	13775578	13775932	-	--
+BnaC01g19820D	chrC01	13795539	13795659	+	--
+BnaC01g19860D	chrC01	13805776	13806925	-	uncharacterized protein LOC106392005
+BnaC01g21130D	chrC01	14781784	14782844	+	--
+BnaC01g21200D	chrC01	14822348	14822479	+	--
+BnaC01g22890D	chrC01	16447311	16448343	+	EPIDERMAL PATTERNING FACTOR-like protein 4
+BnaC01g23930D	chrC01	18133458	18137313	+	histone deacetylase HDT1
+BnaC01g24210D	chrC01	18880630	18880893	+	--
+BnaC01g24220D	chrC01	18882752	18883032	+	--
+BnaC01g24240D	chrC01	18898387	18900159	+	uncharacterized protein LOC106407612
+BnaC01g25320D	chrC01	20824307	20825617	+	uncharacterized protein LOC106414275
+BnaC01g25330D	chrC01	20825982	20828116	+	uncharacterized protein LOC106414275
+BnaC01g25340D	chrC01	20831386	20833963	-	E3 ubiquitin-protein ligase SIS3
+BnaC01g25350D	chrC01	20838456	20838689	-	--
+BnaC01g25450D	chrC01	21121832	21121951	-	uncharacterized protein LOC111210366
+BnaC01g25500D	chrC01	21282321	21282494	+	uncharacterized protein LOC106374687
+BnaC01g25870D	chrC01	22194894	22195046	-	ferric reduction oxidase 5-like
+BnaC01g26270D	chrC01	23062615	23062779	+	--
+BnaC01g26280D	chrC01	23066661	23066771	+	--
+BnaC01g26560D	chrC01	23549590	23549649	+	--
+BnaC01g28670D	chrC01	26649991	26650173	-	probable BOI-related E3 ubiquitin-protein ligase 3
+BnaC01g30690D	chrC01	29159194	29159612	-	"light-harvesting complex-like protein 3 isotype 2
+BnaC01g30750D	chrC01	29225673	29226558	-	transcription factor ICE1-like
+BnaC01g31480D	chrC01	30313303	30313461	+	--
+BnaC01g32950D	chrC01	32176404	32177394	-	--
+BnaC01g41340D	chrC01_random	488376	488806	-	uncharacterized protein LOC106364049
+BnaC01g41390D	chrC01_random	546257	553095	-	cysteine-rich receptor-like protein kinase 11 isoform X1
+BnaC01g42550D	chrC01_random	1713695	1713733	-	--
+BnaC01g42680D	chrC01_random	1862006	1862047	+	--
+BnaC01g42940D	chrC01_random	2261005	2261254	+	--
+BnaC01g43260D	chrC01_random	2781887	2782129	-	--
+BnaC01g43850D	chrC01_random	3484565	3486958	-	"RNA pseudouridine synthase 4
+BnaC01g44420D	chrC01_random	3997854	3998273	-	two-on-two hemoglobin-3-like
+BnaC01g44470D	chrC01_random	4031464	4031827	-	--
+BnaC02g00580D	chrC02	238475	243164	-	uncharacterized protein LOC106406372
+BnaC02g01220D	chrC02	506139	506207	+	--
+BnaC02g02130D	chrC02	955335	956180	-	--
+BnaC02g08520D	chrC02	4754748	4757138	-	basic 7S globulin 2-like
+BnaC02g08570D	chrC02	4786711	4786900	+	disease resistance protein TAO1-like
+BnaC02g08610D	chrC02	4794347	4796442	+	"DEAD-box ATP-dependent RNA helicase 58
+BnaC02g09950D	chrC02	5606976	5607086	-	--
+BnaC02g10320D	chrC02	5882514	5882625	-	--
+BnaC02g11130D	chrC02	6427112	6427369	-	uncharacterized protein LOC111202863
+BnaC02g11160D	chrC02	6437590	6438396	-	uncharacterized protein BNAC02G11160D isoform X1
+BnaC02g11180D	chrC02	6440742	6441239	-	uncharacterized protein BNAC02G11180D
+BnaC02g11730D	chrC02	6958422	6958705	-	--
+BnaC02g14360D	chrC02	9789256	9789330	-	--
+BnaC02g14390D	chrC02	9803635	9803697	+	--
+BnaC02g16240D	chrC02	11864920	11867943	+	protein root UVB sensitive 6 isoform X2
+BnaC02g16280D	chrC02	11896146	11896356	-	"tocopherol O-methyltransferase
+BnaC02g16290D	chrC02	11899222	11900427	-	protein CDI
+BnaC02g16300D	chrC02	11903702	11907734	-	GPCR-type G protein 1
+BnaC02g16990D	chrC02	12370294	12370419	+	organic cation/carnitine transporter 6-like
+BnaC02g17510D	chrC02	13106049	13107072	-	uncharacterized protein LOC106404526
+BnaC02g18550D	chrC02	14697358	14697654	+	--
+BnaC02g19480D	chrC02	15857385	15857837	+	HVA22-like protein c
+BnaC02g19730D	chrC02	16086097	16086597	-	--
+BnaC02g21730D	chrC02	18672112	18674273	-	--
+BnaC02g21790D	chrC02	18692935	18693659	+	--
+BnaC02g23260D	chrC02	20269717	20271733	-	probable DNA replication complex GINS protein PSF1
+BnaC02g23290D	chrC02	20281012	20282133	-	uncharacterized protein LOC106398627
+BnaC02g23340D	chrC02	20300712	20306703	-	GDSL esterase/lipase EXL6-like
+BnaC02g23370D	chrC02	20316323	20316979	+	vacuolar protein sorting-associated protein 35B
+BnaC02g23400D	chrC02	20342089	20342754	-	defensin-like protein 1
+BnaC02g23490D	chrC02	20452940	20453190	+	--
+BnaC02g23830D	chrC02	20930856	20931017	+	uncharacterized protein LOC106378199
+BnaC02g24110D	chrC02	21350445	21352861	-	uncharacterized protein LOC111211496
+BnaC02g24250D	chrC02	21525130	21525430	+	--
+BnaC02g24290D	chrC02	21554431	21554762	+	probable serine/threonine-protein kinase PBL1 isoform X2
+BnaC02g24300D	chrC02	21555421	21556615	-	--
+BnaC02g24320D	chrC02	21577077	21577354	+	--
+BnaC02g24330D	chrC02	21593396	21593464	-	--
+BnaC02g24350D	chrC02	21594184	21594225	-	--
+BnaC02g25000D	chrC02	22367425	22368741	-	--
+BnaC02g25580D	chrC02	22934107	22934398	-	--
+BnaC02g25590D	chrC02	22934499	22934643	-	--
+BnaC02g26840D	chrC02	24658872	24659057	-	--
+BnaC02g27410D	chrC02	25305928	25306201	-	--
+BnaC02g27600D	chrC02	25554066	25555357	+	--
+BnaC02g30270D	chrC02	32047332	32049233	-	probable inorganic phosphate transporter 1-3
+BnaC02g36950D	chrC02	39912094	39912426	+	protein RALF-like 27
+BnaC02g40940D	chrC02	43930497	43930655	-	--
+BnaC02g43820D	chrC02	45960236	45960561	-	--
+BnaC02g43870D	chrC02	45989110	45989268	+	--
+BnaC02g45150D	chrC02_random	900275	901537	-	chaperone protein dnaJ 16-like
+BnaC02g45260D	chrC02_random	1006013	1006201	-	glutathione S-transferase U28
+BnaC02g45860D	chrC02_random	1644886	1645089	+	--
+BnaC02g45980D	chrC02_random	1792839	1793295	+	--
+BnaC02g46310D	chrC02_random	2139604	2139753	+	protein phosphatase 2C 16-like
+BnaC02g46340D	chrC02_random	2174446	2174556	+	--
+BnaC02g47240D	chrC02_random	2984437	2984619	+	aquaporin PIP1-2 isoform X1
+BnaC02g47310D	chrC02_random	3068159	3070117	+	auxin-responsive protein IAA9-like isoform X2
+BnaC02g48220D	chrC02_random	4422277	4422454	+	--
+BnaC03g02790D	chrC03	1378176	1378253	-	--
+BnaC03g02820D	chrC03	1381507	1381563	+	--
+BnaC03g03130D	chrC03	1509699	1511198	+	uncharacterized protein LOC111202591
+BnaC03g03160D	chrC03	1523779	1524775	+	--
+BnaC03g15120D	chrC03	7484314	7484670	-	arabinogalactan peptide 22
+BnaC03g15320D	chrC03	7623704	7623862	+	--
+BnaC03g15330D	chrC03	7635802	7636172	+	--
+BnaC03g15340D	chrC03	7636253	7636324	+	--
+BnaC03g18180D	chrC03	9309602	9309668	-	--
+BnaC03g18370D	chrC03	9419760	9419852	-	--
+BnaC03g18380D	chrC03	9431642	9431872	+	protein RALF-like 17
+BnaC03g18760D	chrC03	9616683	9617824	+	B3 domain-containing protein At2g33720-like
+BnaC03g19170D	chrC03	9942224	9942387	+	--
+BnaC03g20370D	chrC03	10774217	10774419	-	cysteine-rich receptor-like protein kinase 36
+BnaC03g20380D	chrC03	10774534	10774688	-	--
+BnaC03g20430D	chrC03	10822884	10823045	-	uncharacterized protein BNAA03G16910D
+BnaC03g20550D	chrC03	10900413	10900722	-	aquaporin PIP2-2-like
+BnaC03g20670D	chrC03	10974280	10975188	-	"myosin heavy chain
+BnaC03g22350D	chrC03	12273855	12273998	+	uncharacterized protein LOC106363719
+BnaC03g22800D	chrC03	12622278	12622752	+	pentatricopeptide repeat-containing protein At2g40720-like
+BnaC03g23130D	chrC03	12822612	12823525	+	calmodulin-7
+BnaC03g23230D	chrC03	12893675	12893962	-	--
+BnaC03g23320D	chrC03	12980880	12982916	+	AUGMIN subunit 1
+BnaC03g23760D	chrC03	13253155	13253373	+	--
+BnaC03g24030D	chrC03	13450051	13451134	+	protein CMSS1
+BnaC03g26440D	chrC03	15018184	15018360	-	--
+BnaC03g27140D	chrC03	15656751	15658327	+	tetraspanin-8
+BnaC03g27980D	chrC03	16341412	16341704	-	--
+BnaC03g29570D	chrC03	17701135	17701309	+	--
+BnaC03g29650D	chrC03	17810815	17811548	-	uncharacterized protein LOC106381593
+BnaC03g31030D	chrC03	18963274	18963538	-	--
+BnaC03g31180D	chrC03	19091901	19092343	-	uncharacterized protein LOC106384158
+BnaC03g31290D	chrC03	19163336	19163698	-	receptor-like kinase TMK2
+BnaC03g31300D	chrC03	19163783	19163818	-	--
+BnaC03g31310D	chrC03	19163926	19165408	-	--
+BnaC03g36770D	chrC03	22215776	22216414	-	uncharacterized protein LOC106444649
+BnaC03g39140D	chrC03	24125183	24125495	+	--
+BnaC03g39300D	chrC03	24285639	24287417	-	uncharacterized protein BNAC03G39300D isoform X1
+BnaC03g39310D	chrC03	24287934	24289474	+	"palmitoyl-monogalactosyldiacylglycerol delta-7 desaturase
+BnaC03g39400D	chrC03	24340645	24340698	-	--
+BnaC03g39410D	chrC03	24349725	24351055	-	nuclear pore complex protein NUP50B-like
+BnaC03g40230D	chrC03	25201294	25201553	-	--
+BnaC03g40260D	chrC03	25221309	25221634	-	--
+BnaC03g40390D	chrC03	25299831	25300803	-	phosphopantothenoylcysteine decarboxylase
+BnaC03g42860D	chrC03	27588355	27588480	-	cyclin-dependent kinase B2-2
+BnaC03g43310D	chrC03	28212943	28213970	+	probable sugar phosphate/phosphate translocator At3g11320
+BnaC03g43330D	chrC03	28225523	28225882	-	uncharacterized protein LOC106386041
+BnaC03g43620D	chrC03	28714032	28714433	+	--
+BnaC03g43840D	chrC03	28950700	28950789	+	--
+BnaC03g43850D	chrC03	28950916	28951059	+	putative defensin-like protein 257
+BnaC03g45790D	chrC03	30796470	30798635	-	--
+BnaC03g45920D	chrC03	30944643	30944840	+	uncharacterized protein LOC106444255
+BnaC03g47100D	chrC03	32096446	32098866	+	"glucan endo-1
+BnaC03g47130D	chrC03	32107109	32108310	+	DNA polymerase epsilon subunit 3
+BnaC03g48130D	chrC03	33089941	33090387	-	uncharacterized protein LOC106351971
+BnaC03g48690D	chrC03	33552918	33553047	-	--
+BnaC03g48740D	chrC03	33590126	33590281	-	--
+BnaC03g49050D	chrC03	33904011	33905004	-	--
+BnaC03g50770D	chrC03	35212270	35212479	-	uncharacterized protein LOC106347924
+BnaC03g50780D	chrC03	35222326	35222535	-	uncharacterized protein LOC106347924
+BnaC03g51890D	chrC03	36653909	36654040	-	uncharacterized protein LOC106418824
+BnaC03g54130D	chrC03	41174620	41175130	-	--
+BnaC03g54350D	chrC03	41980349	41980594	+	--
+BnaC03g54370D	chrC03	42003329	42003445	+	--
+BnaC03g58580D	chrC03	47847078	47847307	+	--
+BnaC03g59810D	chrC03	49062103	49062285	-	uncharacterized protein BNAC03G59810D
+BnaC03g61290D	chrC03	50350453	50350567	+	--
+BnaC03g61320D	chrC03	50362409	50362603	-	--
+BnaC03g61360D	chrC03	50390407	50390583	+	--
+BnaC03g62590D	chrC03	51698092	51698154	+	--
+BnaC03g63570D	chrC03	53042097	53042514	-	--
+BnaC03g63660D	chrC03	53161433	53161728	-	uncharacterized protein LOC106437247
+BnaC03g66800D	chrC03	56476707	56476924	+	"glycine dehydrogenase (decarboxylating) 1
+BnaC03g67020D	chrC03	56699101	56699505	-	probable pre-mRNA-splicing factor ATP-dependent RNA helicase DEAH5
+BnaC03g67060D	chrC03	56710231	56710523	+	--
+BnaC03g67790D	chrC03	57401971	57402360	-	--
+BnaC03g68140D	chrC03	57772494	57774352	-	TBC1 domain family member 5 homolog A-like
+BnaC03g68170D	chrC03	57789892	57792284	-	transcription factor bHLH27 isoform X1
+BnaC03g68190D	chrC03	57793691	57793750	+	--
+BnaC03g68210D	chrC03	57826932	57827135	+	uncharacterized protein LOC106386262
+BnaC03g69070D	chrC03	58784760	58785331	+	uncharacterized protein LOC111213108
+BnaC03g69080D	chrC03	58785901	58786098	+	--
+BnaC03g69090D	chrC03	58806662	58807376	+	TMV resistance protein N-like
+BnaC03g69930D	chrC03	59634238	59634746	+	uncharacterized protein BNAC03G69930D
+BnaC03g70200D	chrC03	59865041	59865094	+	--
+BnaC03g70230D	chrC03	59874037	59874606	+	--
+BnaC03g70830D	chrC03	60411042	60411563	-	pectinesterase inhibitor
+BnaC03g72880D	chrC03_random	1089668	1089823	+	--
+BnaC03g74250D	chrC03_random	2165978	2166122	-	--
+BnaC04g01550D	chrC04	1141444	1142318	+	ubiquinol-cytochrome c reductase complex 6.7 kDa protein
+BnaC04g03800D	chrC04	2800423	2800608	+	--
+BnaC04g10090D	chrC04	7750104	7751605	-	zinc finger CCCH domain-containing protein 29-like
+BnaC04g10130D	chrC04	7800982	7802552	-	uncharacterized protein At1g04910-like
+BnaC04g13720D	chrC04	11122698	11123528	-	--
+BnaC04g15310D	chrC04	13040368	13045801	-	abscisic acid 8'-hydroxylase 2 isoform X1
+BnaC04g15360D	chrC04	13127183	13127927	-	--
+BnaC04g15390D	chrC04	13225577	13227120	-	choline-phosphate cytidylyltransferase 1-like
+BnaC04g15410D	chrC04	13237079	13237186	-	--
+BnaC04g15420D	chrC04	13237254	13238021	-	--
+BnaC04g15470D	chrC04	13265548	13266005	+	histone H4
+BnaC04g16170D	chrC04	14187054	14187664	+	probable glucuronoxylan glucuronosyltransferase IRX7
+BnaC04g17470D	chrC04	15834392	15834634	-	uncharacterized protein LOC111205266
+BnaC04g17490D	chrC04	15993393	15993588	-	--
+BnaC04g18100D	chrC04	17127277	17127431	-	--
+BnaC04g18120D	chrC04	17146759	17147176	+	--
+BnaC04g20140D	chrC04	21206772	21206927	+	--
+BnaC04g20150D	chrC04	21208222	21208676	-	probable protein phosphatase 2C 13
+BnaC04g21450D	chrC04	22313735	22313827	+	--
+BnaC04g22310D	chrC04	23352813	23353221	+	--
+BnaC04g23200D	chrC04	24307944	24308423	-	uncharacterized protein LOC106442145
+BnaC04g23210D	chrC04	24341325	24343180	+	ABC transporter F family member 5-like
+BnaC04g23240D	chrC04	24354346	24354575	-	"50S ribosomal protein L3-2
+BnaC04g25000D	chrC04	25858691	25858867	+	--
+BnaC04g28040D	chrC04	29450880	29455854	+	nicastrin
+BnaC04g30460D	chrC04	32294028	32295819	+	protein C2-DOMAIN ABA-RELATED 1
+BnaC04g31540D	chrC04	33372054	33372442	-	--
+BnaC04g31580D	chrC04	33387728	33387896	+	--
+BnaC04g32580D	chrC04	34306424	34306817	+	--
+BnaC04g34820D	chrC04	36334288	36334495	+	protein FAR1-RELATED SEQUENCE 5-like
+BnaC04g34880D	chrC04	36350774	36350938	-	--
+BnaC04g35370D	chrC04	36850179	36850217	+	--
+BnaC04g35420D	chrC04	36957312	36958085	+	phytosulfokines 2
+BnaC04g35500D	chrC04	37009939	37015638	-	DNA (cytosine-5)-methyltransferase 1-like
+BnaC04g36020D	chrC04	37521935	37522707	-	methylesterase 4-like isoform X2
+BnaC04g36060D	chrC04	37571826	37572296	+	--
+BnaC04g38060D	chrC04	39391251	39391385	-	--
+BnaC04g38110D	chrC04	39411886	39412040	-	--
+BnaC04g40770D	chrC04	41589520	41591207	-	protein PSY3
+BnaC04g40790D	chrC04	41604111	41605949	-	--
+BnaC04g40830D	chrC04	41645733	41646635	-	"endo-1
+BnaC04g42480D	chrC04	42983477	42984179	-	LOB domain-containing protein 14
+BnaC04g44620D	chrC04	44554556	44555980	+	uncharacterized protein LOC106374807
+BnaC04g44660D	chrC04	44577561	44577614	+	--
+BnaC04g44740D	chrC04	44624602	44624740	-	--
+BnaC04g45330D	chrC04	45049218	45049825	-	--
+BnaC04g45470D	chrC04	45135469	45137666	-	--
+BnaC04g46530D	chrC04	45836467	45836639	-	--
+BnaC04g50220D	chrC04	48003161	48003686	-	--
+BnaC04g52470D	chrC04_random	396257	396769	-	uncharacterized protein BNAC04G52470D
+BnaC04g52630D	chrC04_random	470816	472437	-	protodermal factor 1-like
+BnaC04g53680D	chrC04_random	1174024	1174199	-	--
+BnaC04g53700D	chrC04_random	1195534	1195803	-	--
+BnaC04g53790D	chrC04_random	1282264	1282350	+	--
+BnaC04g53830D	chrC04_random	1310470	1311554	+	--
+BnaC04g53840D	chrC04_random	1311619	1312474	+	--
+BnaC04g53940D	chrC04_random	1376220	1376405	-	"pyruvate dehydrogenase E1 component subunit beta-3
+BnaC04g55310D	chrC04_random	2882187	2882407	-	BEACH domain-containing protein C1-like
+BnaC04g55330D	chrC04_random	2902735	2902919	-	cytochrome P450 76C4-like
+BnaC04g55350D	chrC04_random	2904944	2905087	+	--
+BnaC04g55970D	chrC04_random	3633710	3633823	-	--
+BnaC04g56000D	chrC04_random	3650328	3650426	-	--
+BnaC05g06150D	chrC05	3030939	3033627	-	"cysteine desulfurase 1
+BnaC05g09310D	chrC05	5009442	5009663	-	uncharacterized protein LOC106424235
+BnaC05g10730D	chrC05	6156160	6156858	+	transcription factor ICE1-like
+BnaC05g12560D	chrC05	7324594	7324795	+	--
+BnaC05g12570D	chrC05	7324864	7324926	+	--
+BnaC05g16130D	chrC05	9898510	9898682	-	--
+BnaC05g17580D	chrC05	11330355	11330540	+	--
+BnaC05g17980D	chrC05	11698642	11698775	+	--
+BnaC05g19670D	chrC05	13136151	13136555	-	--
+BnaC05g19680D	chrC05	13136843	13136941	-	--
+BnaC05g19730D	chrC05	13161725	13161894	-	--
+BnaC05g19920D	chrC05	13438266	13438945	-	--
+BnaC05g20510D	chrC05	13904447	13904565	-	--
+BnaC05g20790D	chrC05	14255451	14255742	-	--
+BnaC05g20900D	chrC05	14507205	14507486	+	"protein phosphatase 2C 29-like
+BnaC05g21610D	chrC05	15321451	15321686	+	--
+BnaC05g22620D	chrC05	16459492	16460377	-	uncharacterized protein LOC106398076
+BnaC05g22630D	chrC05	16460448	16461317	-	uncharacterized protein LOC106454674 isoform X2
+BnaC05g23960D	chrC05	18105473	18106879	-	derlin-2.1-like
+BnaC05g23980D	chrC05	18128691	18130784	+	thionin-like protein 2
+BnaC05g24400D	chrC05	18902102	18903679	+	--
+BnaC05g24710D	chrC05	19181587	19183008	+	--
+BnaC05g25230D	chrC05	20062003	20062197	-	60S ribosomal protein L19-3-like isoform X2
+BnaC05g26460D	chrC05	22505904	22506083	+	--
+BnaC05g26780D	chrC05	23054306	23054368	-	--
+BnaC05g26800D	chrC05	23058070	23058263	+	MATH domain-containing protein At5g43560-like isoform X2
+BnaC05g27140D	chrC05	23771206	23771959	+	zinc finger A20 and AN1 domain-containing stress-associated protein 2-like
+BnaC05g27430D	chrC05	24407753	24407830	+	--
+BnaC05g27470D	chrC05	24481795	24481827	+	--
+BnaC05g27880D	chrC05	25275390	25275593	-	--
+BnaC05g28790D	chrC05	27082886	27083011	+	uncharacterized protein LOC106373132
+BnaC05g29200D	chrC05	27957715	27958363	-	protein BREVIS RADIX
+BnaC05g30010D	chrC05	29012506	29013182	-	putative F-box only protein 9
+BnaC05g30040D	chrC05	29041894	29042114	+	--
+BnaC05g30180D	chrC05	29238857	29240500	+	uncharacterized protein LOC106388245
+BnaC05g32040D	chrC05	31404715	31405319	-	uncharacterized protein LOC106417302
+BnaC05g32540D	chrC05	32119741	32120042	-	uncharacterized protein LOC106398676
+BnaC05g32590D	chrC05	32147120	32147281	-	--
+BnaC05g32610D	chrC05	32150153	32150314	-	--
+BnaC05g39090D	chrC05	37655009	37655471	+	--
+BnaC05g39230D	chrC05	37805878	37805970	-	peroxisomal (S)-2-hydroxy-acid oxidase GLO2-like
+BnaC05g39270D	chrC05	37815253	37815732	-	uncharacterized protein LOC106394217
+BnaC05g45600D	chrC05	41479628	41479803	+	L-type lectin-domain containing receptor kinase IV.1
+BnaC05g45660D	chrC05	41520713	41520947	-	--
+BnaC05g45730D	chrC05	41542380	41542547	-	uncharacterized protein LOC111206424
+BnaC05g46460D	chrC05	41931280	41931508	+	--
+BnaC05g46510D	chrC05	41947969	41949879	+	glucose and ribitol dehydrogenase homolog 2
+BnaC05g50480D	chrC05_random	1362920	1363727	-	UDP-glycosyltransferase 85A2 isoform X2
+BnaC05g50490D	chrC05_random	1364664	1364801	-	--
+BnaC05g50500D	chrC05_random	1368848	1369069	+	uncharacterized protein BNAC05G50500D
+BnaC05g50530D	chrC05_random	1395497	1396137	-	--
+BnaC05g50540D	chrC05_random	1407359	1410413	-	uncharacterized protein LOC106359818
+BnaC05g50620D	chrC05_random	1489493	1489989	-	--
+BnaC06g00830D	chrC06	1387753	1388380	-	--
+BnaC06g03350D	chrC06	4035030	4035498	+	--
+BnaC06g03370D	chrC06	4036304	4036663	+	--
+BnaC06g03600D	chrC06	4282342	4282527	-	"WEB family protein At4g27595
+BnaC06g03770D	chrC06	4429488	4430752	+	--
+BnaC06g05900D	chrC06	6429858	6430066	+	uncharacterized protein LOC106430793
+BnaC06g06430D	chrC06	6912918	6915402	+	"pentatricopeptide repeat-containing protein At1g53600
+BnaC06g06910D	chrC06	7487687	7488146	+	--
+BnaC06g08170D	chrC06	9059667	9059852	-	--
+BnaC06g08750D	chrC06	10360618	10361254	+	--
+BnaC06g12000D	chrC06	14157462	14157674	+	--
+BnaC06g12640D	chrC06	15232510	15233051	-	--
+BnaC06g13600D	chrC06	16490681	16490946	-	--
+BnaC06g14790D	chrC06	17529849	17530598	+	splicing factor SF3a60 homolog
+BnaC06g16580D	chrC06	19520986	19521564	-	--
+BnaC06g16590D	chrC06	19521724	19522103	+	--
+BnaC06g17140D	chrC06	19858705	19860585	+	F-box/LRR-repeat protein At3g59210-like isoform X1
+BnaC06g18390D	chrC06	20787607	20787802	+	--
+BnaC06g18710D	chrC06	21039118	21040579	+	extensin-3-like
+BnaC06g18730D	chrC06	21104441	21104545	+	--
+BnaC06g18750D	chrC06	21125564	21128443	-	trihelix transcription factor GT-2-like
+BnaC06g19490D	chrC06	21714797	21714922	+	--
+BnaC06g19520D	chrC06	21722784	21722963	-	--
+BnaC06g20560D	chrC06	22612048	22612382	+	--
+BnaC06g20950D	chrC06	22985952	22987779	-	indole glucosinolate O-methyltransferase 4-like
+BnaC06g24090D	chrC06	25905520	25907020	+	--
+BnaC06g24990D	chrC06	26546882	26547071	+	--
+BnaC06g26420D	chrC06	28099066	28099119	+	--
+BnaC06g26730D	chrC06	28295992	28296257	-	uncharacterized protein BNAA07G25000D
+BnaC06g26810D	chrC06	28381588	28382640	+	--
+BnaC06g26990D	chrC06	28487080	28487890	-	"acyl carrier protein 2
+BnaC06g27860D	chrC06	29227503	29228798	-	cytochrome c oxidase assembly protein COX19-like
+BnaC06g28310D	chrC06	29515686	29516004	-	--
+BnaC06g29090D	chrC06	30180147	30180643	+	uncharacterized protein BNAC06G29090D
+BnaC06g30240D	chrC06	31046596	31046790	+	uncharacterized protein LOC106354024 isoform X1
+BnaC06g30950D	chrC06	31622801	31623286	+	--
+BnaC06g33120D	chrC06	33101553	33102512	-	UDP-glucose:glycoprotein glucosyltransferase
+BnaC06g33220D	chrC06	33187831	33189088	+	MICOS complex subunit Mic10-like
+BnaC06g35460D	chrC06	34423876	34424205	-	--
+BnaC06g35520D	chrC06	34481269	34482416	+	--
+BnaC06g36430D	chrC06	34974326	34974435	+	--
+BnaC06g36510D	chrC06	35022524	35022778	+	defensin-like protein 3
+BnaC06g37100D	chrC06	35307482	35309389	-	probable serine/threonine-protein kinase PBL22
+BnaC06g37120D	chrC06	35314172	35314295	-	--
+BnaC06g37220D	chrC06	35367835	35367873	-	--
+BnaC06g37520D	chrC06	35507541	35507606	-	--
+BnaC06g37530D	chrC06	35507673	35510105	-	chaperone protein dnaJ 10-like
+BnaC06g37610D	chrC06	35541776	35543789	-	indole glucosinolate O-methyltransferase 5-like
+BnaC06g41310D	chrC06_random	574151	574513	-	plant intracellular Ras-group-related LRR protein 8
+BnaC06g42610D	chrC06_random	2145702	2145892	-	--
+BnaC06g43560D	chrC06_random	3036553	3038099	+	--
+BnaC07g00190D	chrC07	365327	365371	-	--
+BnaC07g03190D	chrC07	4135429	4135602	+	--
+BnaC07g03350D	chrC07	4480062	4480184	+	calcium-binding protein CML39
+BnaC07g04490D	chrC07	7037647	7039286	-	uncharacterized protein LOC106373373
+BnaC07g05780D	chrC07	9329081	9329194	+	uncharacterized protein LOC106424921
+BnaC07g06520D	chrC07	10504149	10506156	+	L-type lectin-domain containing receptor kinase I.3-like
+BnaC07g07980D	chrC07	12871095	12873383	-	uncharacterized protein LOC106453960
+BnaC07g08140D	chrC07	13105506	13107154	+	putative protein phosphatase 2C-like protein 44
+BnaC07g08230D	chrC07	13164331	13165674	-	protein LIGHT-DEPENDENT SHORT HYPOCOTYLS 4-like
+BnaC07g08980D	chrC07	14148900	14149030	-	--
+BnaC07g10130D	chrC07	15587413	15588264	-	"50S ribosomal protein L34
+BnaC07g10460D	chrC07	15961305	15961514	-	uncharacterized protein LOC106357439
+BnaC07g10530D	chrC07	16081007	16081121	+	--
+BnaC07g10540D	chrC07	16081200	16081336	+	--
+BnaC07g10570D	chrC07	16097345	16097703	-	--
+BnaC07g12620D	chrC07	18283087	18283269	+	uncharacterized protein BNAA07G09240D
+BnaC07g12630D	chrC07	18292353	18293773	+	--
+BnaC07g14080D	chrC07	19865323	19865433	-	--
+BnaC07g14910D	chrC07	20813988	20814167	-	uncharacterized protein LOC106409034
+BnaC07g16260D	chrC07	22241880	22242014	+	--
+BnaC07g19190D	chrC07	25889800	25889938	+	--
+BnaC07g19220D	chrC07	25905798	25905956	-	--
+BnaC07g21080D	chrC07	27771604	27772871	+	--
+BnaC07g25490D	chrC07	31673442	31673770	-	transcription factor MYB117-like
+BnaC07g25670D	chrC07	31754770	31755015	+	--
+BnaC07g26750D	chrC07	32534429	32535524	+	cytochrome B5-like
+BnaC07g29290D	chrC07	34113752	34114409	-	--
+BnaC07g30780D	chrC07	35092066	35092280	-	--
+BnaC07g31700D	chrC07	35689831	35690046	+	--
+BnaC07g31750D	chrC07	35721255	35721527	+	--
+BnaC07g33870D	chrC07	36845567	36845725	-	--
+BnaC07g34750D	chrC07	37311480	37311739	-	--
+BnaC07g35180D	chrC07	37652400	37656949	-	LEAF RUST 10 DISEASE-RESISTANCE LOCUS RECEPTOR-LIKE PROTEIN KINASE-like 2.1
+BnaC07g36700D	chrC07	38668704	38670224	-	transcription factor MYB102-like
+BnaC07g42130D	chrC07	41720207	41724223	-	F-box/kelch-repeat protein At5g39560
+BnaC07g42270D	chrC07	41788978	41790022	+	uncharacterized protein LOC106441019
+BnaC07g42380D	chrC07	41850792	41851107	-	uncharacterized protein LOC106401059 isoform X2
+BnaC07g43080D	chrC07	42307760	42307948	-	chloroplast envelope membrane protein-like
+BnaC07g48240D	chrC07_random	801636	801819	+	--
+BnaC07g48840D	chrC07_random	1467817	1467918	-	--
+BnaC07g49100D	chrC07_random	1734649	1735225	-	--
+BnaC07g49150D	chrC07_random	1770882	1771242	+	uncharacterized protein BNAA06G30740D isoform X2
+BnaC07g51060D	chrC07_random	2851033	2851238	-	protein MICRORCHIDIA 2-like isoform X2
+BnaC08g01440D	chrC08	1132713	1133206	+	sorbitol dehydrogenase
+BnaC08g05740D	chrC08	8315403	8315621	-	--
+BnaC08g05750D	chrC08	8317747	8317905	+	uncharacterized protein LOC106355220
+BnaC08g05810D	chrC08	8406568	8406840	-	--
+BnaC08g05880D	chrC08	8424938	8425805	+	60S ribosomal protein L28-2
+BnaC08g05920D	chrC08	8455612	8456756	-	14-3-3-like protein GF14 epsilon
+BnaC08g06830D	chrC08	9444591	9444855	+	--
+BnaC08g06920D	chrC08	9527975	9529373	-	--
+BnaC08g07720D	chrC08	11147067	11147108	+	--
+BnaC08g08020D	chrC08	11879331	11879644	+	--
+BnaC08g08330D	chrC08	12429369	12431198	-	"pentatricopeptide repeat-containing protein At4g14050
+BnaC08g08640D	chrC08	12981932	12982074	-	--
+BnaC08g08770D	chrC08	13187649	13188555	-	uncharacterized protein LOC106451496
+BnaC08g09900D	chrC08	14778328	14779847	+	proteasome subunit beta type-2-A-like
+BnaC08g09920D	chrC08	14785206	14785526	+	uncharacterized protein LOC106435442
+BnaC08g09970D	chrC08	14850852	14858307	+	Fanconi anemia group D2 protein homolog isoform X1
+BnaC08g09980D	chrC08	14876705	14877222	+	60S ribosomal protein L27-3
+BnaC08g10490D	chrC08	15816367	15817689	+	late embryogenis abundant protein 41
+BnaC08g10720D	chrC08	16089412	16089486	+	--
+BnaC08g11430D	chrC08	16837260	16837600	+	--
+BnaC08g12480D	chrC08	17637781	17637933	+	"protochlorophyllide reductase B
+BnaC08g16130D	chrC08	20306269	20306447	+	uncharacterized protein LOC106401845
+BnaC08g17640D	chrC08	21161506	21161604	-	protein MAINTENANCE OF MERISTEMS
+BnaC08g22190D	chrC08	24945260	24946347	-	--
+BnaC08g22440D	chrC08	25090247	25090604	-	--
+BnaC08g23930D	chrC08	26066099	26067262	-	cytochrome b-c1 complex subunit 9-like
+BnaC08g31230D	chrC08	30703878	30704105	+	--
+BnaC08g34450D	chrC08	32548687	32548791	+	spermidine sinapoyl-CoA acyltransferase-like
+BnaC08g34580D	chrC08	32701827	32702123	-	--
+BnaC08g34610D	chrC08	32717914	32718400	-	uncharacterized protein BNAC08G34610D
+BnaC08g34630D	chrC08	32730036	32730200	+	short-chain dehydrogenase reductase 3a isoform X1
+BnaC08g34680D	chrC08	32749516	32749811	-	PLAT domain-containing protein 2-like
+BnaC08g34710D	chrC08	32771202	32772186	+	uncharacterized protein LOC106414850
+BnaC08g34760D	chrC08	32795838	32796050	+	--
+BnaC08g35450D	chrC08	33290026	33290934	-	elicitor peptide 6
+BnaC08g35540D	chrC08	33338665	33340746	-	cinnamyl alcohol dehydrogenase 2
+BnaC08g35560D	chrC08	33344785	33345851	-	40S ribosomal protein S25-4
+BnaC08g38120D	chrC08	34581926	34582600	+	uncharacterized protein BNAC08G38120D
+BnaC08g38170D	chrC08	34596170	34596590	-	--
+BnaC08g38780D	chrC08	34876743	34877011	+	auxin-responsive protein IAA5-like
+BnaC08g38820D	chrC08	34910746	34912743	+	L-type lectin-domain containing receptor kinase S.1-like
+BnaC08g38830D	chrC08	34913206	34914110	+	ABC transporter G family member 40-like
+BnaC08g38860D	chrC08	34920921	34921146	+	uncharacterized protein LOC106363114
+BnaC08g39760D	chrC08	35303878	35304099	+	transcription factor HRS1
+BnaC08g39780D	chrC08	35306472	35309339	-	probable apyrase 5
+BnaC08g44980D	chrC08	37901130	37901787	+	monothiol glutaredoxin-S11
+BnaC08g46560D	chrC08_random	726052	726108	+	--
+BnaC08g46920D	chrC08_random	1233511	1233867	-	--
+BnaC08g47580D	chrC08_random	2524403	2524582	+	--
+BnaC08g47590D	chrC08_random	2526323	2527785	+	--
+BnaC08g47700D	chrC08_random	2640980	2641045	+	--
+BnaC08g48480D	chrC08_random	3443942	3444787	+	--
+BnaC09g00650D	chrC09	348592	348717	-	protein transport protein SEC31-like
+BnaC09g03530D	chrC09	2033511	2034746	+	transcription factor MYB86
+BnaC09g03550D	chrC09	2044063	2044893	+	probable germin-like protein subfamily 2 member 5
+BnaC09g03720D	chrC09	2110268	2111240	+	probable membrane-associated kinase regulator 1
+BnaC09g03750D	chrC09	2124346	2124928	-	putative FBD-associated F-box protein At1g50980
+BnaC09g04470D	chrC09	2549352	2549441	+	--
+BnaC09g04850D	chrC09	2801954	2807800	-	uncharacterized protein LOC106428388 isoform X2
+BnaC09g05470D	chrC09	3220621	3221215	+	--
+BnaC09g06880D	chrC09	4258955	4259026	+	--
+BnaC09g09210D	chrC09	5973939	5975046	+	NAC domain-containing protein 35-like
+BnaC09g09230D	chrC09	5983696	5986688	-	ubiquitin domain-containing protein DSK2b-like
+BnaC09g09260D	chrC09	5997855	5999251	+	homoserine kinase-like
+BnaC09g09370D	chrC09	6068413	6072060	-	MLO-like protein 8
+BnaC09g09660D	chrC09	6291955	6292649	-	bZIP transcription factor 2-like
+BnaC09g11120D	chrC09	7759708	7759806	+	--
+BnaC09g11150D	chrC09	7803016	7803187	+	--
+BnaC09g12270D	chrC09	8729993	8730595	+	miraculin-like
+BnaC09g12290D	chrC09	8738726	8738947	+	mitochondrial import receptor subunit TOM7-2-like
+BnaC09g12790D	chrC09	9281711	9282146	-	"uncharacterized protein At1g43920
+BnaC09g13200D	chrC09	9890999	9891546	+	--
+BnaC09g13220D	chrC09	9892728	9892975	+	--
+BnaC09g13270D	chrC09	9925978	9930914	+	--
+BnaC09g14190D	chrC09	10848576	10848632	+	--
+BnaC09g14420D	chrC09	11055651	11056876	+	uncharacterized protein LOC106393481
+BnaC09g14430D	chrC09	11057403	11058395	+	--
+BnaC09g14470D	chrC09	11129362	11129409	+	--
+BnaC09g14520D	chrC09	11149756	11149941	-	--
+BnaC09g17680D	chrC09	14416046	14416214	+	--
+BnaC09g18130D	chrC09	14783785	14783977	+	--
+BnaC09g18240D	chrC09	14933819	14933992	-	--
+BnaC09g18570D	chrC09	15352884	15354159	+	60S ribosomal protein L11-1
+BnaC09g18790D	chrC09	15679584	15681459	-	WAT1-related protein At5g45370
+BnaC09g18830D	chrC09	15735399	15736266	+	--
+BnaC09g19540D	chrC09	16372889	16373734	+	RING-H2 finger protein ATL30
+BnaC09g19850D	chrC09	16931917	16932042	-	--
+BnaC09g21240D	chrC09	18486944	18487566	-	--
+BnaC09g21400D	chrC09	18598343	18598393	-	--
+BnaC09g24690D	chrC09	22850076	22850114	+	--
+BnaC09g26210D	chrC09	26134242	26136905	-	uncharacterized protein LOC106358772
+BnaC09g26270D	chrC09	26177517	26177651	-	uncharacterized protein LOC106444499
+BnaC09g26380D	chrC09	26726353	26726660	-	serine/threonine-protein kinase HT1-like
+BnaC09g27020D	chrC09	28452665	28454109	-	protein MICRORCHIDIA 5-like
+BnaC09g27120D	chrC09	28655794	28655880	-	--
+BnaC09g28140D	chrC09	30427724	30429770	-	protein ABHD17B-like
+BnaC09g28180D	chrC09	30442513	30444563	-	protein HOTHEAD-like isoform X1
+BnaC09g31200D	chrC09	34228704	34228946	-	--
+BnaC09g31300D	chrC09	34317382	34317524	+	--
+BnaC09g32710D	chrC09	35878503	35878818	-	--
+BnaC09g33000D	chrC09	36242339	36242389	+	--
+BnaC09g34260D	chrC09	37639350	37639818	-	--
+BnaC09g34330D	chrC09	37685228	37685275	+	--
+BnaC09g34830D	chrC09	38270210	38270693	-	--
+BnaC09g35600D	chrC09	38923903	38924024	+	--
+BnaC09g36020D	chrC09	39373087	39373206	-	--
+BnaC09g39130D	chrC09	41815633	41815898	+	tubby-like F-box protein 11
+BnaC09g42530D	chrC09	44049766	44050523	-	uncharacterized protein LOC106424688
+BnaC09g42540D	chrC09	44054914	44055511	-	uncharacterized protein LOC111209575
+BnaC09g47150D	chrC09	46662494	46662742	+	non-specific lipid-transfer protein-like protein At5g64080
+BnaC09g47760D	chrC09	46923921	46924529	+	agmatine deiminase-like
+BnaC09g52150D	chrC09_random	1390928	1391018	-	--
+BnaC09g53460D	chrC09_random	3395898	3396198	-	coatomer subunit beta-1
+BnaC09g53470D	chrC09_random	3402030	3403510	+	homeobox-leucine zipper protein REVOLUTA-like
+BnaC09g54170D	chrC09_random	3995072	3995246	-	"glucan endo-1
+BnaC09g54210D	chrC09_random	4010378	4012417	-	uncharacterized protein LOC106394009
+BnaC09g54640D	chrC09_random	4342761	4342971	+	--
+BnaC09g54690D	chrC09_random	4366226	4368277	-	"ATP-dependent zinc metalloprotease FTSH 6
+BnaCnng04660D	chrCnn_random	4106074	4106130	-	--
+BnaCnng07190D	chrCnn_random	6397648	6397941	+	zinc finger protein CONSTANS-LIKE 12-like
+BnaCnng09310D	chrCnn_random	8446596	8446714	+	--
+BnaCnng12900D	chrCnn_random	11922719	11923191	+	--
+BnaCnng12980D	chrCnn_random	11941798	11941938	+	--
+BnaCnng13290D	chrCnn_random	12122152	12122627	-	--
+BnaCnng16080D	chrCnn_random	15141184	15141249	-	--
+BnaCnng19480D	chrCnn_random	18272772	18272964	+	--
+BnaCnng21120D	chrCnn_random	19781679	19782136	-	--
+BnaCnng22060D	chrCnn_random	20633576	20633965	-	protein SGT1 homolog A-like
+BnaCnng23640D	chrCnn_random	22059576	22060196	-	putative F-box/LRR-repeat protein At5g02930
+BnaCnng23660D	chrCnn_random	22073193	22073707	+	--
+BnaCnng26440D	chrCnn_random	24929357	24929569	+	--
+BnaCnng26970D	chrCnn_random	25424787	25425147	-	uncharacterized protein LOC106370946
+BnaCnng26990D	chrCnn_random	25439288	25439374	+	--
+BnaCnng27020D	chrCnn_random	25458595	25458914	-	--
+BnaCnng27450D	chrCnn_random	25926522	25928545	-	--
+BnaCnng27740D	chrCnn_random	26319266	26321371	+	uncharacterized protein LOC111211174
+BnaCnng31660D	chrCnn_random	30070985	30071168	-	--
+BnaCnng33570D	chrCnn_random	31838348	31838904	-	putative F-box/LRR-repeat protein At5g54820
+BnaCnng33670D	chrCnn_random	31941812	31942697	+	cysteine-rich and transmembrane domain-containing protein PCC1-like isoform X1
+BnaCnng34770D	chrCnn_random	32999109	32999547	-	probable isoprenylcysteine alpha-carbonyl methylesterase ICMEL1
+BnaCnng34810D	chrCnn_random	33014760	33014927	-	--
+BnaCnng34840D	chrCnn_random	33024018	33024212	+	uncharacterized protein LOC106363753
+BnaCnng36640D	chrCnn_random	34992624	34992963	-	uncharacterized protein BNACNNG36640D
+BnaCnng38440D	chrCnn_random	37020145	37020784	-	calcium-binding protein PBP1-like
+BnaCnng39250D	chrCnn_random	37976442	37976624	+	"glycine--tRNA ligase
+BnaCnng39550D	chrCnn_random	38161106	38161405	-	probable xyloglucan galactosyltransferase GT15
+BnaCnng39620D	chrCnn_random	38182793	38191438	-	--
+BnaCnng40030D	chrCnn_random	38540170	38541962	-	eukaryotic initiation factor 4A-I-like
+BnaCnng40060D	chrCnn_random	38544706	38544942	+	probable disease resistance protein RPP1
+BnaCnng41830D	chrCnn_random	40740884	40742773	-	"rhodanese-like domain-containing protein 14
+BnaCnng43770D	chrCnn_random	42784681	42785166	+	--
+BnaCnng43960D	chrCnn_random	43136891	43137422	+	scarecrow-like protein 23 isoform X1
+BnaCnng45800D	chrCnn_random	45067761	45067913	+	--
+BnaCnng47040D	chrCnn_random	46475632	46475694	+	--
+BnaCnng47340D	chrCnn_random	46797085	46797686	+	--
+BnaCnng47810D	chrCnn_random	47085338	47087146	-	--
+BnaCnng48190D	chrCnn_random	47482373	47482657	-	E3 ubiquitin-protein ligase XBAT32-like
+BnaCnng48470D	chrCnn_random	47750798	47753233	+	phospholipid-transporting ATPase 3
+BnaCnng48820D	chrCnn_random	48247908	48247943	+	--
+BnaCnng50470D	chrCnn_random	50028848	50029107	-	--
+BnaCnng52360D	chrCnn_random	51850128	51850247	-	--
+BnaCnng52370D	chrCnn_random	51850543	51851374	+	--
+BnaCnng54040D	chrCnn_random	53801439	53804239	+	phosphatidylinositol glycan anchor biosynthesis class U protein-like isoform X1
+BnaCnng55490D	chrCnn_random	55409791	55409835	-	--
+BnaCnng56580D	chrCnn_random	56446509	56449947	+	--
+BnaCnng56990D	chrCnn_random	56787453	56787748	+	--
+BnaCnng57370D	chrCnn_random	57152048	57152461	-	cyclin-dependent protein kinase inhibitor SMR13-like
+BnaCnng58410D	chrCnn_random	58166612	58166833	+	--
+BnaCnng58570D	chrCnn_random	58305882	58306837	+	transmembrane protein 230-like
+BnaCnng58940D	chrCnn_random	58635714	58635897	-	--
+BnaCnng61790D	chrCnn_random	61622061	61623687	-	--
+BnaCnng61910D	chrCnn_random	61746899	61747157	-	--
+BnaCnng65480D	chrCnn_random	65233468	65233707	+	uncharacterized protein BNACNNG65480D
+BnaCnng66140D	chrCnn_random	65813539	65814631	+	--
+BnaCnng68250D	chrCnn_random	67858272	67858358	-	--
+BnaCnng68310D	chrCnn_random	67888906	67889133	+	--
+BnaCnng69250D	chrCnn_random	69038093	69039452	+	--
+BnaCnng69710D	chrCnn_random	69655283	69655654	-	--
+BnaCnng70760D	chrCnn_random	70841714	70842728	-	putative ER lumen protein-retaining receptor C28H8.4
+BnaCnng70770D	chrCnn_random	70850083	70850599	-	--
+BnaCnng70790D	chrCnn_random	70876745	70876922	+	--
+BnaCnng73260D	chrCnn_random	73788560	73789345	-	uncharacterized protein LOC106417016
+BnaCnng73280D	chrCnn_random	73818986	73820251	-	sister-chromatid cohesion protein 3
+BnaCnng73290D	chrCnn_random	73823169	73824316	+	NDR1/HIN1-like protein 3
+BnaCnng73300D	chrCnn_random	73824553	73824630	+	--
+BnaCnng73310D	chrCnn_random	73824738	73825661	+	probable splicing factor 3A subunit 1
+BnaCnng73340D	chrCnn_random	73872071	73874271	-	uncharacterized protein LOC106369800
+BnaCnng73950D	chrCnn_random	74681480	74681756	-	--
+BnaCnng74590D	chrCnn_random	75489042	75489189	+	--
+BnaCnng76080D	chrCnn_random	77093242	77093544	-	--
+BnaCnng78520D	chrCnn_random	80241202	80241379	-	--
+BnaUnng03120D	chrUnn_random	4424082	4424201	-	--
+BnaUnng03340D	chrUnn_random	4764988	4765114	+	--
+BnaUnng03860D	chrUnn_random	5465014	5465346	-	--
+BnaUnng04030D	chrUnn_random	5801248	5802606	+	uncharacterized protein LOC106376303
+BnaUnng04540D	chrUnn_random	6777797	6778258	+	uncharacterized protein LOC111212652
+BnaUnng04560D	chrUnn_random	6794475	6794510	+	--

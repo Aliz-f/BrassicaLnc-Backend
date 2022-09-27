@@ -1,0 +1,255 @@
+BioProject ID	Run ID	Organ	Trait-Cultivar	Experiment	Description
+PRJNA284624	SRR2036392	seed	brown seeds - 26 DAF	embryonal Control of seed coat 	Identification of genes related to embryonal Control of yellow seed coat in B. napus
+PRJNA284624	SRR2036393	seed	yellow seeds - 26 DAF	embryonal Control of seed coat 	Identification of genes related to embryonal Control of yellow seed coat in B. napus
+PRJNA293490	SRR2179614	flower	WSLA	Recessive Male Sterility (RGMS)	comparative transcriptome analysis of Recessive Male Sterility (RGMS) in sterile and fertile Brassica napus lines
+PRJNA293490	SRR2179615	flower	WSLB	Recessive Male Sterility (RGMS)	comparative transcriptome analysis of Recessive Male Sterility (RGMS) in sterile and fertile Brassica napus lines
+PRJNA293490	SRR2192464	flower	WSLA	Recessive Male Sterility (RGMS)	comparative transcriptome analysis of Recessive Male Sterility (RGMS) in sterile and fertile Brassica napus lines
+PRJNA293490	SRR2192489	flower	WSLB	Recessive Male Sterility (RGMS)	comparative transcriptome analysis of Recessive Male Sterility (RGMS) in sterile and fertile Brassica napus lines
+PRJNA317510	SRR3343235	Stem	stem - LHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3343236	Stem	stem - LHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3343237	flower	bud - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3343238	silique	silique pericarp - LHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3347141	silique	silique pericarp - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3347142	silique	silique pericarp - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3348118	silique	silique pericarp - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3349850	Seed	seed - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3351917	Seed	seed - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3352389	Seed	seed - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3355337	Seed	seed - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3355338	flower	bud - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3355360	flower	bud - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3355369	flower	bud - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3357539	Leaf	leaf - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3357562	Leaf	leaf - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3359113	Stem	stem - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3359124	Stem	stem - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3439745	Stem	stem - LHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3439746	Stem	stem - LHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3439748	Leaf	leaf - LHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3439750	flower	bud - LHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3439752	flower	bud - LHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3439754	flower	bud - LHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3439759	flower	bud - LHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3439761	Seed	seed - LHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3439856	Seed	seed - LHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3439928	Seed	seed - LHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR3439930	silique	silique pericarp - LHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR5074227	Leaf	leaf - LHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA317510	SRR5074228	Leaf	leaf - HHI	Harvest index (HI)	Identification of differentially expressed genes between extremely high and low harvest index accessions
+PRJNA322687	SRR3584236	Leaf	AC1 - Normal	dosage alterations in polyploids 	The comprehensive analysis of gene expression dependent/independent on dosage alterations in Brassica polyploids 
+PRJNA322687	SRR3584237	Leaf	AC2 - Normal	dosage alterations in polyploids 	The comprehensive analysis of gene expression dependent/independent on dosage alterations in Brassica polyploids 
+PRJNA322687	SRR3584238	Leaf	AAC1 - Derivatives	dosage alterations in polyploids 	The comprehensive analysis of gene expression dependent/independent on dosage alterations in Brassica polyploids 
+PRJNA322687	SRR3584239	Leaf	AAC2 - Derivatives	dosage alterations in polyploids 	The comprehensive analysis of gene expression dependent/independent on dosage alterations in Brassica polyploids 
+PRJNA322687	SRR3584240	Leaf	CCA1 - Derivatives	dosage alterations in polyploids 	The comprehensive analysis of gene expression dependent/independent on dosage alterations in Brassica polyploids 
+PRJNA322687	SRR3584241	Leaf	CCA2 - Derivatives	dosage alterations in polyploids 	The comprehensive analysis of gene expression dependent/independent on dosage alterations in Brassica polyploids 
+PRJNA322687	SRR3584242	Leaf	CCAA1 - Normal	dosage alterations in polyploids 	The comprehensive analysis of gene expression dependent/independent on dosage alterations in Brassica polyploids 
+PRJNA322687	SRR3584243	Leaf	CCAA2 - Normal	dosage alterations in polyploids 	The comprehensive analysis of gene expression dependent/independent on dosage alterations in Brassica polyploids 
+PRJNA329379	SRR4241885	Leaf	More lobes (A) 	dosage alterations in polyploids 	The genetic structure of leaf shape and size characterization in Brassica napus. 
+PRJNA329379	SRR4242053	Leaf	Fewer lobes (B) 	dosage alterations in polyploids 	The genetic structure of leaf shape and size characterization in Brassica napus. 
+PRJNA329379	SRR4242079	Leaf	Dissected lines (P)	dosage alterations in polyploids 	The genetic structure of leaf shape and size characterization in Brassica napus. 
+PRJNA359938	SRR5139856	Flower	red flower	flower colors	RNA-Seq to perform comparative petal transcriptome profiling between the lines with different flower colours
+PRJNA359938	SRR5139857	Flower	yellow flower	flower colors	RNA-Seq to perform comparative petal transcriptome profiling between the lines with different flower colours
+PRJNA382037	SRR5429371	Stem	Dwarf Mutant - shoot apexes	New Dwarf Mutant	Transcriptomics Characterization of New Dwarf Mutant of Brassica napus
+PRJNA382037	SRR5429372	Stem	Normal (T6) - shoot apexes	New Dwarf Mutant	Transcriptomics Characterization of New Dwarf Mutant of Brassica napus
+PRJNA387636	SRR5590338	Seed	Brown -14 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5590943	Seed	Brown -14 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5590945	Seed	Brown -14 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5590946	Seed	Yellow - 14 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5590955	Seed	Yellow - 14 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5590957	Seed	Yellow - 14 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5590959	Seed	Brown - 21 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5590960	Seed	Brown - 21 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5590972	Seed	Brown - 21 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5590973	Seed	Yellow - 21 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5590975	Seed	Yellow - 21 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591012	Seed	Yellow - 21 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591364	Seed	Brown -14 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591412	Seed	Brown - 28 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591464	Seed	Brown - 28 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591481	Seed	Brown - 28 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591522	Seed	Yellow - 28 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591524	Seed	Yellow - 28 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591597	Seed	Yellow - 28 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591631	Seed	Brown - 35 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591634	Seed	Brown - 35 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591709	Seed	Brown - 35 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591714	Seed	Yellow - 35 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591715	Seed	Yellow - 35 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591717	Seed	Yellow - 35 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591718	Seed	Brown - 42 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591719	Seed	Brown - 42 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591720	Seed	Brown - 42 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591722	Seed	Yellow - 42 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591723	Seed	Yellow - 42 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA387636	SRR5591744	Seed	Yellow - 42 DAF	Seed coat	Seed coat transcriptome analysis
+PRJNA401257	SRR6004295	flower	bulb - Sterile	Female-Male Sterility	Mapping Bnmfs of the Female-Male Sterility
+PRJNA401257	SRR6004382	flower	bulb - Sterile	Female-Male Sterility	Mapping Bnmfs of the Female-Male Sterility
+PRJNA401257	SRR6004383	flower	bulb - Sterile	Female-Male Sterility	Mapping Bnmfs of the Female-Male Sterility
+PRJNA401257	SRR6004384	flower	bulb - Fertile 	Female-Male Sterility	Mapping Bnmfs of the Female-Male Sterility
+PRJNA401257	SRR6004385	flower	bulb - Fertile 	Female-Male Sterility	Mapping Bnmfs of the Female-Male Sterility
+PRJNA401257	SRR6004386	flower	bulb - Fertile 	Female-Male Sterility	Mapping Bnmfs of the Female-Male Sterility
+PRJNA401257	SRR6004387	flower	leaf - Sterile	Female-Male Sterility	Mapping Bnmfs of the Female-Male Sterility
+PRJNA401257	SRR6004388	flower	leaf - Fertile 	Female-Male Sterility	Mapping Bnmfs of the Female-Male Sterility
+PRJNA449400	SRR6974179	Leaf	AA	allotetraploid	RNA-seq of resynthesized allotetraploid Brassica napus
+PRJNA449400	SRR6974180	Leaf	AA	allotetraploid	RNA-seq of resynthesized allotetraploid Brassica napus
+PRJNA449400	SRR6974181	Leaf	AA	allotetraploid	RNA-seq of resynthesized allotetraploid Brassica napus
+PRJNA449400	SRR6974182	Leaf	AACC	allotetraploid	RNA-seq of resynthesized allotetraploid Brassica napus
+PRJNA449400	SRR6974183	Leaf	AACC	allotetraploid	RNA-seq of resynthesized allotetraploid Brassica napus
+PRJNA449400	SRR6974186	Leaf	AACC	allotetraploid	RNA-seq of resynthesized allotetraploid Brassica napus
+PRJNA453137	SRR7058994	Stem	Low Stem - podding	stem lodging	Dissect the expression pattern of stem lodging-related genes during flowering and silique development in rapeseed
+PRJNA453137	SRR7058995	Stem	High Stem - podding	stem lodging	Dissect the expression pattern of stem lodging-related genes during flowering and silique development in rapeseed
+PRJNA453137	SRR7058996	Stem	High Stem - flowering	stem lodging	Dissect the expression pattern of stem lodging-related genes during flowering and silique development in rapeseed
+PRJNA453137	SRR7058998	Stem	Low Stem - flowering	stem lodging	Dissect the expression pattern of stem lodging-related genes during flowering and silique development in rapeseed
+PRJNA453137	SRR7058999	Stem	High Stem - flowering	stem lodging	Dissect the expression pattern of stem lodging-related genes during flowering and silique development in rapeseed
+PRJNA453137	SRR7059000	Stem	Low Stem - flowering	stem lodging	Dissect the expression pattern of stem lodging-related genes during flowering and silique development in rapeseed
+PRJNA453137	SRR7059001	Stem	Low Stem - flowering	stem lodging	Dissect the expression pattern of stem lodging-related genes during flowering and silique development in rapeseed
+PRJNA453137	SRR7059002	Stem	High Stem - podding	stem lodging	Dissect the expression pattern of stem lodging-related genes during flowering and silique development in rapeseed
+PRJNA453137	SRR7059003	Stem	High Stem - podding	stem lodging	Dissect the expression pattern of stem lodging-related genes during flowering and silique development in rapeseed
+PRJNA453137	SRR7059004	Stem	Low Stem - podding	stem lodging	Dissect the expression pattern of stem lodging-related genes during flowering and silique development in rapeseed
+PRJNA453137	SRR7059005	Stem	Low Stem - podding	stem lodging	Dissect the expression pattern of stem lodging-related genes during flowering and silique development in rapeseed
+PRJNA489323	SRR7816633	Stem	Stem	allotetraploid	Transcriptome analysis of allotetraploid Brassica napus
+PRJNA489323	SRR7816634	Stem	Stem	allotetraploid	Transcriptome analysis of allotetraploid Brassica napus
+PRJNA489323	SRR7816635	Stem	Stem	allotetraploid	Transcriptome analysis of allotetraploid Brassica napus
+PRJNA489323	SRR7816636	Leaf	Leaf	allotetraploid	Transcriptome analysis of allotetraploid Brassica napus
+PRJNA489323	SRR7816637	Leaf	Leaf	allotetraploid	Transcriptome analysis of allotetraploid Brassica napus
+PRJNA489323	SRR7816638	Leaf	Leaf	allotetraploid	Transcriptome analysis of allotetraploid Brassica napus
+PRJNA489323	SRR7816661	flower	flower	allotetraploid	Transcriptome analysis of allotetraploid Brassica napus
+PRJNA489323	SRR7816662	flower	flower	allotetraploid	Transcriptome analysis of allotetraploid Brassica napus
+PRJNA489323	SRR7816663	flower	flower	allotetraploid	Transcriptome analysis of allotetraploid Brassica napus
+PRJNA489323	SRR7816664	silique	silique	allotetraploid	Transcriptome analysis of allotetraploid Brassica napus
+PRJNA489323	SRR7816665	silique	silique	allotetraploid	Transcriptome analysis of allotetraploid Brassica napus
+PRJNA489323	SRR7816666	silique	silique	allotetraploid	Transcriptome analysis of allotetraploid Brassica napus
+PRJNA511929	SRR8371848	flower	SA - anther	cytoplasmic male sterility	Transcriptomic analysis of the restorer line in Shaan2A CMS of Brassica napus.
+PRJNA511929	SRR8371849	flower	YB - bud	cytoplasmic male sterility	Transcriptomic analysis of the restorer line in Shaan2A CMS of Brassica napus.
+PRJNA511929	SRR8371850	flower	YB - bud	cytoplasmic male sterility	Transcriptomic analysis of the restorer line in Shaan2A CMS of Brassica napus.
+PRJNA511929	SRR8371851	flower	YB - bud	cytoplasmic male sterility	Transcriptomic analysis of the restorer line in Shaan2A CMS of Brassica napus.
+PRJNA511929	SRR8371852	flower	SA - anther	cytoplasmic male sterility	Transcriptomic analysis of the restorer line in Shaan2A CMS of Brassica napus.
+PRJNA511929	SRR8371853	flower	SA - anther	cytoplasmic male sterility	Transcriptomic analysis of the restorer line in Shaan2A CMS of Brassica napus.
+PRJNA513109	SRR8398868	flower	25 °C 	cytoplasmic male sterility	Transcriptome analysis of thermosensitive male sterility of Brassica napus under high temperature inducement
+PRJNA513109	SRR8398869	flower	15 °C	cytoplasmic male sterility	Transcriptome analysis of thermosensitive male sterility of Brassica napus under high temperature inducement
+PRJNA516592	SRR8476608	seed	transgene-negative	silique valves - transgenic plants	Examination of the differentially expressed genes in silique valves between transgenic-positive and -negative plants highly expressing BnaA9.CYP78A9 in Brassica napus
+PRJNA516592	SRR8476609	seed	transgene-negative	silique valves - transgenic plants	Examination of the differentially expressed genes in silique valves between transgenic-positive and -negative plants highly expressing BnaA9.CYP78A9 in Brassica napus
+PRJNA516592	SRR8476610	seed	transgene-positive	silique valves - transgenic plants	Examination of the differentially expressed genes in silique valves between transgenic-positive and -negative plants highly expressing BnaA9.CYP78A9 in Brassica napus
+PRJNA516592	SRR8476611	seed	transgene-positive	silique valves - transgenic plants	Examination of the differentially expressed genes in silique valves between transgenic-positive and -negative plants highly expressing BnaA9.CYP78A9 in Brassica napus
+PRJNA516592	SRR8476612	seed	transgene-positive	silique valves - transgenic plants	Examination of the differentially expressed genes in silique valves between transgenic-positive and -negative plants highly expressing BnaA9.CYP78A9 in Brassica napus
+PRJNA516592	SRR8476613	seed	transgene-negative	silique valves - transgenic plants	Examination of the differentially expressed genes in silique valves between transgenic-positive and -negative plants highly expressing BnaA9.CYP78A9 in Brassica napus
+PRJNA545838	SRR9179168	seed	Wild-type Youngsan - 8 DAF	silique valves - transgenic plants	Examination of mRNA profiles of developing pods of 2 transgenic plants and a Control plant at 3 time points
+PRJNA545838	SRR9179169	seed	Wild-type Youngsan - 25 DAF	silique valves - transgenic plants	Examination of mRNA profiles of developing pods of 2 transgenic plants and a Control plant at 3 time points
+PRJNA545838	SRR9179170	seed	Wild-type Youngsan - 45 DAF	silique valves - transgenic plants	Examination of mRNA profiles of developing pods of 2 transgenic plants and a Control plant at 3 time points
+PRJNA545838	SRR9179171	seed	CpFatB4 transgenic - 8 DAF	silique valves - transgenic plants	Examination of mRNA profiles of developing pods of 2 transgenic plants and a Control plant at 3 time points
+PRJNA545838	SRR9179172	seed	CpFatB4 transgenic - 25 DAF	silique valves - transgenic plants	Examination of mRNA profiles of developing pods of 2 transgenic plants and a Control plant at 3 time points
+PRJNA545838	SRR9179173	seed	CpFatB4 transgenic - 45 DAF	silique valves - transgenic plants	Examination of mRNA profiles of developing pods of 2 transgenic plants and a Control plant at 3 time points
+PRJNA545838	SRR9179174	seed	CpFatB5 transgenic - 8 DAF	silique valves - transgenic plants	Examination of mRNA profiles of developing pods of 2 transgenic plants and a Control plant at 3 time points
+PRJNA545838	SRR9179175	seed	CpFatB5 transgenic - 25 DAF	silique valves - transgenic plants	Examination of mRNA profiles of developing pods of 2 transgenic plants and a Control plant at 3 time points
+PRJNA562991	SRR10090703	Leaf	Normal	dwarf mutant	Analysis of genes expression of dwarf mutant
+PRJNA562991	SRR10090704	Leaf	Normal	dwarf mutant	Analysis of genes expression of dwarf mutant
+PRJNA562991	SRR10090705	Leaf	Normal	dwarf mutant	Analysis of genes expression of dwarf mutant
+PRJNA562991	SRR10090706	Leaf	Dwarf Mutant	dwarf mutant	Analysis of genes expression of dwarf mutant
+PRJNA562991	SRR10090707	Leaf	Dwarf Mutant	dwarf mutant	Analysis of genes expression of dwarf mutant
+PRJNA562991	SRR10090708	Leaf	Dwarf Mutant	dwarf mutant	Analysis of genes expression of dwarf mutant
+PRJNA716953	SRR14060148	Seed	Lumen_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060149	Seed	Lumen_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060152	Seed	Lumen_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060153	Seed	Lumen_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060156	Seed	Lumen_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060157	Seed	Lumen_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060158	Seed	Lumen_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060159	Seed	Lumen_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060160	Seed	Lumen_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060161	Seed	Lumen_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060163	Seed	Lumen_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060165	Seed	Lumen_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060167	Seed	Lumen_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060168	Seed	Lumen_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060169	Seed	Solar_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060170	Seed	Solar_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060171	Seed	Solar_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060172	Seed	Solar_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060173	Seed	Solar_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060176	Seed	Solar_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060182	Seed	Solar_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060183	Seed	Solar_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060187	Seed	Solar_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060189	Seed	Solar_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060190	Seed	Solar_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060191	Seed	Solar_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060145	Seed	Lumen_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060146	Seed	Lumen_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060147	Seed	Lumen_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060174	Seed	Solar_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060175	Seed	Solar_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060177	Seed	Solar_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060178	Seed	Solar_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060179	Seed	Solar_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060180	Seed	Solar_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060181	Seed	Solar_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060184	Seed	Solar_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060185	Seed	Solar_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060186	Seed	Solar_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060188	Seed	Solar_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060192	Seed	Solar_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060150	Seed	Lumen_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060151	Seed	Lumen_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060154	Seed	Lumen_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060155	Seed	Lumen_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060162	Seed	Lumen_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060164	Seed	Lumen_7DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA716953	SRR14060166	Seed	Lumen_14DAF	seed weight plasticity	Transcriptome analysis of the seed weight plasticity in Brassica napus
+PRJNA734925	SRR14718293	Silique wall	Long silique C	natural variation of silique length	Transcriptome analysis to reveal the key genes and mechanisms underlying the natural variation of silique length in rapeseed (Brassica napus L.)
+PRJNA734925	SRR14718294	Silique wall	Long silique C	natural variation of silique length	Transcriptome analysis to reveal the key genes and mechanisms underlying the natural variation of silique length in rapeseed (Brassica napus L.)
+PRJNA734925	SRR14718295	Silique wall	Long silique C	natural variation of silique length	Transcriptome analysis to reveal the key genes and mechanisms underlying the natural variation of silique length in rapeseed (Brassica napus L.)
+PRJNA734925	SRR14718296	Silique wall	Short silique D	natural variation of silique length	Transcriptome analysis to reveal the key genes and mechanisms underlying the natural variation of silique length in rapeseed (Brassica napus L.)
+PRJNA734925	SRR14718297	Silique wall	Short silique D	natural variation of silique length	Transcriptome analysis to reveal the key genes and mechanisms underlying the natural variation of silique length in rapeseed (Brassica napus L.)
+PRJNA734925	SRR14718298	Silique wall	Short silique D	natural variation of silique length	Transcriptome analysis to reveal the key genes and mechanisms underlying the natural variation of silique length in rapeseed (Brassica napus L.)
+PRJNA612938	SRR11318267	anther	1F_parent_anther	thermo-sensitive genic male sterility (TGMS)	RNA-seq analysis of thermo-sensitive male sterility line in Brassica napus L.
+PRJNA612938	SRR11318265	bud	11F_BC1_bud	thermo-sensitive genic male sterility (TGMS)	RNA-seq analysis of thermo-sensitive male sterility line in Brassica napus L.
+PRJNA612938	SRR11318266	anther	2F_parent_anther	thermo-sensitive genic male sterility (TGMS)	RNA-seq analysis of thermo-sensitive male sterility line in Brassica napus L.
+PRJNA612938	SRR11318264	anther	12S_BC1_anther	thermo-sensitive genic male sterility (TGMS)	RNA-seq analysis of thermo-sensitive male sterility line in Brassica napus L.
+PRJNA612938	SRR11318263	anther	13S_BC1_anther	thermo-sensitive genic male sterility (TGMS)	RNA-seq analysis of thermo-sensitive male sterility line in Brassica napus L.
+PRJNA612938	SRR11318262	bud	14S_BC1-bud	thermo-sensitive genic male sterility (TGMS)	RNA-seq analysis of thermo-sensitive male sterility line in Brassica napus L.
+PRJNA612938	SRR11318261	bud	15S_BC1_bud	thermo-sensitive genic male sterility (TGMS)	RNA-seq analysis of thermo-sensitive male sterility line in Brassica napus L.
+PRJNA612938	SRR11318260	bud	3F_parent_bud	thermo-sensitive genic male sterility (TGMS)	RNA-seq analysis of thermo-sensitive male sterility line in Brassica napus L.
+PRJNA612938	SRR11318259	anther	4S_parent_anther	thermo-sensitive genic male sterility (TGMS)	RNA-seq analysis of thermo-sensitive male sterility line in Brassica napus L.
+PRJNA612938	SRR11318258	anther	5S_parent_anther	thermo-sensitive genic male sterility (TGMS)	RNA-seq analysis of thermo-sensitive male sterility line in Brassica napus L.
+PRJNA612938	SRR11318257	bud	6S_parent_bud	thermo-sensitive genic male sterility (TGMS)	RNA-seq analysis of thermo-sensitive male sterility line in Brassica napus L.
+PRJNA612938	SRR11318256	bud	7S_parent_bud	thermo-sensitive genic male sterility (TGMS)	RNA-seq analysis of thermo-sensitive male sterility line in Brassica napus L.
+PRJNA612938	SRR11318255	anther	8F_BC1_anther	thermo-sensitive genic male sterility (TGMS)	RNA-seq analysis of thermo-sensitive male sterility line in Brassica napus L.
+PRJNA612938	SRR11318254	anther	9F_BC1_anther	thermo-sensitive genic male sterility (TGMS)	RNA-seq analysis of thermo-sensitive male sterility line in Brassica napus L.
+PRJNA612938	SRR11318253	bud	10F_BC1_bud	thermo-sensitive genic male sterility (TGMS)	RNA-seq analysis of thermo-sensitive male sterility line in Brassica napus L.
+PRJNA554517	SRR9694967	leaf	WZ	Transgenic lines (BnaPAP2.A7-Anthocyanin Biosynthesis)	Transcriptome analysis of positive and negative transgenic lines (for BnaPAP2.A7) of Brassica napus L. wz: transgenic plants with full-length BnaPAP2. A7, wz395: transgenic plants with 395 isoform and wz910: transgenic plants with 910 isoforms.
+PRJNA554517	SRR9694966	leaf	WZ	Transgenic lines (BnaPAP2.A7-Anthocyanin Biosynthesis)	Transcriptome analysis of positive and negative transgenic lines (for BnaPAP2.A7) of Brassica napus L. wz: transgenic plants with full-length BnaPAP2. A7, wz395: transgenic plants with 395 isoform and wz910: transgenic plants with 910 isoforms.
+PRJNA554517	SRR9694965	leaf	J9709	Transgenic lines (BnaPAP2.A7-Anthocyanin Biosynthesis)	Transcriptome analysis of positive and negative transgenic lines (for BnaPAP2.A7) of Brassica napus L. wz: transgenic plants with full-length BnaPAP2. A7, wz395: transgenic plants with 395 isoform and wz910: transgenic plants with 910 isoforms.
+PRJNA554517	SRR9694964	leaf	J9709	Transgenic lines (BnaPAP2.A7-Anthocyanin Biosynthesis)	Transcriptome analysis of positive and negative transgenic lines (for BnaPAP2.A7) of Brassica napus L. wz: transgenic plants with full-length BnaPAP2. A7, wz395: transgenic plants with 395 isoform and wz910: transgenic plants with 910 isoforms.
+PRJNA554517	SRR9694963	leaf	WZ	Transgenic lines (BnaPAP2.A7-Anthocyanin Biosynthesis)	Transcriptome analysis of positive and negative transgenic lines (for BnaPAP2.A7) of Brassica napus L. wz: transgenic plants with full-length BnaPAP2. A7, wz395: transgenic plants with 395 isoform and wz910: transgenic plants with 910 isoforms.
+PRJNA554517	SRR9694962	leaf	PR	Transgenic lines (BnaPAP2.A7-Anthocyanin Biosynthesis)	Transcriptome analysis of positive and negative transgenic lines (for BnaPAP2.A7) of Brassica napus L. wz: transgenic plants with full-length BnaPAP2. A7, wz395: transgenic plants with 395 isoform and wz910: transgenic plants with 910 isoforms.
+PRJNA554517	SRR9694961	leaf	PR	Transgenic lines (BnaPAP2.A7-Anthocyanin Biosynthesis)	Transcriptome analysis of positive and negative transgenic lines (for BnaPAP2.A7) of Brassica napus L. wz: transgenic plants with full-length BnaPAP2. A7, wz395: transgenic plants with 395 isoform and wz910: transgenic plants with 910 isoforms.
+PRJNA554517	SRR9694960	leaf	PR	Transgenic lines (BnaPAP2.A7-Anthocyanin Biosynthesis)	Transcriptome analysis of positive and negative transgenic lines (for BnaPAP2.A7) of Brassica napus L. wz: transgenic plants with full-length BnaPAP2. A7, wz395: transgenic plants with 395 isoform and wz910: transgenic plants with 910 isoforms.
+PRJNA554517	SRR9694959	leaf	W395	Transgenic lines (BnaPAP2.A7-Anthocyanin Biosynthesis)	Transcriptome analysis of positive and negative transgenic lines (for BnaPAP2.A7) of Brassica napus L. wz: transgenic plants with full-length BnaPAP2. A7, wz395: transgenic plants with 395 isoform and wz910: transgenic plants with 910 isoforms.
+PRJNA554517	SRR9694958	leaf	W395	Transgenic lines (BnaPAP2.A7-Anthocyanin Biosynthesis)	Transcriptome analysis of positive and negative transgenic lines (for BnaPAP2.A7) of Brassica napus L. wz: transgenic plants with full-length BnaPAP2. A7, wz395: transgenic plants with 395 isoform and wz910: transgenic plants with 910 isoforms.
+PRJNA554517	SRR9694957	leaf	W395	Transgenic lines (BnaPAP2.A7-Anthocyanin Biosynthesis)	Transcriptome analysis of positive and negative transgenic lines (for BnaPAP2.A7) of Brassica napus L. wz: transgenic plants with full-length BnaPAP2. A7, wz395: transgenic plants with 395 isoform and wz910: transgenic plants with 910 isoforms.
+PRJNA554517	SRR9694956	leaf	W910	Transgenic lines (BnaPAP2.A7-Anthocyanin Biosynthesis)	Transcriptome analysis of positive and negative transgenic lines (for BnaPAP2.A7) of Brassica napus L. wz: transgenic plants with full-length BnaPAP2. A7, wz395: transgenic plants with 395 isoform and wz910: transgenic plants with 910 isoforms.
+PRJNA554517	SRR9694955	leaf	W910	Transgenic lines (BnaPAP2.A7-Anthocyanin Biosynthesis)	Transcriptome analysis of positive and negative transgenic lines (for BnaPAP2.A7) of Brassica napus L. wz: transgenic plants with full-length BnaPAP2. A7, wz395: transgenic plants with 395 isoform and wz910: transgenic plants with 910 isoforms.
+PRJNA554517	SRR9694954	leaf	W910	Transgenic lines (BnaPAP2.A7-Anthocyanin Biosynthesis)	Transcriptome analysis of positive and negative transgenic lines (for BnaPAP2.A7) of Brassica napus L. wz: transgenic plants with full-length BnaPAP2. A7, wz395: transgenic plants with 395 isoform and wz910: transgenic plants with 910 isoforms.
+PRJNA554517	SRR9694953	leaf	J9709	Transgenic lines (BnaPAP2.A7-Anthocyanin Biosynthesis)	Transcriptome analysis of positive and negative transgenic lines (for BnaPAP2.A7) of Brassica napus L. wz: transgenic plants with full-length BnaPAP2. A7, wz395: transgenic plants with 395 isoform and wz910: transgenic plants with 910 isoforms.
+PRJNA602672	SRR10951023	leaf	HW	leaf epidermis (wax load capacity)	Brassica napus leaf epidermis RNA-seq data in both high wax (HW) load and low wax )LW) load cells
+PRJNA602672	SRR10951022	leaf	HW	leaf epidermis (wax load capacity)	Brassica napus leaf epidermis RNA-seq data in both high wax (HW) load and low wax )LW) load cells
+PRJNA602672	SRR10951019	leaf	LW	leaf epidermis (wax load capacity)	Brassica napus leaf epidermis RNA-seq data in both high wax (HW) load and low wax )LW) load cells
+PRJNA602672	SRR10951020	leaf	LW	leaf epidermis (wax load capacity)	Brassica napus leaf epidermis RNA-seq data in both high wax (HW) load and low wax )LW) load cells
+PRJNA602672	SRR10951021	leaf	HW	leaf epidermis (wax load capacity)	Brassica napus leaf epidermis RNA-seq data in both high wax (HW) load and low wax )LW) load cells
+PRJNA602672	SRR10951018	leaf	LW	leaf epidermis (wax load capacity)	Brassica napus leaf epidermis RNA-seq data in both high wax (HW) load and low wax )LW) load cells
+PRJNA602164	SRR10915210	stem tips	NY18	plant height 	Transcriptome analysis of a candidate gene controlling plant height in Brassica napus L
+PRJNA602164	SRR10915209	stem tips	NY18	plant height 	Transcriptome analysis of a candidate gene controlling plant height in Brassica napus L
+PRJNA602164	SRR10915208	stem tips	DF59	plant height 	Transcriptome analysis of a candidate gene controlling plant height in Brassica napus L
+PRJNA602164	SRR10915207	stem tips	DF59	plant height 	Transcriptome analysis of a candidate gene controlling plant height in Brassica napus L
+PRJNA627985	SRR11607781	Anthers	P3-2	Genome stability and polyploid formation	Transcriptome sequencing of mature anthers of Brassica napus (Y3560:synthetic_octoploid16, Y3380: synthetic_octoploid12, P3-2: synthetic_tetraploid8, and ZS11: natural_tetraploid4)
+PRJNA627985	SRR11607780	Anthers	P3-2	Genome stability and polyploid formation	Transcriptome sequencing of mature anthers of Brassica napus (Y3560:synthetic_octoploid16, Y3380: synthetic_octoploid12, P3-2: synthetic_tetraploid8, and ZS11: natural_tetraploid4)
+PRJNA627985	SRR11607782	Anthers	P3-2_	Genome stability and polyploid formation	Transcriptome sequencing of mature anthers of Brassica napus (Y3560:synthetic_octoploid16, Y3380: synthetic_octoploid12, P3-2: synthetic_tetraploid8, and ZS11: natural_tetraploid4)
+PRJNA627985	SRR11607778	Anthers	Y3380	Genome stability and polyploid formation	Transcriptome sequencing of mature anthers of Brassica napus (Y3560:synthetic_octoploid16, Y3380: synthetic_octoploid12, P3-2: synthetic_tetraploid8, and ZS11: natural_tetraploid4)
+PRJNA627985	SRR11607791	Anthers	Y3380	Genome stability and polyploid formation	Transcriptome sequencing of mature anthers of Brassica napus (Y3560:synthetic_octoploid16, Y3380: synthetic_octoploid12, P3-2: synthetic_tetraploid8, and ZS11: natural_tetraploid4)
+PRJNA627985	SRR11607790	Anthers	Y3380	Genome stability and polyploid formation	Transcriptome sequencing of mature anthers of Brassica napus (Y3560:synthetic_octoploid16, Y3380: synthetic_octoploid12, P3-2: synthetic_tetraploid8, and ZS11: natural_tetraploid4)
+PRJNA627985	SRR11607788	Anthers	Y3560	Genome stability and polyploid formation	Transcriptome sequencing of mature anthers of Brassica napus (Y3560:synthetic_octoploid16, Y3380: synthetic_octoploid12, P3-2: synthetic_tetraploid8, and ZS11: natural_tetraploid4)
+PRJNA627985	SRR11607787	Anthers	Y3560	Genome stability and polyploid formation	Transcriptome sequencing of mature anthers of Brassica napus (Y3560:synthetic_octoploid16, Y3380: synthetic_octoploid12, P3-2: synthetic_tetraploid8, and ZS11: natural_tetraploid4)
+PRJNA627985	SRR11607786	Anthers	Y3560	Genome stability and polyploid formation	Transcriptome sequencing of mature anthers of Brassica napus (Y3560:synthetic_octoploid16, Y3380: synthetic_octoploid12, P3-2: synthetic_tetraploid8, and ZS11: natural_tetraploid4)
+PRJNA627985	SRR11607792	Anthers	ZS11	Genome stability and polyploid formation	Transcriptome sequencing of mature anthers of Brassica napus (Y3560:synthetic_octoploid16, Y3380: synthetic_octoploid12, P3-2: synthetic_tetraploid8, and ZS11: natural_tetraploid4)
+PRJNA627985	SRR11607785	Anthers	ZS11	Genome stability and polyploid formation	Transcriptome sequencing of mature anthers of Brassica napus (Y3560:synthetic_octoploid16, Y3380: synthetic_octoploid12, P3-2: synthetic_tetraploid8, and ZS11: natural_tetraploid4)
+PRJNA627985	SRR11607784	Anthers	ZS11	Genome stability and polyploid formation	Transcriptome sequencing of mature anthers of Brassica napus (Y3560:synthetic_octoploid16, Y3380: synthetic_octoploid12, P3-2: synthetic_tetraploid8, and ZS11: natural_tetraploid4)

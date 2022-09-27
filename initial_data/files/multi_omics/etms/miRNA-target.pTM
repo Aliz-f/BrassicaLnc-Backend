@@ -1,0 +1,28 @@
+>bna-miR824 MIMAT0005599	Score: 3	BnaA07LNG0001200
+                           v   v
+Query:          1 TAGACCATTT---GTGAGAAGGGA 21
+                  :|||||||||   |||||o|o:||
+Sbjct:        866 GTCTGGTAAAACTCACTCGTATCT 843
+
+
+>bna-miR156g MIMAT0023616	Score: 2.5	BnaC02LNG0006800
+                           v   v
+Query:          1 TTGACAGAAG---ATAGAGAGCAC 21
+                  ||||||:|||   |||||:||o||
+Sbjct:       8990 AACTGTTTTCATGTATCTTTCTTG 8967
+
+
+>bna-miR156c MIMAT0005639	Score: 2.5	BnaC02LNG0006800
+                           v   v
+Query:          1 TTGACAGAAG---ATAGAGAGCAC 21
+                  ||||||:|||   |||||:||o||
+Sbjct:       8990 AACTGTTTTCATGTATCTTTCTTG 8967
+
+
+>bna-miR156b MIMAT0005636	Score: 2.5	BnaC02LNG0006800
+                           v   v
+Query:          1 TTGACAGAAG---ATAGAGAGCAC 21
+                  ||||||:|||   |||||:||o||
+Sbjct:       8990 AACTGTTTTCATGTATCTTTCTTG 8967
+
+

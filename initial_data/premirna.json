@@ -1,0 +1,812 @@
+[
+    {
+        "model": "lncRNA.premirna",
+        "pk": 1,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0004100",
+            "premi_rna": "bna-miR6031",
+            "identity": "90.909",
+            "alignment_length": "22",
+            "mismatches": "2",
+            "lncrna_start": "9291",
+            "Lncrna_end": "9312",
+            "premi_rna_start": "24",
+            "premi_rna_end": "3",
+            "e_value": "0.029",
+            "bitscore": "28.2",
+            "structure": true
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 2,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0004500",
+            "premi_rna": "bna-miR159",
+            "identity": "88.235",
+            "alignment_length": "17",
+            "mismatches": "2",
+            "lncrna_start": "542",
+            "Lncrna_end": "558",
+            "premi_rna_start": "1",
+            "premi_rna_end": "17",
+            "e_value": "5.4",
+            "bitscore": "18.3",
+            "structure": true
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 3,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006800",
+            "premi_rna": "bna-miR156a",
+            "identity": "93.75",
+            "alignment_length": "16",
+            "mismatches": "1",
+            "lncrna_start": "2058",
+            "Lncrna_end": "2073",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "0.14",
+            "bitscore": "24.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 4,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006800",
+            "premi_rna": "bna-miR156d",
+            "identity": "93.75",
+            "alignment_length": "16",
+            "mismatches": "1",
+            "lncrna_start": "2058",
+            "Lncrna_end": "2073",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "0.14",
+            "bitscore": "24.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 5,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006800",
+            "premi_rna": "bna-miR156e",
+            "identity": "93.75",
+            "alignment_length": "16",
+            "mismatches": "1",
+            "lncrna_start": "2058",
+            "Lncrna_end": "2073",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "0.14",
+            "bitscore": "24.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 6,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006800",
+            "premi_rna": "bna-miR156f",
+            "identity": "93.75",
+            "alignment_length": "16",
+            "mismatches": "1",
+            "lncrna_start": "2058",
+            "Lncrna_end": "2073",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "0.14",
+            "bitscore": "24.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 7,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006900",
+            "premi_rna": "bna-miR156a",
+            "identity": "93.75",
+            "alignment_length": "16",
+            "mismatches": "1",
+            "lncrna_start": "1038",
+            "Lncrna_end": "1053",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "0.1",
+            "bitscore": "24.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 8,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006900",
+            "premi_rna": "bna-miR156d",
+            "identity": "93.75",
+            "alignment_length": "16",
+            "mismatches": "1",
+            "lncrna_start": "1038",
+            "Lncrna_end": "1053",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "0.1",
+            "bitscore": "24.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 9,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006900",
+            "premi_rna": "bna-miR156e",
+            "identity": "93.75",
+            "alignment_length": "16",
+            "mismatches": "1",
+            "lncrna_start": "1038",
+            "Lncrna_end": "1053",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "0.1",
+            "bitscore": "24.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 10,
+        "fields": {
+            "lncrna_id": "BnaA01LNG0006900",
+            "premi_rna": "bna-miR156f",
+            "identity": "93.75",
+            "alignment_length": "16",
+            "mismatches": "1",
+            "lncrna_start": "1038",
+            "Lncrna_end": "1053",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "0.1",
+            "bitscore": "24.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 11,
+        "fields": {
+            "lncrna_id": "BnaA02LNG0001200",
+            "premi_rna": "bna-miR6031",
+            "identity": "94.444",
+            "alignment_length": "18",
+            "mismatches": "1",
+            "lncrna_start": "43",
+            "Lncrna_end": "60",
+            "premi_rna_start": "24",
+            "premi_rna_end": "7",
+            "e_value": "0.007",
+            "bitscore": "28.2",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 12,
+        "fields": {
+            "lncrna_id": "BnaA02LNG0001400",
+            "premi_rna": "bna-miR6034",
+            "identity": "87.5",
+            "alignment_length": "16",
+            "mismatches": "2",
+            "lncrna_start": "426",
+            "Lncrna_end": "441",
+            "premi_rna_start": "18",
+            "premi_rna_end": "3",
+            "e_value": "6.8",
+            "bitscore": "16.4",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 13,
+        "fields": {
+            "lncrna_id": "BnaA03LNG0008900",
+            "premi_rna": "bna-miR172a",
+            "identity": "88.235",
+            "alignment_length": "17",
+            "mismatches": "2",
+            "lncrna_start": "3020",
+            "Lncrna_end": "3036",
+            "premi_rna_start": "2",
+            "premi_rna_end": "18",
+            "e_value": "9.4",
+            "bitscore": "18.3",
+            "structure": true
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 14,
+        "fields": {
+            "lncrna_id": "BnaA03LNG0008900",
+            "premi_rna": "bna-miR172b",
+            "identity": "88.235",
+            "alignment_length": "17",
+            "mismatches": "2",
+            "lncrna_start": "3020",
+            "Lncrna_end": "3036",
+            "premi_rna_start": "2",
+            "premi_rna_end": "18",
+            "e_value": "9.4",
+            "bitscore": "18.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 15,
+        "fields": {
+            "lncrna_id": "BnaA03LNG0008900",
+            "premi_rna": "bna-miR172c",
+            "identity": "88.235",
+            "alignment_length": "17",
+            "mismatches": "2",
+            "lncrna_start": "3020",
+            "Lncrna_end": "3036",
+            "premi_rna_start": "2",
+            "premi_rna_end": "18",
+            "e_value": "9.4",
+            "bitscore": "18.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 16,
+        "fields": {
+            "lncrna_id": "BnaA03LNG0008900",
+            "premi_rna": "bna-miR172d",
+            "identity": "88.235",
+            "alignment_length": "17",
+            "mismatches": "2",
+            "lncrna_start": "3020",
+            "Lncrna_end": "3036",
+            "premi_rna_start": "2",
+            "premi_rna_end": "18",
+            "e_value": "9.4",
+            "bitscore": "18.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 17,
+        "fields": {
+            "lncrna_id": "BnaA05LNG0003600",
+            "premi_rna": "bna-miR6031",
+            "identity": "87.5",
+            "alignment_length": "24",
+            "mismatches": "3",
+            "lncrna_start": "1444",
+            "Lncrna_end": "1467",
+            "premi_rna_start": "24",
+            "premi_rna_end": "1",
+            "e_value": "0.076",
+            "bitscore": "24.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 18,
+        "fields": {
+            "lncrna_id": "BnaA09LNG0007400",
+            "premi_rna": "bna-miR171a",
+            "identity": "88.889",
+            "alignment_length": "18",
+            "mismatches": "2",
+            "lncrna_start": "3085",
+            "Lncrna_end": "3102",
+            "premi_rna_start": "19",
+            "premi_rna_end": "2",
+            "e_value": "7",
+            "bitscore": "20.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 19,
+        "fields": {
+            "lncrna_id": "BnaA09LNG0007400",
+            "premi_rna": "bna-miR171b",
+            "identity": "88.889",
+            "alignment_length": "18",
+            "mismatches": "2",
+            "lncrna_start": "3085",
+            "Lncrna_end": "3102",
+            "premi_rna_start": "19",
+            "premi_rna_end": "2",
+            "e_value": "7",
+            "bitscore": "20.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 20,
+        "fields": {
+            "lncrna_id": "BnaA09LNG0007400",
+            "premi_rna": "bna-miR171c",
+            "identity": "88.889",
+            "alignment_length": "18",
+            "mismatches": "2",
+            "lncrna_start": "3085",
+            "Lncrna_end": "3102",
+            "premi_rna_start": "19",
+            "premi_rna_end": "2",
+            "e_value": "7",
+            "bitscore": "20.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 21,
+        "fields": {
+            "lncrna_id": "BnaA09LNG0007400",
+            "premi_rna": "bna-miR171d",
+            "identity": "88.889",
+            "alignment_length": "18",
+            "mismatches": "2",
+            "lncrna_start": "3085",
+            "Lncrna_end": "3102",
+            "premi_rna_start": "19",
+            "premi_rna_end": "2",
+            "e_value": "7",
+            "bitscore": "20.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 22,
+        "fields": {
+            "lncrna_id": "BnaA09LNG0007400",
+            "premi_rna": "bna-miR171e",
+            "identity": "88.889",
+            "alignment_length": "18",
+            "mismatches": "2",
+            "lncrna_start": "3085",
+            "Lncrna_end": "3102",
+            "premi_rna_start": "19",
+            "premi_rna_end": "2",
+            "e_value": "7",
+            "bitscore": "20.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 23,
+        "fields": {
+            "lncrna_id": "BnaA09LNG0008200",
+            "premi_rna": "bna-miR860",
+            "identity": "87.5",
+            "alignment_length": "16",
+            "mismatches": "2",
+            "lncrna_start": "322",
+            "Lncrna_end": "337",
+            "premi_rna_start": "3",
+            "premi_rna_end": "18",
+            "e_value": "8.3",
+            "bitscore": "16.4",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 24,
+        "fields": {
+            "lncrna_id": "BnaAnnLNG0003700",
+            "premi_rna": "bna-miR156b",
+            "identity": "93.75",
+            "alignment_length": "16",
+            "mismatches": "1",
+            "lncrna_start": "1530",
+            "Lncrna_end": "1545",
+            "premi_rna_start": "1",
+            "premi_rna_end": "16",
+            "e_value": "0.15",
+            "bitscore": "24.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 25,
+        "fields": {
+            "lncrna_id": "BnaAnnLNG0003700",
+            "premi_rna": "bna-miR156c",
+            "identity": "93.75",
+            "alignment_length": "16",
+            "mismatches": "1",
+            "lncrna_start": "1530",
+            "Lncrna_end": "1545",
+            "premi_rna_start": "1",
+            "premi_rna_end": "16",
+            "e_value": "0.15",
+            "bitscore": "24.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 26,
+        "fields": {
+            "lncrna_id": "BnaAnnLNG0003700",
+            "premi_rna": "bna-miR156g",
+            "identity": "93.75",
+            "alignment_length": "16",
+            "mismatches": "1",
+            "lncrna_start": "1530",
+            "Lncrna_end": "1545",
+            "premi_rna_start": "1",
+            "premi_rna_end": "16",
+            "e_value": "0.15",
+            "bitscore": "24.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 27,
+        "fields": {
+            "lncrna_id": "BnaC03LNG0002500",
+            "premi_rna": "bna-miR6031",
+            "identity": "94.444",
+            "alignment_length": "18",
+            "mismatches": "1",
+            "lncrna_start": "6453",
+            "Lncrna_end": "6470",
+            "premi_rna_start": "1",
+            "premi_rna_end": "18",
+            "e_value": "0.027",
+            "bitscore": "28.2",
+            "structure": true
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 28,
+        "fields": {
+            "lncrna_id": "BnaC04LNG0005500",
+            "premi_rna": "bna-miR2111c",
+            "identity": "93.75",
+            "alignment_length": "16",
+            "mismatches": "1",
+            "lncrna_start": "1114",
+            "Lncrna_end": "1129",
+            "premi_rna_start": "6",
+            "premi_rna_end": "21",
+            "e_value": "0.093",
+            "bitscore": "24.3",
+            "structure": true
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 29,
+        "fields": {
+            "lncrna_id": "BnaC05LNG0007400",
+            "premi_rna": "bna-miR169m",
+            "identity": "90",
+            "alignment_length": "20",
+            "mismatches": "2",
+            "lncrna_start": "140",
+            "Lncrna_end": "159",
+            "premi_rna_start": "1",
+            "premi_rna_end": "20",
+            "e_value": "0.029",
+            "bitscore": "24.3",
+            "structure": true
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 30,
+        "fields": {
+            "lncrna_id": "BnaC06LNG0000600",
+            "premi_rna": "bna-miR2111c",
+            "identity": "89.474",
+            "alignment_length": "19",
+            "mismatches": "2",
+            "lncrna_start": "1324",
+            "Lncrna_end": "1342",
+            "premi_rna_start": "3",
+            "premi_rna_end": "21",
+            "e_value": "0.69",
+            "bitscore": "22.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 31,
+        "fields": {
+            "lncrna_id": "BnaC06LNG0008800",
+            "premi_rna": "bna-miR6036",
+            "identity": "88.889",
+            "alignment_length": "18",
+            "mismatches": "2",
+            "lncrna_start": "2902",
+            "Lncrna_end": "2919",
+            "premi_rna_start": "7",
+            "premi_rna_end": "24",
+            "e_value": "2.7",
+            "bitscore": "20.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 32,
+        "fields": {
+            "lncrna_id": "BnaC08LNG0000400",
+            "premi_rna": "bna-miR396a",
+            "identity": "93.75",
+            "alignment_length": "16",
+            "mismatches": "1",
+            "lncrna_start": "492",
+            "Lncrna_end": "507",
+            "premi_rna_start": "18",
+            "premi_rna_end": "3",
+            "e_value": "0.046",
+            "bitscore": "24.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 33,
+        "fields": {
+            "lncrna_id": "BnaC08LNG0002900",
+            "premi_rna": "bna-miR6034",
+            "identity": "88.235",
+            "alignment_length": "17",
+            "mismatches": "2",
+            "lncrna_start": "2125",
+            "Lncrna_end": "2141",
+            "premi_rna_start": "17",
+            "premi_rna_end": "1",
+            "e_value": "7.6",
+            "bitscore": "18.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 34,
+        "fields": {
+            "lncrna_id": "BnaC08LNG0006200",
+            "premi_rna": "bna-miR169c",
+            "identity": "87.5",
+            "alignment_length": "16",
+            "mismatches": "2",
+            "lncrna_start": "404",
+            "Lncrna_end": "419",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "8.9",
+            "bitscore": "16.4",
+            "structure": true
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 35,
+        "fields": {
+            "lncrna_id": "BnaC08LNG0006200",
+            "premi_rna": "bna-miR169d",
+            "identity": "87.5",
+            "alignment_length": "16",
+            "mismatches": "2",
+            "lncrna_start": "404",
+            "Lncrna_end": "419",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "8.9",
+            "bitscore": "16.4",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 36,
+        "fields": {
+            "lncrna_id": "BnaC08LNG0006200",
+            "premi_rna": "bna-miR169e",
+            "identity": "87.5",
+            "alignment_length": "16",
+            "mismatches": "2",
+            "lncrna_start": "404",
+            "Lncrna_end": "419",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "8.9",
+            "bitscore": "16.4",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 37,
+        "fields": {
+            "lncrna_id": "BnaC08LNG0006200",
+            "premi_rna": "bna-miR169f",
+            "identity": "87.5",
+            "alignment_length": "16",
+            "mismatches": "2",
+            "lncrna_start": "404",
+            "Lncrna_end": "419",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "8.9",
+            "bitscore": "16.4",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 38,
+        "fields": {
+            "lncrna_id": "BnaC08LNG0006200",
+            "premi_rna": "bna-miR169g",
+            "identity": "87.5",
+            "alignment_length": "16",
+            "mismatches": "2",
+            "lncrna_start": "404",
+            "Lncrna_end": "419",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "8.9",
+            "bitscore": "16.4",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 39,
+        "fields": {
+            "lncrna_id": "BnaC08LNG0006200",
+            "premi_rna": "bna-miR169h",
+            "identity": "87.5",
+            "alignment_length": "16",
+            "mismatches": "2",
+            "lncrna_start": "404",
+            "Lncrna_end": "419",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "8.9",
+            "bitscore": "16.4",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 40,
+        "fields": {
+            "lncrna_id": "BnaC08LNG0006200",
+            "premi_rna": "bna-miR169i",
+            "identity": "87.5",
+            "alignment_length": "16",
+            "mismatches": "2",
+            "lncrna_start": "404",
+            "Lncrna_end": "419",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "8.9",
+            "bitscore": "16.4",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 41,
+        "fields": {
+            "lncrna_id": "BnaC08LNG0006200",
+            "premi_rna": "bna-miR169j",
+            "identity": "87.5",
+            "alignment_length": "16",
+            "mismatches": "2",
+            "lncrna_start": "404",
+            "Lncrna_end": "419",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "8.9",
+            "bitscore": "16.4",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 42,
+        "fields": {
+            "lncrna_id": "BnaC08LNG0006200",
+            "premi_rna": "bna-miR169k",
+            "identity": "87.5",
+            "alignment_length": "16",
+            "mismatches": "2",
+            "lncrna_start": "404",
+            "Lncrna_end": "419",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "8.9",
+            "bitscore": "16.4",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 43,
+        "fields": {
+            "lncrna_id": "BnaC08LNG0006200",
+            "premi_rna": "bna-miR169l",
+            "identity": "87.5",
+            "alignment_length": "16",
+            "mismatches": "2",
+            "lncrna_start": "404",
+            "Lncrna_end": "419",
+            "premi_rna_start": "16",
+            "premi_rna_end": "1",
+            "e_value": "8.9",
+            "bitscore": "16.4",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 44,
+        "fields": {
+            "lncrna_id": "BnaCnnLNG0005000",
+            "premi_rna": "bna-miR6031",
+            "identity": "88.235",
+            "alignment_length": "17",
+            "mismatches": "2",
+            "lncrna_start": "199",
+            "Lncrna_end": "215",
+            "premi_rna_start": "20",
+            "premi_rna_end": "4",
+            "e_value": "2.1",
+            "bitscore": "18.3",
+            "structure": false
+        }
+    },
+    {
+        "model": "lncRNA.premirna",
+        "pk": 45,
+        "fields": {
+            "lncrna_id": "BnaCnnLNG0010600",
+            "premi_rna": "bna-miR6035",
+            "identity": "87.5",
+            "alignment_length": "16",
+            "mismatches": "2",
+            "lncrna_start": "150",
+            "Lncrna_end": "165",
+            "premi_rna_start": "5",
+            "premi_rna_end": "20",
+            "e_value": "4.6",
+            "bitscore": "16.4",
+            "structure": false
+        }
+    }
+]

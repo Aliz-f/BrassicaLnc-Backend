@@ -1,0 +1,15 @@
+[
+    {
+        "model": "statistic.subdivisionlncrnasaccordingclasscodes",
+        "pk": "1",
+        "fields": {
+            "name": "Subdivision of lncRNAs according to the class codes (\u201cu,\u201d \u201cx,\u201d \u201ci,\u201d \u201co,\u201d and \u201ce\u201d)",
+            "data": {
+                "intronic lncRNAs (i)": 25,
+                "generic exonic overlap lncRNAs with reference transcripts (o)": 178,
+                "intergenic lncRNAs (u)": 1645,
+                "antisense lncRNAs (x)": 0
+            }
+        }
+    }
+]

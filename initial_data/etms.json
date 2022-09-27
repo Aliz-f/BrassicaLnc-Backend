@@ -1,0 +1,66 @@
+[
+    {
+        "model": "lncRNA.etms",
+        "pk": 1,
+        "fields": {
+            "lncrna_id": "BnaA07LNG0001200",
+            "mirna_id": "bna-miR824",
+            "score": "3",
+            "lncrna_start": "866",
+            "lncrna_end": "843",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "alignment": ":|||||||||   |||||o|o:||",
+            "lnc_alignment": "TAGACCATTT---GTGAGAAGGGA",
+            "mirna_alignment": "GTCTGGTAAAACTCACTCGTATCT\n"
+        }
+    },
+    {
+        "model": "lncRNA.etms",
+        "pk": 2,
+        "fields": {
+            "lncrna_id": "BnaC02LNG0006800",
+            "mirna_id": "bna-miR156g",
+            "score": "2.5",
+            "lncrna_start": "8990",
+            "lncrna_end": "8967",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "alignment": "||||||:|||   |||||:||o||",
+            "lnc_alignment": "TTGACAGAAG---ATAGAGAGCAC",
+            "mirna_alignment": "AACTGTTTTCATGTATCTTTCTTG\n"
+        }
+    },
+    {
+        "model": "lncRNA.etms",
+        "pk": 3,
+        "fields": {
+            "lncrna_id": "BnaC02LNG0006800",
+            "mirna_id": "bna-miR156c",
+            "score": "2.5",
+            "lncrna_start": "8990",
+            "lncrna_end": "8967",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "alignment": "||||||:|||   |||||:||o||",
+            "lnc_alignment": "TTGACAGAAG---ATAGAGAGCAC",
+            "mirna_alignment": "AACTGTTTTCATGTATCTTTCTTG\n"
+        }
+    },
+    {
+        "model": "lncRNA.etms",
+        "pk": 4,
+        "fields": {
+            "lncrna_id": "BnaC02LNG0006800",
+            "mirna_id": "bna-miR156b",
+            "score": "2.5",
+            "lncrna_start": "8990",
+            "lncrna_end": "8967",
+            "mirna_start": "1",
+            "mirna_end": "21",
+            "alignment": "||||||:|||   |||||:||o||",
+            "lnc_alignment": "TTGACAGAAG---ATAGAGAGCAC",
+            "mirna_alignment": "AACTGTTTTCATGTATCTTTCTTG\n"
+        }
+    }
+]

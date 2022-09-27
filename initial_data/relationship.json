@@ -1,0 +1,14 @@
+[
+    {
+        "model": "statistic.relationshipbetweenchrgenelncrna",
+        "pk": "1",
+        "fields": {
+            "name": "The quantitative relationship between Chromosome, Gene and LncRNA",
+            "data": {
+                "chromosome": 41,
+                "mRNA": 101040,
+                "lncRNA": 1856
+            }
+        }
+    }
+]
