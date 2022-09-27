@@ -1,6 +1,7 @@
+"""LncRna project urls for statistic app"""
 from django.urls import path
-from .views import *
+from .views import StatisticPlot
 
 urlpatterns = [
-    path('', plotStatistic.as_view(), name='statistic'),
+    path('', StatisticPlot.as_view(), name='statistic'),
 ]
