@@ -27,12 +27,12 @@ class InitialLncDatabase:
         # self.abiotic_fpkm()
         # self.biotic_fpkm()
         # self.developmental_fpkm()
-        # self.premi_rna()
+        self.premi_rna()
         # self.small_rna()
         # self.etms()
         # self.statistic()
         # self.traget_downgenes()
-        self.target_downgenes_description()
+        # self.target_downgenes_description()
 
     def parse_fasta(self, fname):
         """parse fasta file"""
@@ -434,7 +434,7 @@ class InitialLncDatabase:
                         alignment_length = each[3],
                         mismatches = each[4],
                         lncrna_start = each[5],
-                        Lncrna_end = each[6],
+                        lncrna_end = each[6],
                         premi_rna_start = each[7],
                         premi_rna_end = each[8],
                         e_value = each[9],

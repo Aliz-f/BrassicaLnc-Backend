@@ -2091,7 +2091,7 @@ class PremiRna(models.Model):
     lncrna_start = models.IntegerField(
         verbose_name="LncRNA start"
     )
-    Lncrna_end = models.IntegerField(
+    lncrna_end = models.IntegerField(
         verbose_name="LncRNA end"
     )
     premi_rna_start = models.IntegerField(
