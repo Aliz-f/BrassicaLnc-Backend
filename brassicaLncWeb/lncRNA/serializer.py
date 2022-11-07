@@ -8,7 +8,7 @@ from django.utils.encoding import force_str
 from .models import (Lnc, Gtf, ChemicalFpkm,
     AbioticFpkm, GeneticsFpkm, DevelopmentalFpkm,
     BioticFpkm, Transposon, SmallRnaTarget, PremiRna, Etms,
-    TargetDowngene, DowngeneDescription
+    TargetDowngene, DowngeneDescription, TargetUpgene, UpgeneDescription
 )
 
 class CustomValidation(APIException):
@@ -113,4 +113,19 @@ class DowngeneDescriptionSerializer(serializers.ModelSerializer):
     class Meta:
         """no docstring"""
         model = DowngeneDescription
+        fields = "__all__"
+
+
+class TargetUpgeneSerializer(serializers.ModelSerializer):
+    """Serializer for TargetDowngene model"""
+    class Meta:
+        """no docstring"""
+        model = TargetUpgene
+        fields = "__all__"
+
+class UpgeneDescriptionSerializer(serializers.ModelSerializer):
+    """Serializer for DowngeneDescription model"""
+    class Meta:
+        """no docstring"""
+        model = UpgeneDescription
         fields = "__all__"

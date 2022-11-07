@@ -9,11 +9,12 @@ from django.db.models import Q
 from .serializer import (LncSerializer, GtfSerializer, SmallRnaTargetSerializer,
     PremiRnaSerializer, TransposonSerializer, ChemicalSerializer, DevelopmentalSerializer,
     GeneticsSerializer, AbioticSerializer, BioticSerializer, EtmsSerializer,
-    TargetDowngeneSerializer, DowngeneDescriptionSerializer
+    TargetDowngeneSerializer, DowngeneDescriptionSerializer, TargetUpgeneSerializer,
+    UpgeneDescriptionSerializer
 )
 from .models import (Lnc, Gtf, ChemicalFpkm, DevelopmentalFpkm,
     GeneticsFpkm, AbioticFpkm, BioticFpkm, Transposon, SmallRnaTarget,
-    PremiRna, Etms, TargetDowngene, DowngeneDescription
+    PremiRna, Etms, TargetDowngene, DowngeneDescription, TargetUpgene, UpgeneDescription
 )
 
 class CsrfExemptSessionAuthentication(authentication.SessionAuthentication):
@@ -131,6 +132,8 @@ class GetEachTranscript(APIView):
             premirna_query = PremiRna.objects.filter(lncrna_id = lnc_query.geneId)
             transposon_query = Transposon.objects.filter(lncrna_id = lnc_query.geneId)
             target_downgene_query = TargetDowngene.objects.filter(query=lnc_query.geneId)
+            target_upgene_query = TargetUpgene.objects.filter(query=lnc_query.geneId)
+
             
             lnc_serializer = LncSerializer(lnc_query)
             gtf_serializer = GtfSerializer(gtf_query,many=True)
@@ -138,6 +141,8 @@ class GetEachTranscript(APIView):
             permirna_serializer = PremiRnaSerializer(premirna_query, many=True)
             transposon_serializer = TransposonSerializer(transposon_query, many=True)
             target_downgene_serializer = TargetDowngeneSerializer(target_downgene_query, many=True)
+            target_upgene_serializer = TargetUpgeneSerializer(target_upgene_query, many=True)
+            
             response = dict()
             response.update(
                 dict(
@@ -146,7 +151,8 @@ class GetEachTranscript(APIView):
                     smallRNA = smallrna_serializer.data,
                     premiRNA = permirna_serializer.data,
                     transposon = transposon_serializer.data,
-                    target_downgene = target_downgene_serializer.data
+                    target_downgene = target_downgene_serializer.data,
+                    target_upgene = target_upgene_serializer.data
                 )
             )
             return Response(response,status=status.HTTP_200_OK)
@@ -846,7 +852,7 @@ class GetEtms(APIView):
 
 class GetTargetDowngene(APIView):
     """
-    Api for get Premi Rna information
+    Api for get Target Down genes  information
     Query params:
         - query=BnaA01LNG0001100
         - len_query=10,1000
@@ -943,7 +949,7 @@ class GetTargetDowngene(APIView):
 
 class GetDowngeneDescription(APIView):
     """
-    Api for get Premi Rna information
+    Api for get Down genes description information
     Query params:
         - gene_id=BnaUnng04540D
 
@@ -969,6 +975,137 @@ class GetDowngeneDescription(APIView):
                 dict(
                     data = downgene_serializer.data,
                     count = downgene_query.count()
+                ),
+                status=status.HTTP_200_OK
+            )
+        except Exception as error:
+            return Response({"detail":str(error)}, status=status.HTTP_400_BAD_REQUEST)
+
+class GetTargetUpgene(APIView):
+    """
+    Api for get Target Up genes information
+    Query params:
+        - query=BnaA01LNG0001100
+        - len_query=10,1000
+        - target=BnaA01g11750D
+        - len_target=10,1000
+        - dg = -10,1000
+        - ndg = -0.400,-0.305
+        - position_query = 10,1000
+        - position_target = 10,1000
+        - per_page = 10
+        - page = 2
+
+        test1 : ?len_query=10,1000&len_target=10,1000&dg=-10,1000&ndg=-0.400,-0.105&position_target=10,10000
+        test2 : ?target=BnaA01g11750D
+    """
+    permission_classes = (permissions.AllowAny,)
+    parser_classes = (JSONParser,)
+    authentication_classes = (
+        CsrfExemptSessionAuthentication,
+        authentication.SessionAuthentication,
+        authentication.BasicAuthentication
+    )
+
+    def get(self,request) -> Response:
+        """no docstring"""
+        try:
+            target_query = request.GET.get('query', None)
+            len_query = request.GET.get('len_query', None)
+            target = request.GET.get('target', None)
+            len_target = request.GET.get('len_target', None)
+            target_dg = request.GET.get('dg', None)
+            ndg = request.GET.get('ndg', None)
+            position_query = request.GET.get('position_query', None)
+            position_target = request.GET.get('position_target', None)
+            page_size = request.GET.get('per_page', 10)
+
+            page_size = int(page_size)
+            paginator = PageNumberPagination()
+            paginator.page_size = page_size
+            query = Q()
+            if target_query:
+                target_query = target_query.strip()
+                query &= Q(query = target_query)
+            if len_query:
+                len_query = len_query.split(',')
+                len_query = [each.strip() for each in len_query]
+                query &= Q(length_query__gt = len_query[0]) & \
+                    Q(length_query__lt = len_query[1])
+            if target:
+                target = target.strip()
+                query &= Q(target=target)
+            if len_target:
+                len_target = len_target.split(',')
+                len_target = [each.strip() for each in len_target]
+                query &= Q(length_target__gt = len_target[0]) & \
+                    Q(length_target__lt = len_target[1])
+            if target_dg:
+                target_dg = target_dg.split(',')
+                target_dg = [each.strip() for each in target_dg]
+                query &= Q(dg__gt = target_dg[0]) & \
+                    Q(dg__lt = target_dg[1])
+            if ndg:
+                ndg = ndg.split(',')
+                ndg = [each.strip() for each in ndg]
+                query &= Q(ndg__gt = ndg[0]) & \
+                    Q(ndg__lt = ndg[1])
+            if position_query:
+                position_query = position_query.split(',')
+                position_query = [each.strip() for each in position_query]
+                query &= Q(start_position_query__gt = position_query[0]) & \
+                    Q(end_position_query__lt = position_query[1])
+            if position_target:
+                position_target = position_target.split(',')
+                position_target = [each.strip() for each in position_target]
+                query &= Q(start_position_target__gt = position_target[0]) & \
+                    Q(end_position_target__lt = position_target[1])
+
+            targetup_query = TargetUpgene.objects.filter(query).order_by('id')
+            result_page = paginator.paginate_queryset(targetup_query, request)
+            targetup_serializer = TargetUpgeneSerializer(result_page, many=True)
+            pages = targetup_query.count()/page_size if \
+                isinstance(int, type(targetup_query.count()/page_size)) else \
+                    int(targetup_query.count()/page_size)+1
+            return Response(
+                dict(
+                    data = targetup_serializer.data,
+                    page = pages,
+                    count = targetup_query.count()
+                ),
+                status=status.HTTP_200_OK
+            )
+        except Exception as error:
+            return Response({"detail":str(error)}, status=status.HTTP_400_BAD_REQUEST)
+
+class GetUpgeneDescription(APIView):
+    """
+    Api for get Up genes description information
+    Query params:
+        - gene_id=BnaUnng04540D
+
+        test1 : ?gene_id=BnaUnng04540D
+    """
+    permission_classes = (permissions.AllowAny,)
+    parser_classes = (JSONParser,)
+    authentication_classes = (
+        CsrfExemptSessionAuthentication,
+        authentication.SessionAuthentication,
+        authentication.BasicAuthentication
+    )
+
+    def get(self,request) -> Response:
+        """no docstring"""
+        try:
+            gene_id = request.GET.get('gene_id', None)
+            assert gene_id, 'gene_id key not found'
+            query = Q(gene_id = gene_id)
+            upgene_query = UpgeneDescription.objects.filter(query).order_by('id')
+            upgene_serializer = UpgeneDescriptionSerializer(upgene_query, many=True)
+            return Response(
+                dict(
+                    data = upgene_serializer.data,
+                    count = upgene_query.count()
                 ),
                 status=status.HTTP_200_OK
             )

@@ -2245,3 +2245,87 @@ class DowngeneDescription(models.Model):
 
     def __str__(self) -> str:
         return str(self.gene_id)
+
+
+class TargetUpgene(models.Model):
+    """Target Upgenes data model"""
+    query = models.CharField(
+        verbose_name="Query",
+        max_length=100,
+        null = False
+    )
+    length_query = models.FloatField(
+        verbose_name="Length_Query",
+        null = False
+    )
+    target =  models.CharField(
+        verbose_name="Target",
+        max_length=100,
+        null = False
+    )
+    length_target =  models.FloatField(
+        verbose_name="Length_Target",
+        null = False
+    )
+    dg =  models.FloatField(
+        verbose_name="dG",
+        null = False
+    )
+    ndg =  models.FloatField(
+        verbose_name="ndG",
+        null = False
+    )
+    start_position_query =  models.FloatField(
+        verbose_name="Start_Position_Query",
+        null = False
+    )
+    end_position_query =  models.FloatField(
+        verbose_name="End_Position_Query",
+        null = False
+    )
+    start_position_target =  models.FloatField(
+        verbose_name="Start_Position_Target",
+        null = False
+    )
+    end_position_target =  models.FloatField(
+        verbose_name="End_Position_Target",
+        null = False
+    )
+
+    def __str__(self) -> str:
+        return str(self.query)
+
+
+class UpgeneDescription(models.Model):
+    """UpgeneDescription data model"""
+    gene_id =  models.CharField(
+        verbose_name="GeneID",
+        max_length=100,
+        null = False
+    )
+    chromosome =  models.CharField(
+        verbose_name="Chromosome",
+        max_length=100,
+        null = False
+    )
+    start =  models.FloatField(
+        verbose_name="Start",
+        null = False
+    )
+    stop =  models.FloatField(
+        verbose_name="Stop",
+        null = False
+    )
+    strand =  models.CharField(
+        verbose_name="Strand",
+        max_length=100,
+        null = False
+    )
+    description =  models.CharField(
+        verbose_name="Description",
+        max_length=100,
+        null = False
+    )
+
+    def __str__(self) -> str:
+        return str(self.gene_id)

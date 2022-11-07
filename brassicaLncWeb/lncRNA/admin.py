@@ -3,7 +3,7 @@ from django.contrib import admin
 from .models import (Lnc, Gtf, ChemicalFpkm,
     AbioticFpkm, GeneticsFpkm, DevelopmentalFpkm,
     BioticFpkm, Transposon, SmallRnaTarget, PremiRna, Etms, TargetDowngene,
-    DowngeneDescription,
+    DowngeneDescription, TargetUpgene, UpgeneDescription
 )
 
 # Register your models here.
@@ -297,7 +297,6 @@ class EtmsAdmin(admin.ModelAdmin):
     ]
     list_per_page = 10
 
-
 class TargetDowngeneAdmin(admin.ModelAdmin):
     """Etms model config for admin panel."""
     list_display= [
@@ -378,6 +377,86 @@ class DowngeneDescriptionAdmin(admin.ModelAdmin):
     ]
     list_per_page = 10
 
+class TargetupgeneAdmin(admin.ModelAdmin):
+    """target up gene model config for admin panel."""
+    list_display= [
+        "id",
+        "query",
+        "length_query",
+        "target",
+        "length_target",
+        "dg",
+        "ndg",
+        "start_position_query",
+        "end_position_query",
+        "start_position_target",
+        "end_position_target",
+    ]
+    fields = [
+        "id",
+        "query",
+        "length_query",
+        "target",
+        "length_target",
+        "dg",
+        "ndg",
+        "start_position_query",
+        "end_position_query",
+        "start_position_target",
+        "end_position_target",
+    ]
+    readonly_fields = [
+        "id",
+    ]
+    search_fields = [
+        "id",
+        "query",
+        "length_query",
+        "target",
+        "length_target",
+        "dg",
+        "ndg",
+        "start_position_query",
+        "end_position_query",
+        "start_position_target",
+        "end_position_target",
+    ]
+    list_per_page = 10
+
+class UpgeneDescriptionAdmin(admin.ModelAdmin):
+    """up gene description model config for admin panel."""
+    list_display= [
+        "id",
+        "gene_id",
+        "chromosome",
+        "start",
+        "stop",
+        "strand",
+        "description",
+    ]
+    fields = [
+        "id",
+        "gene_id",
+        "chromosome",
+        "start",
+        "stop",
+        "strand",
+        "description",
+    ]
+    readonly_fields = [
+        "id",
+    ]
+    search_fields = [
+        "id",
+        "gene_id",
+        "chromosome",
+        "start",
+        "stop",
+        "strand",
+        "description",
+    ]
+    list_per_page = 10
+
 admin.site.register(Lnc, LncAdmin)
 admin.site.register(Gtf, GtfAdmin)
 admin.site.register(ChemicalFpkm)
@@ -391,3 +470,5 @@ admin.site.register(PremiRna, PremiRNAAdmin)
 admin.site.register(Etms, EtmsAdmin)
 admin.site.register(TargetDowngene, TargetDowngeneAdmin)
 admin.site.register(DowngeneDescription, DowngeneDescriptionAdmin)
+admin.site.register(TargetUpgene, TargetupgeneAdmin)
+admin.site.register(UpgeneDescription, UpgeneDescriptionAdmin)
