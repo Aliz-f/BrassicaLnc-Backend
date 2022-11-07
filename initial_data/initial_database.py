@@ -27,12 +27,14 @@ class InitialLncDatabase:
         # self.abiotic_fpkm()
         # self.biotic_fpkm()
         # self.developmental_fpkm()
-        self.premi_rna()
+        # self.premi_rna()
         # self.small_rna()
         # self.etms()
         # self.statistic()
-        # self.traget_downgenes()
-        # self.target_downgenes_description()
+        self.traget_downgenes()
+        self.target_downgenes_description()
+        self.traget_upgenes()
+        self.target_upgenes_description()
 
     def parse_fasta(self, fname):
         """parse fasta file"""
@@ -598,7 +600,7 @@ class InitialLncDatabase:
         if self.create_files:
             target_lines = list()
             data = list()
-            with open(root + "/files/multi_omics/target/LncTar_Downgenes.txt",
+            with open(root + "/files/multi_omics/target/down_genes/LncTar_Downgenes.txt",
             "r", encoding="utf-8") as file_handeler:
                 for line in file_handeler.readlines():
                     temp_line = line.split("\t")
@@ -638,7 +640,7 @@ class InitialLncDatabase:
         if self.create_files:
             description_lines = list()
             data = list()
-            with open(root + "/files/multi_omics/target/Downgenes_description.txt",
+            with open(root + "/files/multi_omics/target/down_genes/Downgenes_description.txt",
             "r", encoding="utf-8") as file_handeler:
                 for line in file_handeler.readlines():
                     temp_line = line.split('\t')
@@ -669,6 +671,83 @@ class InitialLncDatabase:
             call_command("loaddata", "target_downgenes_description.json")
         else:
             call_command("loaddata", "target_downgenes_description.json")
+
+    def traget_upgenes(self):
+            """load target downgene data"""
+            if self.create_files:
+                target_lines = list()
+                data = list()
+                with open(root + "/files/multi_omics/target/up_genes/LncTar_Upgenes.txt",
+                "r", encoding="utf-8") as file_handeler:
+                    for line in file_handeler.readlines():
+                        temp_line = line.split("\t")
+                        temp_line = [each.strip() for each in temp_line]
+                        target_lines.append(temp_line)
+                    del target_lines[0]
+                    iterator = 1
+                    for each in target_lines:
+                        data.append(
+                            dict(
+                                model = "lncRNA.targetupgene",
+                                pk = f"{iterator}",
+                                fields = dict(
+                                    query = each[0],
+                                    length_query = each[1],
+                                    target = each[2],
+                                    length_target = each[3],
+                                    dg = each[4],
+                                    ndg = each[5],
+                                    start_position_query = each[6],
+                                    end_position_query = each[7],
+                                    start_position_target = each[8],
+                                    end_position_target = each[9],
+                                )
+                            )
+                        )
+                        iterator += 1
+                with open("target_upgene.json", "w", encoding="utf-8") as lnc_json:
+                    json.dump(data, lnc_json, indent=4)
+                    print("Target Upgenes file created!...")
+                call_command("loaddata", "target_upgene.json")
+            else:
+                call_command("loaddata", "target_upgene.json")
+
+    def target_upgenes_description(self):
+        """load target downgenes description data"""
+        if self.create_files:
+            description_lines = list()
+            data = list()
+            with open(root + "/files/multi_omics/target/up_genes/Upgenes_description.txt",
+            "r", encoding="utf-8") as file_handeler:
+                for line in file_handeler.readlines():
+                    temp_line = line.split('\t')
+                    temp_line = [each.strip() for each in temp_line]
+                    description_lines.append(temp_line)
+                del description_lines[0]
+
+                iterator = 1
+                for each in description_lines:
+                    data.append(
+                        dict(
+                            model = "lncRNA.upgenedescription",
+                            pk = f"{iterator}",
+                            fields = dict(
+                                gene_id = each[0],
+                                chromosome = each[1],
+                                start = each[2],
+                                stop = each[3],
+                                strand = each[4],
+                                description = each[5],
+                            )
+                        )
+                    )
+                    iterator += 1
+            with open("target_upgenes_description.json", "w", encoding="utf-8") as lnc_json:
+                json.dump(data, lnc_json, indent=4)
+                print("Target Downgenes Description file created!...")
+            call_command("loaddata", "target_upgenes_description.json")
+        else:
+            call_command("loaddata", "target_upgenes_description.json")
 
 if __name__ == "__main__":
     create_command = bool("-c" in sys.argv or "create_files" in sys.argv)
