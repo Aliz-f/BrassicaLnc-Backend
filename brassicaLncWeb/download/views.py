@@ -155,6 +155,10 @@ class DownloadAllFiles(APIView):
         database-lnc => BrassicaLnc_Final_lncRAN_Table_Database.tsv
         fasta-lnc => Final_lncRNA_rename_V2.fa
         gtf-lnc => lncRNA.gtf
+        down-desc => Downgenes_description.txt
+        up-desc => Upgenes_description.txt
+        down-tar => lncTar_Downgenes.txt
+        up-tar => lncTar_Upgenes.txt
         gp(chemical):
             chemical-lnc-fpkm => chemical_fpkm.txt
             chemical-lnc-db => BrassIcaLnc_Tabledb_Chemical_db.tsv
@@ -192,6 +196,10 @@ class DownloadAllFiles(APIView):
                 "database-lnc":f"{os_path}/lncRANs_Table.tsv",
                 "fasta-lnc" : f"{os_path}/lncRNAs.fa",
                 "gtf-lnc":f"{os_path}/lncRNAs.gtf",
+                "down-desc":f"{os_path}/multi_omics/target/down_genes/Downgenes_description.txt",
+                "up-desc":f"{os_path}/multi_omics/target/up_genes/Upgenes_description.txt",
+                "down-tar":f"{os_path}/multi_omics/target/down_genes/LncTar_Downgenes.txt",
+                "up-tar":f"{os_path}/multi_omics/target/up_genes/LncTar_Upgenes.txt",
                 "abiotic-lnc-fpkm":f"{os_path}/abiotic/v2/abiotic_fpkm.txt",
                 "abiotic-lnc-db":f"{os_path}/abiotic/v2/Abiotic_Table.tsv",
                 "biotic-lnc-fpkm":f"{os_path}/biotic/v2/biotic_fpkm.txt",
