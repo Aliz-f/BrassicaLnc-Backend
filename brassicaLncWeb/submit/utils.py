@@ -19,7 +19,7 @@ def send_email(data) -> bool:
         See the other data in admin Panel
         '''
         mail = Mailer(email=os.getenv('SENDER_MAIL'), password=os.getenv('SENDER_PASSWORD'))
-        mail.send(receiver='fad127alireza2@gmail.com', subject=subject, message=message)
+        mail.send(receiver='', subject=subject, message=message)
         return True
     except Exception:
         return False
