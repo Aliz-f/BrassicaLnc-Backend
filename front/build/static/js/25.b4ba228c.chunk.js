@@ -1,0 +1,2 @@
+(this.webpackJsonpbrassica=this.webpackJsonpbrassica||[]).push([[25],{535:function(n,s,c){"use strict";c.r(s);var i=c(266),e=c(35),t=c(1);s.default=function(){return Object(t.jsx)(i.a,{container:!0,spacing:e.b,children:Object(t.jsx)(i.a,{item:!0,xs:12,display:"flex",justifyContent:"center",children:Object(t.jsx)("h2",{children:"Comming Soon in BrassicaLnc V 2.0.0"})})})}}}]);
+//# sourceMappingURL=25.b4ba228c.chunk.js.map
