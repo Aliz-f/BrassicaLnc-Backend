@@ -9,7 +9,7 @@ import json
 import django
 from django.core.management import call_command
 
-sys.path.append("../brassicaLncWeb")
+sys.path.append("../")
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "brassicaLncWeb.settings")
 django.setup()
 
