@@ -1,160 +1,141 @@
 # BrassicaLnc Backend
 
-Django REST API, admin, reference-data downloads, and nucleotide BLAST for BrassicaLnc. This repository does not contain the frontend; `/` returning 404 is expected. Use `/search/id/` or `/admin/login/` to verify the backend.
+Django REST API, admin, reference-data downloads, and nucleotide BLAST. The frontend is a separate project hosted at `https://brassica.arfadaei.ir`. Deploy this backend on its own hostname, such as `api.example.com`; keep the frontend domain pointing to GitHub Pages.
 
-## Project structure
+Deployment: **host nginx → localhost Gunicorn container → private PostgreSQL 17 container**. Reference fixtures and the nucleotide BLAST database are bundled in the image. `/` returns 404 by design; use `/healthz/`, `/search/id/`, or `/admin/login/`.
 
-| Path | Purpose |
-| --- | --- |
-| `brassicaLncWeb/brassicaLncWeb/` | Django settings, routes, WSGI/ASGI |
-| `brassicaLncWeb/{lncRNA,search,download,submit,statistic}/` | API apps; schema migrations are version controlled |
-| `brassicaLncWeb/files/` | Runtime download and expression datasets; keep in the image |
-| `brassicaLncWeb/data_initialization/*.json` | Bundled reference fixtures for first deployment |
-| `brassicaLncWeb/blast_rest/` | Bundled BLAST REST code |
-| `brassicaLncWeb/blast_rest/data/db/` | Prebuilt nucleotide BLAST database |
-| `brassicaLncWeb/Dockerfile`, `docker-compose.yaml` | Python 3.11/Gunicorn and PostgreSQL 17 services |
-| `deploy/nginx/brassicaLnc.conf.example` | Host nginx reverse proxy configuration |
-| `deploy/staticfiles/`, `deploy/media/` | Persistent host directories shared with the app |
-| `requirements` | Pinned runtime dependencies |
+## 1. Prepare the server
 
-The deployment uses **host nginx → localhost Gunicorn container → private PostgreSQL container**. There is no nginx container or active `brassicaLncWeb/nginx/default.conf`. The legacy root `blast_rest` gitlink has no submodule configuration and is not used by the image; the required runtime is now a normal tracked package inside the Django project. The REST API is available at both `/blast/blastn` and `/blast/blastn/`; legacy django-blastplus HTML forms are no longer exposed because their Biopython imports are incompatible with modern versions.
+The instructions below assume Ubuntu, a non-root user with sudo access, and a checkout at `/srv/brassicaLnc-back`.
 
-## Step-by-step server deployment
-
-These commands assume an Ubuntu server, a sudo-capable deployment user, and a checkout at `/srv/brassicaLnc-back`. The frontend is hosted on GitHub Pages at `https://brassica.arfadaei.ir`. Replace `api.example.com` with the separate domain you assign to the backend server. Keep the same checkout path and Compose project name across upgrades so PostgreSQL uses the same volume.
-
-### 1. Install server prerequisites
-
-Install Docker Engine and the Compose plugin using the [official Ubuntu instructions](https://docs.docker.com/engine/install/ubuntu/). Do not mix Ubuntu's `docker.io` packages with Docker's own package repository. Verify Docker access before continuing:
+Install Docker Engine and its Compose plugin using the [official Ubuntu instructions](https://docs.docker.com/engine/install/ubuntu/). Verify that your deployment user can run Docker:
 
 ```bash
 docker --version
 docker compose version
 docker info
 sudo apt update
-sudo apt install -y git nginx openssl certbot python3-certbot-nginx
+sudo apt install -y git python3 nginx certbot python3-certbot-nginx
 sudo systemctl enable --now docker nginx
 ```
 
-If Docker requires sudo, use `sudo docker` consistently below, or configure access using Docker's installation guide. Allow SSH and TCP 80/443 through the server/cloud firewall; PostgreSQL has no published port and the application port stays on loopback. Point the domain's DNS A record (and AAAA only if IPv6 is configured) to this server.
+Configure Docker access following its installation guide if `docker info` fails. The helper below invokes Docker as your current user. It requires a Compose version supporting `up --wait --wait-timeout` ([Compose reference](https://docs.docker.com/reference/cli/docker/compose/up/)).
 
-### 2. Clone the repository
+Point your **API hostname's** DNS A record at this server. Add an AAAA record only if IPv6 works. Allow SSH and TCP 80/443 through your server/cloud firewall. The application binds to loopback; PostgreSQL has no published port.
+
+## 2. Clone and generate configuration
 
 ```bash
 sudo install -d -o "$(id -un)" -g "$(id -gn)" /srv/brassicaLnc-back
 git clone https://github.com/Aliz-f/BrassicaLnc-Backend.git /srv/brassicaLnc-back
 cd /srv/brassicaLnc-back
-cp brassicaLncWeb/.env.example brassicaLncWeb/.env
-chmod 600 brassicaLncWeb/.env
-```
-
-Deploy a commit containing the migration files and deployment changes. The fixtures, runtime files, and BLAST database must also be present in the checkout.
-
-### 3. Configure environment and directory permissions
-
-Generate two different random values, one for `SECRET_KEY` and one for `DATABASE_PASSWORD`:
-
-```bash
-openssl rand -hex 32
-openssl rand -hex 32
-id -u
-id -g
+python3 deploy/deploy.py init api.example.com
 nano brassicaLncWeb/.env
 ```
 
-Set these values (no spaces around `=`):
+Replace `api.example.com` with your API hostname. Run `init` as your deployment user, without sudo. It generates separate random Django/database secrets, records your UID/GID, creates the static/media directories, and writes `.env` with mode 600. **It refuses to overwrite an existing `.env`.** For an existing installation, keep your current file and review it against `.env.example`; do not regenerate database credentials.
 
-```dotenv
-SECRET_KEY=<first-generated-value>
-DATABASE_PASSWORD=<second-generated-value>
-DATABASE_NAME=brassica
-DATABASE_USER=brassica
-DATABASE_ENGINE=django.db.backends.postgresql
-DATABASE_HOST=database
-DATABASE_PORT=5432
-DEBUG=False
-ALLOWED_HOSTS=api.example.com,localhost,127.0.0.1
-CORS_ALLOWED_ORIGINS=https://brassica.arfadaei.ir
-CSRF_TRUSTED_ORIGINS=https://api.example.com,https://brassica.arfadaei.ir
-APP_PORT=8000
-APP_UID=1000
-APP_GID=1000
-SEED_DATABASE=true
-SESSION_COOKIE_SECURE=False
-CSRF_COOKIE_SECURE=False
-SECURE_SSL_REDIRECT=False
-SECURE_HSTS_SECONDS=0
-```
+Review these settings:
 
-Use your actual non-root deployment user's numeric UID/GID from `id` for `APP_UID`/`APP_GID`. Hosts have no scheme or path; CORS/CSRF origins include their scheme and any nonstandard port. Keep the secret stable across restarts. The app refuses a missing, placeholder, or shorter-than-50-character production secret.
+| Setting | Value / purpose |
+| --- | --- |
+| `ALLOWED_HOSTS` | API hostname, `localhost`, `127.0.0.1`; no scheme or path |
+| `CORS_ALLOWED_ORIGINS` | Frontend origins, including scheme; defaults to `https://brassica.arfadaei.ir` |
+| `CSRF_TRUSTED_ORIGINS` | API and frontend HTTPS origins |
+| `APP_PORT` | Loopback port used by nginx; defaults to `8000` |
+| `APP_UID`, `APP_GID` | Non-root deployment user's numeric IDs |
+| `DATABASE_NAME`, `DATABASE_USER`, `DATABASE_PASSWORD` | Shared by web and PostgreSQL |
+| `SECRET_KEY` | Stable random secret, at least 50 characters |
+| `SEED_DATABASE` | `true` to import bundled reference data on first startup |
+
+Compose forces production mode and the internal PostgreSQL host/port. Keep HTTPS cookie/redirect settings disabled until step 6. Use single quotes around manually chosen secrets containing literal `$` or `#`. Never commit or share `.env` or expanded `docker compose config` output.
+
+Ensure the bind mounts are writable by the configured UID/GID and readable by nginx. For the default setup using your current user:
 
 ```bash
-mkdir -p deploy/staticfiles deploy/media
 sudo chown -R "$(id -u):$(id -g)" deploy/staticfiles deploy/media
 chmod 755 deploy deploy/staticfiles deploy/media
 ```
 
-The bind-mounted directories must be writable by the UID/GID configured above and readable/traversable by nginx. Image permissions do not override host bind-mount permissions. Do not use `chmod 777`.
+If you chose different IDs, use those in `chown`. Rebuild after changing `APP_UID` or `APP_GID`. Image permissions cannot fix host bind-mount permissions.
 
-### 4. Build and start
+## 3. Build and start
 
-Run all subsequent Compose commands from this directory:
+From the repository root:
 
 ```bash
-cd /srv/brassicaLnc-back/brassicaLncWeb
-docker compose --env-file .env config --quiet
-docker compose --env-file .env up -d --build
-docker compose --env-file .env logs -f web
+python3 deploy/deploy.py up
+python3 deploy/deploy.py status
 ```
 
-Using `--env-file .env` explicitly supplies both Compose interpolation (ports, credentials, build arguments) and the application's environment. See [Docker's interpolation documentation](https://docs.docker.com/compose/how-tos/environment-variables/variable-interpolation/). Avoid sharing expanded `docker compose config` output because it contains secrets.
+The helper validates Compose configuration, builds the image, and waits up to 15 minutes for both services to become healthy. Initial seeding may take several minutes. Startup checks directory access and Django configuration, applies migrations, imports reference fixtures atomically, checks BLAST imports/binary, collects static files, and starts Gunicorn.
 
-Startup waits for PostgreSQL, applies migrations, imports all reference fixtures in one transaction if all fixture-backed reference tables are empty, verifies BLAST imports/binary, collects static files, and starts one Gunicorn worker with a 120-second timeout. The initial import can take several minutes. Ctrl+C exits log following without stopping the services.
+The database health check authenticates using the configured credentials. The web health check requests `/healthz/` through Gunicorn and executes a database query. It also works after HTTPS redirects are enabled. Health checks have a ten-minute initial grace period for seeding; health status alone does not restart an unhealthy running container. The restart policy handles exited containers and server reboots.
 
-Subsequent starts skip import when every fixture-backed reference table has data. A partially populated dataset causes a clear startup error instead of silently serving incomplete data. Restore a complete backup or investigate it; use `SEED_DATABASE=false` only for an intentionally managed dataset. Existing partially populated databases from the older startup script cannot be repaired automatically. Do not run the legacy initialization script on production data.
-
-### 5. Verify the application
+On failure:
 
 ```bash
-docker compose --env-file .env ps
+python3 deploy/deploy.py logs
+```
+
+Ctrl+C stops following logs without stopping the services. A timeout leaves containers available for diagnosis. Inspect logs before retrying `up`.
+
+The helper finds configuration relative to its own location, so it can be invoked from any directory using its absolute path. For settings declared in `.env`, it ignores exported shell overrides. Keep the same checkout location and Compose project name across upgrades to retain the same database volume.
+
+Equivalent manual commands, from `brassicaLncWeb/`:
+
+```bash
+docker compose --env-file .env config --quiet
+docker compose --env-file .env up --build --wait --wait-timeout 900
+```
+
+Manual Compose commands let exported shell variables override `.env`; both services resolve database credentials consistently. See [Docker's interpolation rules](https://docs.docker.com/compose/how-tos/environment-variables/variable-interpolation/).
+
+## 4. Verify and create an administrator
+
+```bash
+curl -f http://127.0.0.1:8000/healthz/
 curl -f http://127.0.0.1:8000/search/id/
 curl -I http://127.0.0.1:8000/admin/login/
-docker compose --env-file .env exec web python manage.py check
-docker compose --env-file .env exec web blastn -version
+cd brassicaLncWeb
 docker compose --env-file .env exec web python manage.py createsuperuser
+docker compose --env-file .env exec web blastn -version
+cd ..
 ```
 
-`ps` should show only `127.0.0.1:8000` published for web (or your chosen port). `/search/id/` should return JSON with a nonzero count. The app and database restart automatically after a server reboot when Docker is enabled.
+Use your chosen `APP_PORT` if different. Health should return `{"status": "ok"}`, search should return a nonzero count, and admin should return HTTP 200. The default fixture set contains 1,854 transcripts.
 
-### 6. Configure host nginx
+Later startups skip seeding when all fixture-backed tables contain data. A partially populated dataset stops startup instead of silently serving incomplete data. Restore a complete backup or investigate it. Set `SEED_DATABASE=false` only when intentionally managing the dataset yourself. Do not run the legacy initialization scripts against production data.
+
+## 5. Configure nginx
 
 ```bash
-sudo cp ../deploy/nginx/brassicaLnc.conf.example /etc/nginx/sites-available/brassicaLnc.conf
+sudo cp deploy/nginx/brassicaLnc.conf.example /etc/nginx/sites-available/brassicaLnc.conf
 sudo nano /etc/nginx/sites-available/brassicaLnc.conf
 ```
 
-Set `server_name` to your API domain, adjust both alias paths if you used a different checkout location, and change the `proxy_pass` port if `APP_PORT` differs from 8000. For IPv6, add `listen [::]:80;`. The example forwards the original host and HTTPS scheme and allows enough time for BLAST responses.
+Set `server_name` to your API hostname. Update both alias paths if your checkout is elsewhere, and `proxy_pass` if `APP_PORT` is not 8000. Add `listen [::]:80;` if using IPv6.
 
 ```bash
 sudo ln -s /etc/nginx/sites-available/brassicaLnc.conf /etc/nginx/sites-enabled/brassicaLnc.conf
 sudo nginx -t
 sudo systemctl reload nginx
-curl -f http://api.example.com/search/id/
+curl -f http://api.example.com/healthz/
 ```
 
-Skip the symlink command if it already exists. For an IP-only installation, use the server IP as `server_name` and include it in `ALLOWED_HOSTS`. Do not enter admin credentials over public plain HTTP.
+Skip the symlink command if it already exists. nginx needs traversal permission on every parent of the static/media paths. Do not enter administrator credentials over public plain HTTP.
 
-### 7. Enable HTTPS
+## 6. Enable HTTPS and connect the frontend
 
-With DNS resolving correctly and port 80 reachable:
+Once DNS resolves and port 80 is reachable:
 
 ```bash
 sudo certbot --nginx -d api.example.com
 sudo certbot renew --dry-run
-curl -f https://api.example.com/search/id/
+curl -f https://api.example.com/healthz/
 ```
 
-Choose HTTP-to-HTTPS redirection. Then edit `.env`:
+Choose HTTP-to-HTTPS redirection. Edit `brassicaLncWeb/.env`:
 
 ```dotenv
 SESSION_COOKIE_SECURE=True
@@ -163,16 +144,21 @@ SECURE_SSL_REDIRECT=True
 SECURE_HSTS_SECONDS=3600
 ```
 
+Apply and check:
+
 ```bash
-docker compose --env-file .env up -d web
-docker compose --env-file .env exec web python manage.py check --deploy
+python3 deploy/deploy.py up
+python3 deploy/deploy.py check
+curl -f https://api.example.com/search/id/
 ```
 
-Review any warnings. HSTS starts at one hour; increase it only after HTTPS is stable. Subdomain HSTS and preload are intentionally not enabled. nginx must keep overwriting `X-Forwarded-Proto` with `$scheme`; the application trusts that header. After HTTPS redirection is enabled, use the public HTTPS URL for curl checks. Configure the GitHub Pages frontend at `https://brassica.arfadaei.ir` to use your backend HTTPS API origin. Keep the frontend domain pointing to GitHub Pages; point only the separate API domain to this server. An HTTPS frontend requires an HTTPS API to avoid browser mixed-content blocking. `ALLOWED_HOSTS` must contain the API hostname, while `CORS_ALLOWED_ORIGINS` contains the frontend origin.
+Review [Django deployment checks](https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/). HSTS starts at one hour; increase it after HTTPS is stable. Subdomain HSTS and preload are not enabled by default. nginx must overwrite `X-Forwarded-Proto` with `$scheme`, as the example does, because Django trusts that header. Use public HTTPS URLs for manual checks after enabling redirects.
 
-## Updates, backups, and restore
+Configure the separate frontend to use `https://api.example.com` as its API origin. An HTTPS frontend needs an HTTPS API. Verify browser searches, downloads, and BLAST; CORS origins must match the frontend exactly.
 
-Before every upgrade, take a database backup and preserve `.env` and `deploy/media` securely off-server. From `brassicaLncWeb/`:
+## Updates and backups
+
+Back up before every upgrade. Preserve `.env` and `deploy/media` securely off-server. From `brassicaLncWeb/`:
 
 ```bash
 mkdir -p ../backups
@@ -181,72 +167,86 @@ umask 077
 docker compose --env-file .env exec -T database sh -c 'pg_dump -U "$POSTGRES_USER" -d "$POSTGRES_DB" -Fc' > "../backups/brassica-$(date +%Y%m%d-%H%M%S).dump"
 ```
 
-Check that the command succeeds; a nonempty file alone is not proof of a valid backup. Test restoration on a separate environment. Changing `DATABASE_PASSWORD` in `.env` does not change an existing PostgreSQL role's password; rotate it in PostgreSQL too. Do not change the PostgreSQL major version against the same data volume without a database upgrade plan.
+Check the command's exit status and test restoration separately; a nonempty file is insufficient. Then, from the repository root:
 
 ```bash
 git pull --ff-only
-docker compose --env-file .env up -d --build
-docker compose --env-file .env logs --tail=100 web
-curl -f https://api.example.com/search/id/
+python3 deploy/deploy.py up
+python3 deploy/deploy.py status
+curl -f https://api.example.com/healthz/
 ```
 
-For restoration into a **new, empty database volume**, set `SEED_DATABASE=false`, start only `database`, and restore the backup before starting web:
+Changes to environment settings require container recreation (`up`); `restart` alone does not apply them. Changing `DATABASE_PASSWORD` does not rotate a stored PostgreSQL password. Do not change PostgreSQL's major version against the same volume without a database upgrade plan.
+
+### Restore to a new, empty database volume
+
+Set `SEED_DATABASE=false`. From `brassicaLncWeb/`, start only PostgreSQL and wait for it to become healthy:
 
 ```bash
-docker compose --env-file .env up -d database
-# Wait until database is healthy in `docker compose --env-file .env ps`.
+docker compose --env-file .env up --wait --wait-timeout 120 database
 docker compose --env-file .env exec -T database sh -c 'pg_restore --exit-on-error --no-owner --no-privileges -U "$POSTGRES_USER" -d "$POSTGRES_DB"' < ../backups/your-backup.dump
-docker compose --env-file .env up -d web
+cd ..
+python3 deploy/deploy.py up
 ```
 
-Restore media separately and verify the API/admin. Do not restore over a running application or populated database. `docker compose down` preserves the database; **`docker compose down -v` deletes it**. Rolling application code back may also require restoring the matching database backup if migrations changed the schema.
+Restore media separately. Do not restore over a populated database or a running application. `docker compose down` preserves data; **`docker compose down -v` deletes database volumes**. Rolling back application code may require a matching database backup if migrations changed the schema.
 
-## Diagnose database authentication failures
+## Troubleshooting
 
-Both services now resolve `DATABASE_USER`, `DATABASE_PASSWORD`, and `DATABASE_NAME` through the same Compose interpolation. Previously, web read these only from `env_file`, while PostgreSQL used interpolation; exported shell variables could make the passwords differ even on a new volume. Shell variables override `--env-file` values during interpolation ([Docker documentation](https://docs.docker.com/compose/how-tos/environment-variables/variable-interpolation/)).
+| Symptom | Action |
+| --- | --- |
+| `init` reports an existing file | Keep `.env`; compare it with `.env.example` and edit as needed |
+| Cannot write staticfiles/media | Fix host ownership to match `APP_UID`/`APP_GID`, then rebuild if IDs changed |
+| Database unhealthy / authentication failed | Check for an existing volume with older credentials; use the procedure below |
+| Web unhealthy / readiness timeout | Inspect `python3 deploy/deploy.py logs`; check migrations, seed errors, and mount permissions |
+| 400 / DisallowedHost | Correct API hostname in `ALLOWED_HOSTS`, then run `up` |
+| 502 | Check web health/logs and nginx's loopback port |
+| Static files return 403 | Check nginx traversal/read permissions on the entire alias path |
+| CSRF / CORS errors | Check exact origins and nginx HTTPS forwarding; recreate web |
+| Missing tables | Verify tracked migrations are present; do not blindly fake migrations |
 
-Run from your server checkout's `brassicaLncWeb/` directory after pulling the fix:
+### Existing database password mismatch
+
+Retain the database volume. Connect using the administrator role originally used to initialize it (the helper uses `brassica`; older installs may use `postgres`):
 
 ```bash
-unset DATABASE_USER DATABASE_PASSWORD DATABASE_NAME
-docker compose --env-file .env config --quiet
-docker compose --env-file .env up -d --build --force-recreate
-docker compose --env-file .env ps
-docker compose --env-file .env logs --since=2m --tail=100 web database
+cd brassicaLncWeb
+docker compose --env-file .env exec database psql -U brassica -d brassica
 ```
 
-Use single quotes around secrets containing literal `$` or `#` in `.env`. Do not share `.env` or expanded Compose configuration. The new database health check performs an authenticated TCP `SELECT 1`; it will fail if the stored PostgreSQL password differs from the configured password. `pg_isready` alone does not validate credentials ([PostgreSQL documentation](https://www.postgresql.org/docs/16/app-pg-isready.html)).
-
-If the database is unhealthy because an existing volume has an older password, retain that volume and reset the role password interactively. For the `postgres` role shown in the reported logs:
-
-```bash
-docker compose --env-file .env exec database psql -U postgres -d postgres
-```
-
-Run `\password postgres`, enter the exact `DATABASE_PASSWORD` value twice (without its surrounding quotes), then `\q`. Use the original administrator role if the volume was initialized with another username. Changing environment variables or rebuilding an image does not change stored database credentials.
-
-Verify the web configuration independently of the normal startup script:
+At the psql prompt, run `\password brassica`, enter the exact `.env` password twice without surrounding quotes, then `\q`. Substitute the original role/database if different. Rebuilding an image does not change stored credentials. Verify independently of the normal startup script:
 
 ```bash
 docker compose --env-file .env run --rm --no-deps --entrypoint python web manage.py shell -c "from django.db import connection; connection.ensure_connection(); print('Database connection OK')"
-docker compose --env-file .env up -d web
+cd ..
+python3 deploy/deploy.py up
 ```
 
-Wait for Gunicorn's listening message before testing HTTP. No database deletion is required. Run the Compose configuration regression tests locally with `python3 -m unittest discover -s tests -v` (Docker Compose CLI required; no daemon needed).
+## Development and project layout
 
-## Troubleshooting and limitations
+- `brassicaLncWeb/brassicaLncWeb/`: Django settings, routes, readiness endpoint, WSGI/ASGI.
+- `brassicaLncWeb/{lncRNA,search,download,submit,statistic}/`: API apps and tracked migrations.
+- `brassicaLncWeb/files/`, `data_initialization/*.json`: runtime datasets and initial fixtures; required in the image.
+- `brassicaLncWeb/blast_rest/`: bundled BLAST API and prebuilt database. The legacy root `blast_rest` gitlink is not used by Docker.
+- `deploy/deploy.py`: host setup and deployment helper; uses Python's standard library.
+- `deploy/nginx/`, `deploy/staticfiles/`, `deploy/media/`: host proxy configuration and persistent files.
+- `requirements`: pinned Python dependencies used by the image.
 
-- **400 / DisallowedHost:** correct `ALLOWED_HOSTS` and recreate web with `up -d web`.
-- **502:** inspect web logs; initial seeding may still be running, or nginx may target the wrong port.
-- **Static files return 403:** check directory ownership and nginx traversal permissions on every parent directory.
-- **CSRF / CORS errors:** check exact frontend origins, HTTPS scheme forwarding, and recreate web after environment changes.
-- **Missing tables:** ensure the three apps' migration directories were committed. For an existing manually created schema, inspect it before considering `migrate --fake-initial`; never blindly fake migrations.
-- **Submission email:** records are saved, but the legacy mail helper has no configured recipient and reports `email: false`. Use the admin to review submissions; notification delivery needs separate configuration/code changes.
-- **BLAST:** uses the bundled nucleotide database and a pinned Biopython version that still provides the deprecated command wrappers. Load-test with representative sequences before increasing Gunicorn workers; each BLAST request consumes server CPU and memory. Legacy protein/HTML routes are not part of this deployment.
-- **Scope:** Django was upgraded to the [supported 5.2 LTS series](https://www.djangoproject.com/download/). Deployment checks are not an exhaustive scientific-output or application-security audit. Keep dependencies patched and validate your frontend workflows before switching production traffic.
+For local development, use a fresh Python 3.11 virtual environment, install `requirements` and the system `ncbi-blast+` package, and run Django commands from `brassicaLncWeb/`. Set `DEBUG=True`; absent database engine settings use SQLite. An existing `.env` still supplies database settings. Do not use Django's development server in production.
 
-For local Python development, install `requirements`, install the system `ncbi-blast+` package, run commands from `brassicaLncWeb/`. Set `DEBUG=True` for development; absent database settings use SQLite. Do not use Django's development server in production.
+Run host helper/Compose tests (Compose CLI required, no daemon needed):
 
-## Validation performed
+```bash
+python3 -m unittest discover -s tests -v
+```
 
-The deployment changes were checked with an image build, fresh PostgreSQL migrations and import (17,946 fixture records), repeat seeding, search responses (1,854 transcripts), admin/static HTTP responses, and successful nucleotide BLAST queries. Three regression tests cover REST routing, partial-dataset protection, and import rollback. `check --deploy` with HTTPS settings reports only the intentionally disabled HSTS subdomain/preload options. Server-specific DNS, TLS certificates, nginx permissions, and frontend integration must be verified on your server.
+Run application regression tests in the built image with an isolated in-memory SQLite database:
+
+```bash
+cd brassicaLncWeb
+docker compose --env-file .env run --rm --no-deps -e DATABASE_ENGINE= --entrypoint python web manage.py test lncRNA
+```
+
+Submission records are saved, but the legacy email helper has no configured recipient and reports `email: false`; review submissions in admin. BLAST REST accepts `/blast/blastn` and `/blast/blastn/`. Legacy HTML/protein routes are not exposed. Biopython is pinned to retain the command wrappers; load-test representative queries before increasing the default single Gunicorn worker.
+
+Deployment verification covers image build, fresh PostgreSQL migration/seeding, readiness with HTTPS settings, repeat seeding, and regression tests. DNS, certificates, host nginx permissions, and the separate frontend must be verified on your target server.

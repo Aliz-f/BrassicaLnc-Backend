@@ -16,8 +16,10 @@ Including another URLconf
 from blast_rest.views import blastn
 from django.contrib import admin
 from django.urls import path, include
+from .health import health
 
 urlpatterns = [
+    path('healthz/', health, name='health'),
     path('admin/', admin.site.urls),
     path('lncRNA/', include('lncRNA.urls')),
     path('blast/blastn', blastn.as_view(), name='blastn'),
