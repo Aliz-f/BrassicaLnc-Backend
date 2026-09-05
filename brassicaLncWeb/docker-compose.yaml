@@ -9,16 +9,9 @@ services:
     env_file:
       - .env
     environment:
-      # Resolve credentials exactly as the database service does.
-      DATABASE_USER: ${DATABASE_USER:?Set DATABASE_USER in .env}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD:?Set DATABASE_PASSWORD in .env}
-      DATABASE_NAME: ${DATABASE_NAME:?Set DATABASE_NAME in .env}
       DATABASE_HOST: database
       DATABASE_PORT: 5432
-      DEBUG: "False"
       DATABASE_ENGINE: django.db.backends.postgresql
-      SECRET_KEY: ${SECRET_KEY:?Set SECRET_KEY in .env}
-      ALLOWED_HOSTS: ${ALLOWED_HOSTS:?Set ALLOWED_HOSTS in .env}
     ports:
       - "127.0.0.1:${APP_PORT:-8000}:8000"
     volumes:
@@ -38,19 +31,18 @@ services:
 
   database:
     image: postgres:17-alpine
+    env_file:
+      - .env
     environment:
-      POSTGRES_USER: ${DATABASE_USER:?Set DATABASE_USER in .env}
-      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:?Set DATABASE_PASSWORD in .env}
-      POSTGRES_DB: ${DATABASE_NAME:?Set DATABASE_NAME in .env}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
       test:
         - CMD-SHELL
-        - >-
-          PGPASSWORD="$$POSTGRES_PASSWORD" psql -h database
-          -U "$$POSTGRES_USER" -d "$$POSTGRES_DB" -w
-          -v ON_ERROR_STOP=1 -c 'SELECT 1' >/dev/null
+        - PGPASSWORD="$$POSTGRES_PASSWORD" psql -U "$$POSTGRES_USER" -d "$$POSTGRES_DB" -c "SELECT 1" >/dev/null
       interval: 10s
       timeout: 5s
       retries: 5

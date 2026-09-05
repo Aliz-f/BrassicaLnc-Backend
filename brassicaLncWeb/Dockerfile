@@ -20,9 +20,9 @@ RUN python -m pip install --upgrade pip \
     && pip install -r /app/requirements
 
 COPY brassicaLncWeb /app/brassicaLncWeb
-
 COPY brassicaLncWeb/docker-entrypoint.sh /app/brassicaLncWeb/docker-entrypoint.sh
 
+# Ensure healthcheck.py is present in /app/brassicaLncWeb for healthcheck runner
 RUN test "$APP_UID" -gt 0 && test "$APP_GID" -gt 0 \
     || { echo 'APP_UID and APP_GID must be positive (use 1000 when deploying as root).' >&2; exit 1; }
 

@@ -4,7 +4,7 @@ set -eu
 
 cd /app/brassicaLncWeb
 
-# Check nested static directories too: the mount root alone may be writable.
+# Pre-flight check for static and media volume permissions
 python check_storage.py
 
 python manage.py check
@@ -16,8 +16,8 @@ case "$(printf '%s' "${SEED_DATABASE:-true}" | tr '[:upper:]' '[:lower:]')" in
     *) echo 'SEED_DATABASE must be true or false.' >&2; exit 1 ;;
 esac
 
+# Smoke check dependencies & binaries
 python manage.py shell -c "from blast_rest import utils; from blast_rest.views import blastn; print('blast_rest import smoke check passed'); print(utils.__name__); print(blastn.__name__)"
-
 blastn -version >/dev/null
 
 python manage.py collectstatic --noinput
