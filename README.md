@@ -42,7 +42,7 @@ If Docker requires sudo, use `sudo docker` consistently below, or configure acce
 
 ```bash
 sudo install -d -o "$(id -un)" -g "$(id -gn)" /srv/brassicaLnc-back
-git clone https://github.com/Aliz-f/brassicaLnc.git /srv/brassicaLnc-back
+git clone https://github.com/Aliz-f/BrassicaLnc-Backend.git /srv/brassicaLnc-back
 cd /srv/brassicaLnc-back
 cp brassicaLncWeb/.env.example brassicaLncWeb/.env
 chmod 600 brassicaLncWeb/.env
