@@ -201,6 +201,39 @@ docker compose --env-file .env up -d web
 
 Restore media separately and verify the API/admin. Do not restore over a running application or populated database. `docker compose down` preserves the database; **`docker compose down -v` deletes it**. Rolling application code back may also require restoring the matching database backup if migrations changed the schema.
 
+## Diagnose database authentication failures
+
+Both services now resolve `DATABASE_USER`, `DATABASE_PASSWORD`, and `DATABASE_NAME` through the same Compose interpolation. Previously, web read these only from `env_file`, while PostgreSQL used interpolation; exported shell variables could make the passwords differ even on a new volume. Shell variables override `--env-file` values during interpolation ([Docker documentation](https://docs.docker.com/compose/how-tos/environment-variables/variable-interpolation/)).
+
+Run from your server checkout's `brassicaLncWeb/` directory after pulling the fix:
+
+```bash
+unset DATABASE_USER DATABASE_PASSWORD DATABASE_NAME
+docker compose --env-file .env config --quiet
+docker compose --env-file .env up -d --build --force-recreate
+docker compose --env-file .env ps
+docker compose --env-file .env logs --since=2m --tail=100 web database
+```
+
+Use single quotes around secrets containing literal `$` or `#` in `.env`. Do not share `.env` or expanded Compose configuration. The new database health check performs an authenticated TCP `SELECT 1`; it will fail if the stored PostgreSQL password differs from the configured password. `pg_isready` alone does not validate credentials ([PostgreSQL documentation](https://www.postgresql.org/docs/16/app-pg-isready.html)).
+
+If the database is unhealthy because an existing volume has an older password, retain that volume and reset the role password interactively. For the `postgres` role shown in the reported logs:
+
+```bash
+docker compose --env-file .env exec database psql -U postgres -d postgres
+```
+
+Run `\password postgres`, enter the exact `DATABASE_PASSWORD` value twice (without its surrounding quotes), then `\q`. Use the original administrator role if the volume was initialized with another username. Changing environment variables or rebuilding an image does not change stored database credentials.
+
+Verify the web configuration independently of the normal startup script:
+
+```bash
+docker compose --env-file .env run --rm --no-deps --entrypoint python web manage.py shell -c "from django.db import connection; connection.ensure_connection(); print('Database connection OK')"
+docker compose --env-file .env up -d web
+```
+
+Wait for Gunicorn's listening message before testing HTTP. No database deletion is required. Run the Compose configuration regression tests locally with `python3 -m unittest discover -s tests -v` (Docker Compose CLI required; no daemon needed).
+
 ## Troubleshooting and limitations
 
 - **400 / DisallowedHost:** correct `ALLOWED_HOSTS` and recreate web with `up -d web`.

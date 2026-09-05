@@ -9,6 +9,10 @@ services:
     env_file:
       - .env
     environment:
+      # Resolve credentials exactly as the database service does.
+      DATABASE_USER: ${DATABASE_USER:?Set DATABASE_USER in .env}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD:?Set DATABASE_PASSWORD in .env}
+      DATABASE_NAME: ${DATABASE_NAME:?Set DATABASE_NAME in .env}
       DATABASE_HOST: database
       DATABASE_PORT: 5432
       DEBUG: "False"
@@ -34,7 +38,12 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
+      test:
+        - CMD-SHELL
+        - >-
+          PGPASSWORD="$$POSTGRES_PASSWORD" psql -h database
+          -U "$$POSTGRES_USER" -d "$$POSTGRES_DB" -w
+          -v ON_ERROR_STOP=1 -c 'SELECT 1' >/dev/null
       interval: 10s
       timeout: 5s
       retries: 5
