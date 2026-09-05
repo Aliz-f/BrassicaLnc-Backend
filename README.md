@@ -25,6 +25,9 @@ The Django container runs migrations, seeds initial data when the database is em
 
 - Docker Engine
 - Docker Compose v2
+- nginx installed on the VM host
+- a domain name pointed at the VM if you want HTTPS
+- optional: certbot or another ACME client for SSL certificates
 
 ### Environment
 
@@ -36,6 +39,8 @@ For a real deployment, create [brassicaLncWeb/.env](brassicaLncWeb/.env) with pr
 - `DATABASE_PASSWORD`
 - `ALLOWED_HOSTS`
 - `CSRF_TRUSTED_ORIGINS`
+
+Also set `APP_PORT`, `APP_UID`, and `APP_GID` if you want the container to match your host deployment layout. The defaults work on a typical Linux VM, but you can align them with the user and group that own your deployment directory.
 
 ### Run Locally with Docker
 
@@ -51,29 +56,90 @@ The app will be available at:
 
 ### Deploy on a VM
 
-1. Install Docker and Docker Compose on the VM.
+This is the recommended production flow when nginx is installed on the VM host and Docker is only used for the app and database.
+
+1. Install prerequisites on the VM.
+
+```bash
+sudo apt update
+sudo apt install -y docker.io docker-compose-plugin nginx
+sudo systemctl enable --now docker nginx
+```
+
 2. Clone the repository onto the VM.
-3. Copy [brassicaLncWeb/.env.example](brassicaLncWeb/.env.example) to [brassicaLncWeb/.env](brassicaLncWeb/.env) and fill in production values.
-4. Update `ALLOWED_HOSTS`, `CSRF_TRUSTED_ORIGINS`, and `APP_PORT` for your VM IP or domain.
-5. Create writable host directories for static and media files:
+
+```bash
+git clone git@github.com:Aliz-f/BrassicaLnc-Backend.git /srv/brassicaLnc-back
+cd /srv/brassicaLnc-back
+```
+
+3. Create the deployment folders that nginx and Django will share.
 
 ```bash
 mkdir -p deploy/staticfiles deploy/media
 ```
 
-6. Start the stack:
+4. Copy the environment template and fill in production values.
+
+```bash
+cp brassicaLncWeb/.env.example brassicaLncWeb/.env
+```
+
+Edit `brassicaLncWeb/.env` and set at least `SECRET_KEY`, `DATABASE_PASSWORD`, `ALLOWED_HOSTS`, `CSRF_TRUSTED_ORIGINS`, and `APP_PORT`.
+
+5. If needed, adjust ownership of the deployment directories so the Docker container can write collected static files.
+
+```bash
+sudo chown -R $USER:$USER deploy
+```
+
+If you want the container UID/GID to match the host deployment user, set `APP_UID` and `APP_GID` in `brassicaLncWeb/.env`.
+
+6. Start the Docker stack.
 
 ```bash
 docker compose -f brassicaLncWeb/docker-compose.yaml up -d --build
 ```
 
-7. Check the app logs if needed:
+7. Confirm that the web container is bound to localhost only.
+
+```bash
+docker compose -f brassicaLncWeb/docker-compose.yaml ps
+```
+
+You should see `127.0.0.1:8000->8000/tcp` or the port you set in `APP_PORT`.
+
+8. Review the startup logs.
 
 ```bash
 docker compose -f brassicaLncWeb/docker-compose.yaml logs -f web
 ```
 
-8. Point your VM's nginx to `127.0.0.1:${APP_PORT}`.
+The first startup should run migrations, load the initial data, verify `blast_rest`, run `blastn -version`, and collect static files.
+
+9. Install the host nginx site configuration.
+
+Copy the example file from [deploy/nginx/brassicaLnc.conf.example](deploy/nginx/brassicaLnc.conf.example) to `/etc/nginx/sites-available/brassicaLnc.conf` and update:
+
+- `server_name` to your domain
+- the `alias` paths if your repository is stored somewhere else
+- the `proxy_pass` port if you changed `APP_PORT`
+
+10. Enable the nginx site and reload nginx.
+
+```bash
+sudo ln -s /etc/nginx/sites-available/brassicaLnc.conf /etc/nginx/sites-enabled/brassicaLnc.conf
+sudo nginx -t
+sudo systemctl reload nginx
+```
+
+11. Open the public site through nginx.
+
+Point your browser to `http://your-domain/` or `http://your-vm-ip/`.
+
+12. Add HTTPS.
+
+Use certbot or your preferred ACME client to issue a certificate for the domain, then keep nginx on the host terminating TLS and forwarding traffic to `127.0.0.1:${APP_PORT}`.
 
 ### What Starts Automatically
 
@@ -148,6 +214,8 @@ server {
 	}
 }
 ```
+
+If you use certbot, the HTTPS server block should keep the same `location /`, `location /static/`, and `location /media/` rules and only add the TLS certificate directives and an HTTP-to-HTTPS redirect.
 
 ## Notes
 
