@@ -205,6 +205,23 @@ Restore media separately. Do not restore over a populated database or a running 
 | CSRF / CORS errors | Check exact origins and nginx HTTPS forwarding; recreate web |
 | Missing tables | Verify tracked migrations are present; do not blindly fake migrations |
 
+### Repair existing static-file permissions
+
+`PermissionError` during `collectstatic` (for example, `admin/css/responsive_rtl.css`) means the application cannot replace an existing asset. A writable `staticfiles` root does not guarantee writable nested directories. This can happen after a previous deployment ran as root or with a different UID/GID. Startup now checks nested static directories and existing files before running migrations.
+
+From the server checkout's `brassicaLncWeb/` directory, stop web and obtain the actual image user's IDs, then repair the host bind mount:
+
+```bash
+docker compose --env-file .env stop web
+static_uid=$(docker compose --env-file .env run --rm --no-deps --entrypoint id web -u)
+static_gid=$(docker compose --env-file .env run --rm --no-deps --entrypoint id web -g)
+sudo chown -R "$static_uid:$static_gid" ../deploy/staticfiles
+sudo chmod -R u+rwX,go+rX ../deploy/staticfiles
+docker compose --env-file .env up --wait --wait-timeout 900 web
+```
+
+These commands bypass normal startup when inspecting the user, so they also work during a restart loop. They preserve static files and database data. If you subsequently change `APP_UID`/`APP_GID`, rebuild first and repeat the repair with the new image's IDs. If the preflight instead names `media`, fix that directory's ownership/access for the same user. Do not use `chmod 777` or delete the database volume.
+
 ### Existing database password mismatch
 
 Retain the database volume. Connect using the administrator role originally used to initialize it (the helper uses `brassica`; older installs may use `postgres`):

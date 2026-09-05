@@ -4,13 +4,8 @@ set -eu
 
 cd /app/brassicaLncWeb
 
-# Fail before modifying the database if host bind mounts have wrong ownership.
-for directory in staticfiles media; do
-    if ! [ -d "$directory" ] || ! [ -w "$directory" ]; then
-        echo "Cannot write $directory. Set APP_UID/APP_GID to the deployment user's IDs and fix ownership of deploy/$directory on the host." >&2
-        exit 1
-    fi
-done
+# Check nested static directories too: the mount root alone may be writable.
+python check_storage.py
 
 python manage.py check
 python manage.py migrate --noinput
