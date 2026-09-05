@@ -6,7 +6,7 @@ Deployment: **host nginx → localhost Gunicorn container → private PostgreSQL
 
 ## 1. Prepare the server
 
-The instructions below assume Ubuntu, a non-root user with sudo access, and a checkout at `/srv/brassicaLnc-back`.
+The instructions below assume Ubuntu, a **root shell**, and a checkout at `/srv/brassicaLnc-back`. Root runs Docker and manages host files; the application container still runs as UID/GID `1000:1000`. For a non-root deployment user, prefix administrative commands with `sudo`; the helper uses that user’s IDs instead.
 
 Install Docker Engine and its Compose plugin using the [official Ubuntu instructions](https://docs.docker.com/engine/install/ubuntu/). Verify that your deployment user can run Docker:
 
@@ -14,9 +14,9 @@ Install Docker Engine and its Compose plugin using the [official Ubuntu instruct
 docker --version
 docker compose version
 docker info
-sudo apt update
-sudo apt install -y git python3 nginx certbot python3-certbot-nginx
-sudo systemctl enable --now docker nginx
+apt update
+apt install -y git python3 nginx certbot python3-certbot-nginx
+systemctl enable --now docker nginx
 ```
 
 Configure Docker access following its installation guide if `docker info` fails. The helper below invokes Docker as your current user. It requires a Compose version supporting `up --wait --wait-timeout` ([Compose reference](https://docs.docker.com/reference/cli/docker/compose/up/)).
@@ -26,14 +26,14 @@ Point your **API hostname's** DNS A record at this server. Add an AAAA record on
 ## 2. Clone and generate configuration
 
 ```bash
-sudo install -d -o "$(id -un)" -g "$(id -gn)" /srv/brassicaLnc-back
+install -d -o "$(id -un)" -g "$(id -gn)" /srv/brassicaLnc-back
 git clone https://github.com/Aliz-f/BrassicaLnc-Backend.git /srv/brassicaLnc-back
 cd /srv/brassicaLnc-back
 python3 deploy/deploy.py init api.example.com
 nano brassicaLncWeb/.env
 ```
 
-Replace `api.example.com` with your API hostname. Run `init` as your deployment user, without sudo. It generates separate random Django/database secrets, records your UID/GID, creates the static/media directories, and writes `.env` with mode 600. **It refuses to overwrite an existing `.env`.** For an existing installation, keep your current file and review it against `.env.example`; do not regenerate database credentials.
+Replace `api.example.com` with your API hostname. Run `init` from your root shell. It generates separate random Django/database secrets, sets container UID/GID to `1000:1000` for root deployments (or your IDs for non-root deployments), creates the static/media directories, and writes `.env` with mode 600. **It refuses to overwrite an existing `.env`.** For an existing installation, keep your current file and review it against `.env.example`; do not regenerate database credentials.
 
 Review these settings:
 
@@ -43,21 +43,25 @@ Review these settings:
 | `CORS_ALLOWED_ORIGINS` | Frontend origins, including scheme; defaults to `https://brassica.arfadaei.ir` |
 | `CSRF_TRUSTED_ORIGINS` | API and frontend HTTPS origins |
 | `APP_PORT` | Loopback port used by nginx; defaults to `8000` |
-| `APP_UID`, `APP_GID` | Non-root deployment user's numeric IDs |
+| `APP_UID`, `APP_GID` | Container IDs; use `1000` for both when running deployment as root, never `0` |
 | `DATABASE_NAME`, `DATABASE_USER`, `DATABASE_PASSWORD` | Shared by web and PostgreSQL |
 | `SECRET_KEY` | Stable random secret, at least 50 characters |
 | `SEED_DATABASE` | `true` to import bundled reference data on first startup |
 
 Compose forces production mode and the internal PostgreSQL host/port. Keep HTTPS cookie/redirect settings disabled until step 6. Use single quotes around manually chosen secrets containing literal `$` or `#`. Never commit or share `.env` or expanded `docker compose config` output.
 
-Ensure the bind mounts are writable by the configured UID/GID and readable by nginx. For the default setup using your current user:
+For an existing root-operated installation, preserve your secrets and set these values in `brassicaLncWeb/.env`:
 
-```bash
-sudo chown -R "$(id -u):$(id -g)" deploy/staticfiles deploy/media
-chmod 755 deploy deploy/staticfiles deploy/media
+```dotenv
+APP_UID=1000
+APP_GID=1000
 ```
 
-If you chose different IDs, use those in `chown`. Rebuild after changing `APP_UID` or `APP_GID`. Image permissions cannot fix host bind-mount permissions.
+Do not use root's `id -u` / `id -g` values (`0`) for the container. Running `python3 deploy/deploy.py up` as root now builds the image, stops web, recursively repairs static/media ownership to the configured container IDs, and starts the services. This repairs files left by earlier deployments automatically. It does not change database-volume ownership. Changing container IDs requires a rebuild, which `up` includes.
+
+For manual repair as root, stop web first and run `python3 deploy/deploy.py fix-permissions`, then `up`. Repair skips symlinks, grants public read access to static assets, and preserves existing media visibility while granting the application owner access. Non-root users can run this repair command with `sudo` if old files belong to another user.
+
+Keep the checkout under `/srv`, as shown. A checkout inside `/root` normally prevents host nginx from reading static/media files because it cannot traverse `/root`.
 
 ## 3. Build and start
 
@@ -68,7 +72,7 @@ python3 deploy/deploy.py up
 python3 deploy/deploy.py status
 ```
 
-The helper validates Compose configuration, builds the image, and waits up to 15 minutes for both services to become healthy. Initial seeding may take several minutes. Startup checks directory access and Django configuration, applies migrations, imports reference fixtures atomically, checks BLAST imports/binary, collects static files, and starts Gunicorn.
+The helper validates Compose configuration, builds the image, repairs host permissions when run as root, and waits up to 15 minutes for both services to become healthy. Initial seeding may take several minutes. Startup checks directory access and Django configuration, applies migrations, imports reference fixtures atomically, checks BLAST imports/binary, collects static files, and starts Gunicorn.
 
 The database health check authenticates using the configured credentials. The web health check requests `/healthz/` through Gunicorn and executes a database query. It also works after HTTPS redirects are enabled. Health checks have a ten-minute initial grace period for seeding; health status alone does not restart an unhealthy running container. The restart policy handles exited containers and server reboots.
 
@@ -110,16 +114,16 @@ Later startups skip seeding when all fixture-backed tables contain data. A parti
 ## 5. Configure nginx
 
 ```bash
-sudo cp deploy/nginx/brassicaLnc.conf.example /etc/nginx/sites-available/brassicaLnc.conf
-sudo nano /etc/nginx/sites-available/brassicaLnc.conf
+cp deploy/nginx/brassicaLnc.conf.example /etc/nginx/sites-available/brassicaLnc.conf
+nano /etc/nginx/sites-available/brassicaLnc.conf
 ```
 
 Set `server_name` to your API hostname. Update both alias paths if your checkout is elsewhere, and `proxy_pass` if `APP_PORT` is not 8000. Add `listen [::]:80;` if using IPv6.
 
 ```bash
-sudo ln -s /etc/nginx/sites-available/brassicaLnc.conf /etc/nginx/sites-enabled/brassicaLnc.conf
-sudo nginx -t
-sudo systemctl reload nginx
+ln -s /etc/nginx/sites-available/brassicaLnc.conf /etc/nginx/sites-enabled/brassicaLnc.conf
+nginx -t
+systemctl reload nginx
 curl -f http://api.example.com/healthz/
 ```
 
@@ -130,8 +134,8 @@ Skip the symlink command if it already exists. nginx needs traversal permission 
 Once DNS resolves and port 80 is reachable:
 
 ```bash
-sudo certbot --nginx -d api.example.com
-sudo certbot renew --dry-run
+certbot --nginx -d api.example.com
+certbot renew --dry-run
 curl -f https://api.example.com/healthz/
 ```
 
@@ -215,8 +219,8 @@ From the server checkout's `brassicaLncWeb/` directory, stop web and obtain the 
 docker compose --env-file .env stop web
 static_uid=$(docker compose --env-file .env run --rm --no-deps --entrypoint id web -u)
 static_gid=$(docker compose --env-file .env run --rm --no-deps --entrypoint id web -g)
-sudo chown -R "$static_uid:$static_gid" ../deploy/staticfiles
-sudo chmod -R u+rwX,go+rX ../deploy/staticfiles
+chown -R "$static_uid:$static_gid" ../deploy/staticfiles
+chmod -R u+rwX,go+rX ../deploy/staticfiles
 docker compose --env-file .env up --wait --wait-timeout 900 web
 ```
 

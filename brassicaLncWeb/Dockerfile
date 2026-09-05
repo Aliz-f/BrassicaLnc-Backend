@@ -23,6 +23,9 @@ COPY brassicaLncWeb /app/brassicaLncWeb
 
 COPY brassicaLncWeb/docker-entrypoint.sh /app/brassicaLncWeb/docker-entrypoint.sh
 
+RUN test "$APP_UID" -gt 0 && test "$APP_GID" -gt 0 \
+    || { echo 'APP_UID and APP_GID must be positive (use 1000 when deploying as root).' >&2; exit 1; }
+
 RUN groupadd --gid "$APP_GID" appuser \
     && useradd --create-home --uid "$APP_UID" --gid "$APP_GID" --shell /bin/sh appuser \
     && mkdir -p /app/brassicaLncWeb/staticfiles /app/brassicaLncWeb/media \
