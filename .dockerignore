@@ -15,3 +15,7 @@ venv
 deploy/staticfiles
 deploy/media
 **/.env
+blast_rest
+.agents
+.codex
+backups

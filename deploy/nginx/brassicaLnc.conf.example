@@ -1,6 +1,7 @@
 server {
     listen 80;
-    server_name brassicalnc.example.com;
+    # Replace with the backend domain; the frontend stays on GitHub Pages.
+    server_name api.example.com;
 
     client_max_body_size 25m;
 
@@ -25,6 +26,7 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 130s;
         proxy_redirect off;
     }
 }

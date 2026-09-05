@@ -1,11 +1,12 @@
-FROM python:3.10-slim
+FROM python:3.11-slim-bookworm
 
 ARG APP_UID=1000
 ARG APP_GID=1000
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
-    PIP_NO_CACHE_DIR=1
+    PIP_NO_CACHE_DIR=1 \
+    PYTHONPATH=/app/brassicaLncWeb:/app
 
 WORKDIR /app
 
@@ -14,7 +15,6 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements /app/requirements
-COPY blast_rest /app/blast_rest
 
 RUN python -m pip install --upgrade pip \
     && pip install -r /app/requirements
@@ -25,9 +25,9 @@ COPY brassicaLncWeb/docker-entrypoint.sh /app/brassicaLncWeb/docker-entrypoint.s
 
 RUN groupadd --gid "$APP_GID" appuser \
     && useradd --create-home --uid "$APP_UID" --gid "$APP_GID" --shell /bin/sh appuser \
-    && chown -R appuser:appuser /app \
     && mkdir -p /app/brassicaLncWeb/staticfiles /app/brassicaLncWeb/media \
-    && chmod -R 0777 /app/brassicaLncWeb/staticfiles /app/brassicaLncWeb/media
+    && chown -R appuser:appuser /app \
+    && chmod 0755 /app/brassicaLncWeb/staticfiles /app/brassicaLncWeb/media
 
 WORKDIR /app/brassicaLncWeb
 
@@ -36,4 +36,4 @@ EXPOSE 8000
 USER appuser
 
 ENTRYPOINT ["/bin/sh", "/app/brassicaLncWeb/docker-entrypoint.sh"]
-CMD ["gunicorn", "brassicaLncWeb.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3", "--timeout", "120"]
+CMD ["gunicorn", "brassicaLncWeb.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "1", "--timeout", "120"]

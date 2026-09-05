@@ -12,7 +12,9 @@ services:
       DATABASE_HOST: database
       DATABASE_PORT: 5432
       DEBUG: "False"
-      ALLOWED_HOSTS: localhost,127.0.0.1,0.0.0.0
+      DATABASE_ENGINE: django.db.backends.postgresql
+      SECRET_KEY: ${SECRET_KEY:?Set SECRET_KEY in .env}
+      ALLOWED_HOSTS: ${ALLOWED_HOSTS:?Set ALLOWED_HOSTS in .env}
     ports:
       - "127.0.0.1:${APP_PORT:-8000}:8000"
     volumes:
@@ -25,16 +27,14 @@ services:
 
   database:
     image: postgres:17-alpine
-    env_file:
-      - .env
     environment:
-      POSTGRES_USER: ${DATABASE_USER}
-      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
-      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER:?Set DATABASE_USER in .env}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:?Set DATABASE_PASSWORD in .env}
+      POSTGRES_DB: ${DATABASE_NAME:?Set DATABASE_NAME in .env}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USER} -d ${DATABASE_NAME}"]
+      test: ["CMD-SHELL", "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""]
       interval: 10s
       timeout: 5s
       retries: 5

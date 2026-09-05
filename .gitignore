@@ -32,7 +32,6 @@ db.sqlite3
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
-migrations
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
@@ -137,3 +136,6 @@ GitHub.sublime-settings
 !.vscode/extensions.json 
 .history
 db-data
+/deploy/staticfiles/
+/deploy/media/
+/backups/
