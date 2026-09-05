@@ -1,10 +1,11 @@
 asgiref==3.5.0
-biopython==1.86
-BLAST_REST @ file:///home/alireza/aliz_projects/brassica/blast/blast-rest-1.0.0/blast_rest
+biopython==1.77
+./blast_rest
 Django==4.0.1
 django-blastplus==3.0.0
 django-cors-headers==3.14.0
 djangorestframework==3.13.1
+gunicorn==21.2.0
 numpy==1.22.2
 psycopg2==2.9.11
 python-dotenv==0.20.0
@@ -13,3 +14,4 @@ quick-mailer==2022.2.22
 six==1.16.0
 sqlparse==0.4.2
 unicodecsv==0.14.1
+whitenoise==6.8.2

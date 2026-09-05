@@ -1,5 +1,6 @@
 """LncRna project views for download app"""
 import os
+from pathlib import Path
 from wsgiref.util import FileWrapper
 
 from rest_framework.views import APIView
@@ -13,6 +14,9 @@ from lncRNA.models import (
                 BioticFpkm, GeneticsFpkm,
                 DevelopmentalFpkm, ChemicalFpkm, PremiRna)
 from .utils import export_csv, export_txt, export_fasta, export_gtf, export_csv_fpkm
+
+
+FILES_DIR = Path(__file__).resolve().parent.parent / 'files'
 
 
 # Create your views here.
@@ -188,32 +192,35 @@ class DownloadAllFiles(APIView):
         """no docstring"""
         try:
             file=request.GET.get('file',None)
-            assert file,'files query param not found'
+            if not file:
+                return Response(
+                    {'detail': 'files query param not found'},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
             file = file.replace(' ','')
-            os_path = os.getcwd() + '/files'
             files_address = {
-                "fpkm-lnc":f"{os_path}/lncRNAs_fpkm.txt",
-                "database-lnc":f"{os_path}/lncRANs_Table.tsv",
-                "fasta-lnc" : f"{os_path}/lncRNAs.fa",
-                "gtf-lnc":f"{os_path}/lncRNAs.gtf",
-                "down-desc":f"{os_path}/multi_omics/target/down_genes/Downgenes_description.txt",
-                "up-desc":f"{os_path}/multi_omics/target/up_genes/Upgenes_description.txt",
-                "down-tar":f"{os_path}/multi_omics/target/down_genes/LncTar_Downgenes.txt",
-                "up-tar":f"{os_path}/multi_omics/target/up_genes/LncTar_Upgenes.txt",
-                "abiotic-lnc-fpkm":f"{os_path}/abiotic/v2/abiotic_fpkm.txt",
-                "abiotic-lnc-db":f"{os_path}/abiotic/v2/Abiotic_Table.tsv",
-                "biotic-lnc-fpkm":f"{os_path}/biotic/v2/biotic_fpkm.txt",
-                "biotic-lnc-db":f"{os_path}/biotic/v2/Biotic_Table.tsv",
-                "chemical-lnc-fpkm":f"{os_path}/chemical/v2/chemical_fpkm.txt",
-                "chemical-lnc-db":f"{os_path}/chemical/v2/Chemical_Table.tsv",
-                "developmental-lnc-fpkm":f"{os_path}/developmental/v2/developmental_fpkm.txt",
-                "developmental-lnc-db":f"{os_path}/developmental/v2/Developmental_Table.tsv",
-                "genetics-lnc-fpkm":f"{os_path}/genetics/v2/genetics_fpkm.txt",
-                "genetics-lnc-db":f"{os_path}/genetics/v2/Genetics_Table.tsv",
+                "fpkm-lnc": FILES_DIR / 'lncRNAs_fpkm.txt',
+                "database-lnc": FILES_DIR / 'lncRANs_Table.tsv',
+                "fasta-lnc": FILES_DIR / 'lncRNAs.fa',
+                "gtf-lnc": FILES_DIR / 'lncRNAs.gtf',
+                "down-desc": FILES_DIR / 'multi_omics/target/down_genes/Downgenes_description.txt',
+                "up-desc": FILES_DIR / 'multi_omics/target/up_genes/Upgenes_description.txt',
+                "down-tar": FILES_DIR / 'multi_omics/target/down_genes/LncTar_Downgenes.txt',
+                "up-tar": FILES_DIR / 'multi_omics/target/up_genes/LncTar_Upgenes.txt',
+                "abiotic-lnc-fpkm": FILES_DIR / 'abiotic/v2/abiotic_fpkm.txt',
+                "abiotic-lnc-db": FILES_DIR / 'abiotic/v2/Abiotic_Table.tsv',
+                "biotic-lnc-fpkm": FILES_DIR / 'biotic/v2/biotic_fpkm.txt',
+                "biotic-lnc-db": FILES_DIR / 'biotic/v2/Biotic_Table.tsv',
+                "chemical-lnc-fpkm": FILES_DIR / 'chemical/v2/chemical_fpkm.txt',
+                "chemical-lnc-db": FILES_DIR / 'chemical/v2/Chemical_Table.tsv',
+                "developmental-lnc-fpkm": FILES_DIR / 'developmental/v2/developmental_fpkm.txt',
+                "developmental-lnc-db": FILES_DIR / 'developmental/v2/Developmental_Table.tsv',
+                "genetics-lnc-fpkm": FILES_DIR / 'genetics/v2/genetics_fpkm.txt',
+                "genetics-lnc-db": FILES_DIR / 'genetics/v2/Genetics_Table.tsv',
             }
             file_path = files_address[file]
             with open(file_path, 'rb') as file_handeler:
-                file_name = files_address[file].split('/')[-1]
+                file_name = file_path.name
                 response = HttpResponse(FileWrapper(file_handeler),
                 content_type='text/csv',
                 headers={'Content-Disposition': f'attachment; filename="{file_name}"'})
@@ -244,8 +251,16 @@ class GroupDownloadCsvFpkm(APIView):
         try:
             tran_id  = request.GET.get('id', None)
             group_name = request.GET.get('group', None)
-            assert tran_id, 'transcript id key not found'
-            assert group_name, 'group name key not found'
+            if not tran_id:
+                return Response(
+                    {'detail': 'transcript id key not found'},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+            if not group_name:
+                return Response(
+                    {'detail': 'group name key not found'},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
             if group_name == "chemical":
                 fpkm_query = ChemicalFpkm.objects.filter(lncRNAs=tran_id).values()[0]
             elif group_name == "developmental":
@@ -288,13 +303,14 @@ class DownloadStructurePremiRna(APIView):
         """no docstring"""
         try:
             transcript_id = request.GET.get('transcript', None)
-            assert transcript_id, 'transcript key id not found'
+            if not transcript_id:
+                return Response(
+                    {'detail': 'transcript key id not found'},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
             if PremiRna.objects.filter(lncrna_id = transcript_id).exists():
-                os_path = os.getcwd()
-                os_path+='/files/multi_omics/premiRNA/structure/'
-                file_address = os_path + str(transcript_id) + str('.pdf')
-                print(file_address)
-                if os.path.exists(file_address):
+                file_address = FILES_DIR / 'multi_omics/premiRNA/structure' / f'{transcript_id}.pdf'
+                if file_address.exists():
                     with open(file_address, 'rb') as file_handeler:
                         response = HttpResponse(FileWrapper(file_handeler),
                         content_type='application/pdf',
